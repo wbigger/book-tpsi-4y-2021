@@ -1,0 +1,11 @@
+[book]
+authors = ["Claudio"]
+language = "en"
+multilingual = false
+src = "src"
+title = "TPSI - Quarto anno - 2021"
+description = "Materiale di supporto alle lezioni."
+
+[build]
+build-dir = "docs"
+create-missing = true

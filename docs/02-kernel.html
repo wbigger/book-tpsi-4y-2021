@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Kernel - TPSI - Sistemi operativi con Raspberry PI 3</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Materiale di supporto alle lezioni.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Sistemi Operativi</a></li><li class="chapter-item expanded "><a href="01-mcu-cpu.html"><strong aria-hidden="true">2.</strong> MCU vs CPU</a></li><li class="chapter-item expanded "><a href="02-kernel.html" class="active"><strong aria-hidden="true">3.</strong> Kernel</a></li><li class="chapter-item expanded "><a href="03-gnu.html"><strong aria-hidden="true">4.</strong> GNU utils</a></li><li class="chapter-item expanded "><a href="04-scheduler.html"><strong aria-hidden="true">5.</strong> Scheduler</a></li><li class="chapter-item expanded "><a href="05-memory.html"><strong aria-hidden="true">6.</strong> Memoria</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="assets/objdump.html">objdump</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">TPSI - Sistemi operativi con Raspberry PI 3</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#kernel" id="kernel">Kernel</a></h1>
+<p>Abbiamo visto che il sistema operativo può essere diviso in varie componenti, che possono essere raggruppati in base alla dipendenza dall'hardware su cui girano: a questo fine si usa la metafora delle sfere concentriche, in cui al centro di tutto c'è l'hardware.</p>
+<p align="center">
+<img title="shell-kernel" src='./assets/shell-kernel.png' width='70%' style="padding: 50px 0 30px 0;">
+</p>
+<p>Il programma che è più vicino all'hardware viene chiamato <strong>kernel</strong>. Sulla Raspberry Pi, viene utilizzato un kernel chiamato <strong>Linux</strong>.</p>
+<blockquote>
+<p>Il kernel Linux è stato creato nel 1991 da Linus Torvalds, ed è distribuito attraverso la licenza di software libero GNU GPLv2, ideata da Richard Stallman per proteggere il software libero (free software, con &quot;free as in speech&quot;).</p>
+</blockquote>
+<h2><a class="header" href="#funzioni-principali-del-kernel" id="funzioni-principali-del-kernel">Funzioni principali del kernel</a></h2>
+<p>Come abbiamo visto, il kernel si occupa di mediare l'accesso delle applicazioni alle risorse del computer:</p>
+<ul>
+<li>central processing unit (CPU)</li>
+<li>memoria volatile (RAM)</li>
+<li>periferiche di input/output (hard disk, tastiera, mouse, stampanti, etc.)</li>
+</ul>
+<p>Questa mediazione dell'accesso avviene attraverso alcune funzionalità chiave:</p>
+<ul>
+<li>lo <em>scheduling</em>, che decide quale <em>processo</em> deve essere eseguito in un determinato istante, in accordo ad alcuni criteri</li>
+<li>la gestione della <em>memoria</em>, per permettere alle applicazioni di avere lo spazio di memoria richiesto, senza che diverse applicazioni interferiscano tra di loro e senza che possano creare danni più o meno voluti.</li>
+</ul>
+<h2><a class="header" href="#il-kernel-è-un-programma" id="il-kernel-è-un-programma">Il kernel è un programma</a></h2>
+<p>Il kernel è un programma come gli altri, non ha niente di &quot;magico&quot;. Del kernel Linux possiamo anche vederne il codice sorgente, visto che è software libero e quindi anche aperto.</p>
+<blockquote>
+<p>Il software libero (<a href="https://www.gnu.org/philosophy/free-sw.it.html">free software</a>) implica che il codice sia anche aperto (<a href="https://opensource.org/about">open-source</a>), perché la possibilità di visionare il codice è una delle libertà fondamentali. <strong>Non è vero il viceversa</strong>: un codice aperto potrebbe non essere libero. Controllare sempre la licenza per sapere quali sono i termini esatti di utilizzo.</p>
+</blockquote>
+<blockquote>
+<p>Non confondere &quot;free software&quot; con &quot;freeware&quot;. Il freeware è semplicemente del software che non paghi direttamente per poterlo usare, ma non implica nessun'altro concetto o filosofia. Il free software è generalmente gratis, ma non sempre.</p>
+</blockquote>
+<p>Possiamo trovare il codice sorgente di Linux sulla piattaforma GitHub, a questo indirizzo: <a href="https://github.com/torvalds/linux">https://github.com/torvalds/linux</a></p>
+<p align="center">
+<img title="linux-source" src='./assets/linux-source.png' style="padding: 50px 0 30px 0;">
+</p>
+<blockquote>
+<p>Il codice sorgente su git/GitHun viene contenuto in <em>repository</em>.</p>
+</blockquote>
+<p>Navigando all'interno di questo repository ci aspettiamo di trovare varie cose relative ai diversi tipi di hardware in commercio. Ed è effettivamente così: per esempio, se navighiamo nella cartella <code>arch/</code>, possiamo trovare una lista di tutte le varie <a href="https://en.wikipedia.org/wiki/List_of_CPU_architectures">architetture di CPU</a> in commercio.</p>
+<p align="center">
+<img title="linux-arch" src='./assets/linux-arch.png' style="padding: 50px 0 30px 0;">
+</p>
+<p>Navigando tra i file del kernel vi accorgete che sono tutte istruzioni a basso livello. Per poter usare in maniera comoda queste istruzioni, ci serve un altro strato sopra il kernel, che vedremo nella prossima pagina.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="01-mcu-cpu.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="03-gnu.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="01-mcu-cpu.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="03-gnu.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
