@@ -79,7 +79,7 @@ $ pwd
 Abbreviazione di "make directory", crea una nuova cartella.
 ```sh
 $ mkdir food
-$ ls
+$ ls -l
 -rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
 -rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
 drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
