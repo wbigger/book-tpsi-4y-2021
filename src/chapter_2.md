@@ -1,7 +1,7 @@
 # Comandi
 
 ## echo
-Ritorna un "eco" del suo argomento sul terminale.
+Ritorna un'"eco" del suo argomento sul terminale.
 ```sh
 $ echo ciao
 ciao
