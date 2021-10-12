@@ -1,6 +1,6 @@
 [book]
-authors = ["Claudio"]
-language = "en"
+authors = ["Claudio Capobianco"]
+language = "it"
 multilingual = false
 src = "src"
 title = "TPSI - Quarto anno - 2021"

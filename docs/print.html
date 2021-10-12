@@ -1,52 +1,31 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="it" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>TPSI - Sistemi operativi con Raspberry PI 3</title>
-        
+        <title>TPSI - Quarto anno - 2021</title>
         <meta name="robots" content="noindex" />
-        
-        
-
-
         <!-- Custom HTML head -->
-        
-
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Materiale di supporto alle lezioni.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
         <link rel="stylesheet" href="css/print.css" media="print">
-        
-
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="fonts/fonts.css">
-        
-
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -97,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Sistemi Operativi</a></li><li class="chapter-item expanded "><a href="01-mcu-cpu.html"><strong aria-hidden="true">2.</strong> MCU vs CPU</a></li><li class="chapter-item expanded "><a href="02-kernel.html"><strong aria-hidden="true">3.</strong> Kernel</a></li><li class="chapter-item expanded "><a href="03-gnu.html"><strong aria-hidden="true">4.</strong> GNU utils</a></li><li class="chapter-item expanded "><a href="04-scheduler.html"><strong aria-hidden="true">5.</strong> Scheduler</a></li><li class="chapter-item expanded "><a href="05-memory.html"><strong aria-hidden="true">6.</strong> Memoria</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="assets/objdump.html">objdump</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -105,7 +84,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -122,29 +100,23 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
-                    <h1 class="menu-title">TPSI - Sistemi operativi con Raspberry PI 3</h1>
+                    <h1 class="menu-title">TPSI - Quarto anno - 2021</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -152,8 +124,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -165,698 +135,38 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#sistemi-operativi-con-raspberry-pi-3" id="sistemi-operativi-con-raspberry-pi-3">Sistemi Operativi con Raspberry PI 3</a></h1>
-<p><strong>A.S. 2017-2018</strong></p>
-<p><strong>Istituto di Istruzione Superiore G. Marconi</strong></p>
-<p><strong>Tecnologie e Progettazione di Sistemi Informatici</strong></p>
-<p><strong>Prof. Claudio Capobianco</strong></p>
-<p>Buongiorno ragazzi,</p>
-<p>questo materiale riepiloga quanto detto a lezione nelle scorse settimane.</p>
-<p>Le risposte alle domande dei compiti in classe sono tutte incluse in questo materiale.</p>
-<blockquote>
-<p>Approfondimenti facoltativi sono in box come questo.</p>
-</blockquote>
-<p>Buon lavoro.</p>
-<h1><a class="header" href="#mcu-vs-cpu" id="mcu-vs-cpu">MCU vs CPU</a></h1>
-<p>Prima di cominciare, cerchiamo di capire il contesto in cui ci troviamo.</p>
-<h2><a class="header" href="#tutti-i-computer-hanno-un-sistema-operativo" id="tutti-i-computer-hanno-un-sistema-operativo">Tutti i computer hanno un sistema operativo?</a></h2>
-<p>Short answer: no 🙂</p>
-<p>Long answer:</p>
-<p>Il sistema operativo gestisce le risorse della macchina (memoria, processore, periferiche) per permettere a più applicazioni di poter funzionare contemporaneamente. Ma ogni cosa ha un suo costo: il sistema operativo, come ben sappiamo, utilizza per sé stesso una porzione a volte considerevole delle riorse stesse del nostro computer: pensiamo a quanti GB sul disco occupa una installazione di Windows o Mac, a quanta memoria occupa, e che ha volte i loro processi impegnano la CPU senza una ragione apparente. Oltre a questo pensiamo a problemi di vulnerabilità, aggiornamento, etc.</p>
-<p>Se noi vogliamo far girare un solo programma sul computer, possiamo non aver bisogno di un sistema operativo. Tipicamente quest accade per piccoli elaboratori per compiti molto specifici: questo sistemi vengono chiamati <em>embedded</em>.</p>
-<h2><a class="header" href="#qualche-esempio-di-computer-con-e-senza-os" id="qualche-esempio-di-computer-con-e-senza-os">Qualche esempio di computer con e senza OS?</a></h2>
-<p>In generale, tutti i computer con una interfaccia grafica sono progettati per fare più cose contemporaneamente, ed hanno un sistema operativo: pensiamo ad esempio ai nostri computer desktop, laptop, smartphone. Anche i web server sparsi per il mondo fanno tante cose insieme, ed hanno un sistema operativo.</p>
-<p>Le cose diventano un po' più complicate quando parliamo di piccoli computer su una sola scheda, chiamati appunti <em>single-board computer</em>. In classe abbiamo visto diversi tipi di queste schede:</p>
-<p align="center">
-<img title="mpu-cpu" src='./assets/mpu-cpu.jpg' width='70%'>
-</p>
-<p>A sinistra c'è una Raspberry PI 3 (con il case), a destra in alto un Intel Galileo, sotto un Arduino. Le prime due hanno un sistema operativo, la terza no.</p>
-<h2><a class="header" href="#e-possibile-distinguere-visivamente-se-un-computer-ha-un-os" id="e-possibile-distinguere-visivamente-se-un-computer-ha-un-os">E' possibile distinguere visivamente se un computer ha un OS?</a></h2>
-<p>Di solito sì, perché l'architettura e la disposizione dei componenti sulla scheda è diversa.</p>
-<p>Per i computer senza OS, i componenti base di un elaboratore sono su un unico chip, che viene chiamato <em>microcontollore</em>, abbreviato in <strong>MCU</strong> (Microcontroller Unit):  unità di elaborazione (processore), memoria volatile (RAM) e memoria a lungo termine. Nella foto di Arduino, è quel chip rettangolare lungo con tanti piedini su due lati.</p>
-<p>Per i computer con OS, i componenti solitamente sono su chip separati. Il chip dedicato all'elaborazione viene chiamato <em>microprocessore</em>, abbreviato in <strong>CPU</strong> (Central Processing Unit). Come dice il nome, la CPU è specifica per il processamento dei dati ed è &quot;centrale&quot;, rispetto agli altri componenti collegati ad esso. Nella Raspberry nella foto, la CPU è quella sotto il foro circolare. La RAM è nella parte inferiore della scheda e la memoria a lungo termine è nella scheda microSD estraibile.</p>
-<h2><a class="header" href="#il-sistema-operativo-è-legato-al-tipo-di-cpu" id="il-sistema-operativo-è-legato-al-tipo-di-cpu">Il sistema operativo è legato al tipo di CPU?</a></h2>
-<p>Come per ogni domanda in questo ambito così complesso, la risposta comincia con...dipende!</p>
-<p>Il sistema operativo è un programma estremamente complesso, e si può dividere in diverse componenti. Solo quelli più vicini all'hardware dipendono dalla CPU, dal tipo di RAM e da tutti i componenti e le periferiche.</p>
-<h1><a class="header" href="#kernel" id="kernel">Kernel</a></h1>
-<p>Abbiamo visto che il sistema operativo può essere diviso in varie componenti, che possono essere raggruppati in base alla dipendenza dall'hardware su cui girano: a questo fine si usa la metafora delle sfere concentriche, in cui al centro di tutto c'è l'hardware.</p>
-<p align="center">
-<img title="shell-kernel" src='./assets/shell-kernel.png' width='70%' style="padding: 50px 0 30px 0;">
-</p>
-<p>Il programma che è più vicino all'hardware viene chiamato <strong>kernel</strong>. Sulla Raspberry Pi, viene utilizzato un kernel chiamato <strong>Linux</strong>.</p>
-<blockquote>
-<p>Il kernel Linux è stato creato nel 1991 da Linus Torvalds, ed è distribuito attraverso la licenza di software libero GNU GPLv2, ideata da Richard Stallman per proteggere il software libero (free software, con &quot;free as in speech&quot;).</p>
-</blockquote>
-<h2><a class="header" href="#funzioni-principali-del-kernel" id="funzioni-principali-del-kernel">Funzioni principali del kernel</a></h2>
-<p>Come abbiamo visto, il kernel si occupa di mediare l'accesso delle applicazioni alle risorse del computer:</p>
-<ul>
-<li>central processing unit (CPU)</li>
-<li>memoria volatile (RAM)</li>
-<li>periferiche di input/output (hard disk, tastiera, mouse, stampanti, etc.)</li>
-</ul>
-<p>Questa mediazione dell'accesso avviene attraverso alcune funzionalità chiave:</p>
-<ul>
-<li>lo <em>scheduling</em>, che decide quale <em>processo</em> deve essere eseguito in un determinato istante, in accordo ad alcuni criteri</li>
-<li>la gestione della <em>memoria</em>, per permettere alle applicazioni di avere lo spazio di memoria richiesto, senza che diverse applicazioni interferiscano tra di loro e senza che possano creare danni più o meno voluti.</li>
-</ul>
-<h2><a class="header" href="#il-kernel-è-un-programma" id="il-kernel-è-un-programma">Il kernel è un programma</a></h2>
-<p>Il kernel è un programma come gli altri, non ha niente di &quot;magico&quot;. Del kernel Linux possiamo anche vederne il codice sorgente, visto che è software libero e quindi anche aperto.</p>
-<blockquote>
-<p>Il software libero (<a href="https://www.gnu.org/philosophy/free-sw.it.html">free software</a>) implica che il codice sia anche aperto (<a href="https://opensource.org/about">open-source</a>), perché la possibilità di visionare il codice è una delle libertà fondamentali. <strong>Non è vero il viceversa</strong>: un codice aperto potrebbe non essere libero. Controllare sempre la licenza per sapere quali sono i termini esatti di utilizzo.</p>
-</blockquote>
-<blockquote>
-<p>Non confondere &quot;free software&quot; con &quot;freeware&quot;. Il freeware è semplicemente del software che non paghi direttamente per poterlo usare, ma non implica nessun'altro concetto o filosofia. Il free software è generalmente gratis, ma non sempre.</p>
-</blockquote>
-<p>Possiamo trovare il codice sorgente di Linux sulla piattaforma GitHub, a questo indirizzo: <a href="https://github.com/torvalds/linux">https://github.com/torvalds/linux</a></p>
-<p align="center">
-<img title="linux-source" src='./assets/linux-source.png' style="padding: 50px 0 30px 0;">
-</p>
-<blockquote>
-<p>Il codice sorgente su git/GitHun viene contenuto in <em>repository</em>.</p>
-</blockquote>
-<p>Navigando all'interno di questo repository ci aspettiamo di trovare varie cose relative ai diversi tipi di hardware in commercio. Ed è effettivamente così: per esempio, se navighiamo nella cartella <code>arch/</code>, possiamo trovare una lista di tutte le varie <a href="https://en.wikipedia.org/wiki/List_of_CPU_architectures">architetture di CPU</a> in commercio.</p>
-<p align="center">
-<img title="linux-arch" src='./assets/linux-arch.png' style="padding: 50px 0 30px 0;">
-</p>
-<p>Navigando tra i file del kernel vi accorgete che sono tutte istruzioni a basso livello. Per poter usare in maniera comoda queste istruzioni, ci serve un altro strato sopra il kernel, che vedremo nella prossima pagina.</p>
-<h1><a class="header" href="#gnu-utils" id="gnu-utils">GNU Utils</a></h1>
-<p>Per poter usare in maniera le chiamate di sistema che ci mette a disposizione il kernel, ci sono una serie di strumenti che ci facilitano i compito. Per Linux, queste utiità sono state sviluppate dal <a href="www.gnu.org">progetto GNU</a>, e si chiamano <strong>GNU coreutils</strong>.</p>
-<blockquote>
-<p>Il progetto GNU è stato fondato nel 1983 da Richard Stallman, al MIT di Boston. GNU ha lo scopo in primo luogo di permettere agli sviluppatori di tutto il mondo di poter sviluppare <em>liberamente</em> software, ovvero avendo a disposizione il codice sorgente dei programmi di altre aziende che usano, e senza la necessità di pagare licenze. Le utilità che useremo in questo corso sono solo parte del progetto; un'altra parte fondamentale è la licenza che permette al software di essere usato legalmente, rispettando le libertà fondamentali del free software. Il nome di questa licenza è GPL (General Public Licence), di cui l'ultima versione è la <a href="https://www.gnu.org/licenses/gpl.html">GPLv3</a> <p align="center"><a href='https://www.gnu.org/licenses/gpl.html'><img src='./assets/gpl.png' width='200px'></a></p></p>
-</blockquote>
-<p>Anche in questo caso possiamo andare a cercare il <a href="http://git.savannah.gnu.org/cgit/coreutils.git">codice sorgente</a> delle coreutils.</p>
-<p align="center">
-<img title='GNU coreutils summary' src='./assets/gnu-summary.png'>
-</p>
-<p>Andando a vedere il codice sorgente nella tab &quot;tree&quot;, ed entrando nella cartella <code>src</code>, potete trovare il codice sorgente di tutti i comandi che ci sono familiari e su cui avete fatto la ricerca.</p>
-<p align="center">
-<img title='GNU coreutils summary' src='./assets/gnu-summary.png'>
-</p>
-<h2><a class="header" href="#extra-ricompilare-le-gnu-coreutils" id="extra-ricompilare-le-gnu-coreutils">Extra: ricompilare le GNU coreutils</a></h2>
-<p>Questo non fa strettamente parte di questa unità didattica, ma ve la lascio in caso qualcuno di voi voglia fare degli esperimenti.</p>
-<p>Se volete modificare le GNU coreutils, ad esempio per cambiare il funzionamento di <code>ls</code> o <code>yes</code>, potete farlo seguendo le istruzioni qui sotto.</p>
-<ol>
-<li>accedere al terminale della vostra Raspberry</li>
-<li>abilitare il download dei sorgenti da /etc/apt/sources.list, togliendo il commento all'ultima riga</li>
-<li>creare ed entrare in una cartella separata</li>
-</ol>
-<pre><code> mkdir coreutils-src
- cd coreutils-src
-</code></pre>
-<ol>
-<li>scaricare i sorgenti e scompattarli</li>
-</ol>
-<pre><code>apt-get source coreutils
-tar xvf coreutils_*.orig.tar.xz
-</code></pre>
-<ol>
-<li>entrare dentro la cartella <code>src</code>, all'interno possiamo vedere i sorgenti dei vari comandi.</li>
-</ol>
-<pre><code>cd src
-</code></pre>
-<h3><a class="header" href="#modificare-un-comando" id="modificare-un-comando">Modificare un comando</a></h3>
-<p>Possiamo provare a modificare il comando <code>yes</code>, che è uno dei più semplici. Modificare l'eseguibile in modo che invece di <code>yes</code>, stampi quello che volete.</p>
-<ol>
-<li>modificare il file <code>yes.c</code></li>
-<li>tornare alla root del progetto e ricompilare</li>
-</ol>
-<pre><code>cd ..
-./configure.sh
-make
-</code></pre>
-<p>Ora nella cartella <code>src</code> avete tutti gli eseguibili! Provate a lanciare yes e vedete se stampa quello che desiderate.</p>
-<pre><code>cd src
-./yes
-</code></pre>
-<h1><a class="header" href="#scheduler" id="scheduler">Scheduler</a></h1>
-<p>Uno dei compiti principali del sistema operativo, ed in particolare del kernel, è quello di decidere quando una determinata applicazione può usare il processore. Questo meccanismo viene chiamato <strong>scheduling</strong>.</p>
-<p>L'unità fondamentale su cui lavora lo scheduling per gestire il processore viene chiamato, senza sorprese, <em>processo</em>.</p>
-<h2><a class="header" href="#processi" id="processi">Processi</a></h2>
-<p>Noi scriviamo del codice sorgente sul nostro editor di testo e lo salviamo in un file. Questo file viene chiamato <em>programma</em>. Il programma, per poter essere eseguito, deve essere compilato e caricato in memoria. Una volta che queste operazioni sono state fatte, il programma diventa a tutti gli effetti un <em>processo</em>. Possiamo quindi dire che <em>i processi sono programmi in esecuzione</em>. Un programma può essere eseguito più volte ed avere quindi più processi in esecuzione: pensiamo ad esempio a diverse finestre di un browser.</p>
-<h3><a class="header" href="#ciclo-di-vita-dei-processi" id="ciclo-di-vita-dei-processi">Ciclo di vita dei processi</a></h3>
-<p>Quando il programma viene eseguito, <em>nasce</em> un processo e questi ha un suo <em>ciclo di vita</em> che viene gestito dallo scheduler. Il ciclo di vita è rappresentato da diversi stati.</p>
-<p align="center">
-<img title='Process states' src='./assets/process-states.jpg' width='70%'>
-</p>
-<p>Al processo appena creato lo scheduler assegna lo stato <code>NEW</code>, durante il quale il programma alloca tutte le risorse di cui necessita (es. memoria). Quando ha finito, lo scheduler gli assegna lo stato <code>READY</code>: i processi contrassegnati con questo stato sono pronti ed in &quot;fila&quot; per essere eseguiti sul processore. Quando questo accade lo stato cambia in <code>EXECUTE</code>.</p>
-<p>Nello stato <code>EXECUTE</code> possono succedere diverse cose:</p>
-<ul>
-<li>il processo richiede una risorsa che non è disponibile, in questo caso lo scheduler gli assegna lo stato <code>SLEEP</code> (aka <code>waiting</code>)</li>
-<li>lo scheduler decide di assegnare il processore ad un altro processo, e riporta il processo corrente in <code>READY</code></li>
-<li>il processo finisce le cose che doveva fare o viene &quot;ucciso&quot; (<em>killed</em>) dall'esterno, lo scheduler gli assegna lo stateo <code>TERMINATED</code> nel quale libera le risorse che ha allocato nel suo ciclo di vita</li>
-<li>il processo viene &quot;fermato&quot; (<em>stopped</em>) dall'esterno, ed entra nello stato di <code>STOP</code>; lo stato di <code>STOP</code> è simile a <code>SLEEP</code> ma lo stop viene comandato dall'esterno.</li>
-</ul>
-<blockquote>
-<p>Libro, studiare: pag. 238, stato dei processi.</p>
-</blockquote>
-<p>Nella realtà, il kernel Linux prevede molti altri stati, che considerano se il processo sta eseguendo delle operazioni da amministratore o utente, o se il processo è nella memoria RAM o nella memoria di swap. A volte uno processo che ha finito tutte le operazioni può diventare <code>ZOMBIE</code> se ha ancora qualche legame con il mondo che non lo fanno morire serenamente. Il meccanismo base è comunque quello descritto sopra e ci concentreremo quindi su quello.</p>
-<h2><a class="header" href="#scriviamo-il-nostro-programma" id="scriviamo-il-nostro-programma">Scriviamo il nostro programma</a></h2>
-<p>Per verificare quanto appena detto, scriviamo un semplice programma in C, che salveremo in un file chiamato <code>hello.c</code>.</p>
-<p>Vogliamo che questo programma stampi su schermo una stringa una volta al secondo, finché non viene esplicitamente fermato dall'utente.</p>
-<pre><code># include &lt;stdio.h&gt;; // libreria che contiene la funzione printf
-# include &lt;unistd.h&gt; // libreria che contiene la funzione usleep
-
-// la funzione main è l'entry point del programma, da dove comincerà l'esecuzione
-int main {
-  // questa forma del for equivale ad un ciclo infinito
-  for (;;) {
-    // stampa una stringa nello standard output, generalmente la console da cui viene lanciato il programma
-    printf(“HELLO”);
-    // aspetta per un certo numero di microsecondi
-    usleep(1000000); // 1e6 microsecondi = 1 secondo
-  }
-  // il return fa uscire dalla funzione corrente, ma trovandoci nel main fa uscire dal programma.
-  return 0;
-}
-</code></pre>
-<p>La funzione int main richiede di ritornare un valore intero. Per convenzione dei programmi C, si ritorna 0 se non ci sono stati errori, un valore negativo altrimenti.</p>
-<h3><a class="header" href="#compilazione" id="compilazione">Compilazione</a></h3>
-<p>Prima di poterlo eseguire, dobbiamo <em>compilare</em> il programma, ovvero trasformarlo da un file leggibile dagli esseri umani, ad un file leggibile dalla macchina. Nei sistemi GNU Linux, questo compito è svolto dal programma <code>gcc</code>.</p>
-<blockquote>
-<p>GCC è l'acronimo di GNU Compiler Collection (originariamente GNU C Compiler), e contiene tutti gli strumenti per compilare programmi scritti in moltissimi linguaggi diversi. Come dice il nome, gcc è stato sviluppato da GNU ed è quindi software libero (<a href="https://gcc.gnu.org/viewcvs/gcc/">qui</a> potete trovare il codice sorgente).</p>
-</blockquote>
-<p>La compilazione di un programma C prevede due fasi:</p>
-<ol>
-<li>trasformazione di un file di testo <code>.c</code> in un <em>oggetto</em> <code>.o</code></li>
-<li>collegamento (<em>linking</em>) dell'oggetto con tutti gli altri oggetti delle librerie di cui ha bisogno</li>
-</ol>
-<p>Entrambe queste operazioni possono essere svolte con il seguente comando.</p>
-<pre><code>gcc hello.c -o hello
-</code></pre>
-<p>Questo comando ha creato l'eseguibile <code>hello</code>. Ora eseguiamolo.</p>
-<pre><code>./hello
-</code></pre>
-<p align="center">
-<img title='hello' src='./assets/hello.png' >
-</p>
-<p>Bene! Ricapitolando, abbiamo scritto un programma, l'abbiamo compilato, eseguito ed è diventato un processo. Ma come facciamo a fermarlo??</p>
-<p>Fortunatamente, da terminale possiamo inviare <em>segnali</em> al processo, usando degli shortcut da tastiera. Con <code>ctrl-c</code>, inviamo il segnale di <code>kill</code> al processo, e lo scheduler lo muove nello stato di <code>TERMINATED</code> e successivamente lo elmina dalla memoria. Proviamo.</p>
-<p align="center">
-<img title='kill a process' src='./assets/kill.png' >
-</p>
-<p>OK ma... così non posso esaminare il mio sistema quando il processo è in esecuzione. Fortunatamente, esiste un altro segnale che serve proprio a questo: <code>ctrl-z</code> invia un segnale al processo per sospenderlo, e lo scheduler gli assegna lo stato di <code>STOP</code>.</p>
-<p align="center">
-<img title='kill a process' src='./assets/stop.png' >
-</p>
-<p>Come vediamo dalla stampa su schermo, il processo è ancora in vita ed è stato fermato (<code>STOPPED</code>).</p>
-<p>Per vedere in che stato si trovano i processi in questo momento, possiamo usare il comando <code>ps</code> con il parametro <code>a</code></p>
-<pre><code>ps a
-</code></pre>
-<p align="center">
-<img title='ps a' src='./assets/ps-a.png' >
-</p>
-<p>Il nostro processo è in stato <code>T</code>. A cosa corrisponde? Consultiamo il manuale
-di <code>ps</code> con il comando:</p>
-<pre><code>man ps
-</code></pre>
-<p>Scorrendo, vediamo ad un certo punto la lista degli stati e che T corrisponde a stopped, come ci aspettavamo.</p>
-<p>Ora facciamo riprendere l'esecuzione al processo, con il comando:</p>
-<pre><code>bg
-</code></pre>
-<p>Il comando <code>bg</code> è l'abbreviazione di &quot;background&quot; e permette di far continuare l'esecuzione ad un processo, e contemporaneamente avere il controllo della shell. Se infatti provate ora ad eseguire un qualsiasi comando, la shell vi risponderà. Il problema è che l'output della shell viene continuamente interrotto dalle stampe, il che è molto fastidioso. Come fare?</p>
-<p>Prima di tutto terminiamo il processo <code>./hello</code>. Per fare questo, dobbiamo riportarlo in foreground con il comando:</p>
-<pre><code>fg
-</code></pre>
-<p>che è l'abbreviazione di &quot;foreground&quot;. A questo punto possiamo terminarlo normalmente con <code>ctrl-c</code>.</p>
-<p>Ora possiamo <em>re-indirizzare</em> l'output del nostro processo in un luogo diverso dalla console. Infatti, quando usiamo la printf nel nostro programma C, stiamo dicendo implicitamente di usare lo <em>standard output</em> (abbreviato <code>stdout</code>), che di default è il terminale da cui abbiamo lanciato l'eseguibile.</p>
-<pre><code>printf --&gt; stdout --&gt; terminale
-</code></pre>
-<p>Questo comportamento può essere sovrascritto nel momento in cui si lancia l'eseguibile, con il carattere maggiore <code>&gt;</code>. Si può reindirizzare l'output in un qualsiasi <em>file</em>, e questo in generale è utile ad esempio per fare dei log di sistema. Nel nostro caso, non siamo interessati a salvare in maniera persistente l'output del nostro programma, e ci viene in aiuto un file speciale dei sistemi Linux che si comporta da &quot;buco nero&quot;, un pozzo senza fondo in cui possiamo metterci dentro qualsiasi cosa, l'output verrà semplicemente scartato. Questo file speciale è <code>/dev/null</code>. Lanciando il comando così modificato:</p>
-<pre><code>./hello &gt; /dev/null
-</code></pre>
-<p>abbiamo che l'output ora non è più visibile sul nostro terminale. Riprendiamo il controllo della shell con <code>ctrl-z</code>, mettiamo il processo in background con <code>bg</code> e <em>voilà!</em> abbiamo il nostro processo in esecuzione e il controllo della shell.</p>
-<p>Controlliamo che il processo sia effettivamente lì, e vediamo in che stato si trova.</p>
-<pre><code>ps a
-</code></pre>
-<p align="center">
-<img title='state is sleeping' src='./assets/state-sleep.png' >
-</p>
-Ora vediamo che lo stato del processo è cambiato, si trova in stato `S`, che corrisponde a _sleep_. Ma perché non si trova in running?!?
-<p>Ci sono diversi motivi. Il primo è che durante la <code>usleep</code> il processo è in stato di <em>sleep</em> (ovviamente). Considerando che la stampa dell'output richiede pochi millisecondi, è effettivamente molto probabilmente che quando lanciamo <code>ps</code> troviamo il nostro processo dormiente.</p>
-<blockquote>
-<p>Se togliessimo la usleep? Il risultato dipenderebbe dal numero di <em>core</em> che ha il processore: su ogni core può esserci un processo in esecuzione. Ma se avessimo un solo core, succederebbe che tutto il nostro sistema sarebbe estremamente rallentato, perché quasi sempre ci sarebbe <code>./hello</code> in esecuzione.</p>
-</blockquote>
-<p>Come fa lo scheduler a decidere quale processo in ogni momento deve essere eseguito sul processore? Utilizza dei criteri, che costituiscono poi la parte più importante dello scheduler stesso.</p>
-<h2><a class="header" href="#criteri-di-scheduling" id="criteri-di-scheduling">Criteri di scheduling</a></h2>
-<blockquote>
-<p>Libro: studiare pag.241, &quot;Criteri di scheduling&quot;</p>
-</blockquote>
-<p>Immaginate di avere un'attività commerciale con una sola cassa e tantissimi utenti in coda da gestire. In qualità di gestori, dovete dare chiare istruzioni all'operatore o operatrice alla cassa su come gestire i clienti.</p>
-<p>Gli sviluppatori che programmano lo scheduler si trovano in una situazione molto simile. Inizialmente le cose sono facili: si potrebbe dire che si devono servire i clienti/processi uno alla volta in base all'ordine di arrivo, e li servo finché non hanno finito le loro richieste. Questo sistema si chiama <em>First-Come-First-Served</em> ed è molto simile ad una coda FIFO (First-In-First-Out). Scrivere uno scheduler così è molto semplice, ma porta presto a ovvi problemi: se un processo ha tante cose da fare blocca il sistema.</p>
-<p>Un'alternativa è quello di servire prima quelli che richiederanno meno tempo ad essere eseguiti. Questo approccio si chiama <em>Shortest Job First</em>. Anche questo è semplice ma porta all'eccesso opposto del precedente: è probabile che processi che richiedano tanto tempo di esecuzione non vengano mai completati.</p>
-<p>Ora pensate ad un pronto soccorso. Immaginate che arrivi qualcuno in fin di vita che richieda un operazione importante, e davanti a lui ci sono molte persone con dei problemi lievi. Cosa fareste? Ovviamente dareste priorità al ferito grave. Ed è questo effettivamente un altro concetto chiave che si può aggiungere allo scheduler: la <em>priorità</em>. Alcuni processi è bene eseguirli prima di altri. In generale, i processi relativi <em>all'interazione utente</em> (es. interfaccia grafica) hanno alta priorità, perché in questi casi anche un ritardo di pochi millisecondi può essere molto fastidioso e portare all'inutilizzabilità di tutto il sistema.</p>
-<p>Nella realtà, si usa una combinazione di tutte le soluzioni sopra, e non ce n'è una adatta a tutte le situazioni. Come scegliere, allora?</p>
-<p>Come sempre, le scelte vanno prese in base a dei <em>valori</em> (aka <em>principi</em> o <em>obiettivi</em>), e basati su dei parametri misurabili.</p>
-<p align="center">
-<b>No valori</b> --> <b>No scelte sensate</b><br>
-<b>No misure</b> --> <b>No sonni tranquilli</b>
-</p>
-<p>I valori che potete porre alla base delle vostre scelte possono essere, ad esempio:</p>
-<ul>
-<li>equità</li>
-<li>bilanciamento</li>
-<li>controllo</li>
-</ul>
-<blockquote>
-<p>Studiare pag. 242 del libro relativamente a questi concetti</p>
-</blockquote>
-<h3><a class="header" href="#round-robin" id="round-robin">Round Robin</a></h3>
-<p>Un caso semplice ma efficace di scheduling si chiama <em>Round Robin</em> ed è molto utilizzato nei casi in cui la semplicità ed il determinismo sono particolarmente importanti, come ad esempio nei sistemi <em>Safety Critical</em>, ovvero per sistemi in cui un malfunzionamento può portare a danni alle persone (safety).</p>
-<blockquote>
-<p>Per approfondire, vedi pag. 246 del libro.</p>
-</blockquote>
-<h2><a class="header" href="#are-you-pre-emptive" id="are-you-pre-emptive">Are you pre-emptive?</a></h2>
-<p>Come ultima cosa, è importante comprendere bene il concetto di <em>pre-emptive</em>.</p>
-<p>Immaginate di essere l'operatore o operatrice al bancone di una pizzeria al taglio. Mentre state servendo un cliente, entra il sindaco della vostra città ed ha evidentemente molta fretta di essere servito. In accordo con i criteri che vi sono stati dati, assegnate un'alta priorità al sindaco, ma cosa fate con il cliente attuale?</p>
-<p>Avete due possibilità:</p>
-<ul>
-<li><em>non pre-emptive</em>: finite di servire il cliente attuale, e poi servite il sindaco</li>
-<li><em>pre-emptive</em>: servite immediatamente il sindaco, mettendo da parte il cliente attuale</li>
-</ul>
-<p>Quale scegliere? Ovviamente dipende dal vostro contesto d'uso e dai vostri valori e obiettivi. Non c'è una soluzione migliore in assoluto, ed ogni scelta ha dei vantaggi e degli svantaggi.</p>
-<h1><a class="header" href="#gestione-della-memoria" id="gestione-della-memoria">Gestione della memoria</a></h1>
-<p>Come abbiamo detto, un elaboratore elettronico è composto fondamentalmente da due entità: un unità di processamento, e delle informazioni da processare.  Queste informazioni si trovano in un elemento chiamato <em>memoria</em>. È chiaro quindi perché la gestione della memoria è un aspetto fondamentale di un sistema operativo.</p>
-<p>La memoria serve principalmente a due scopi:</p>
-<ul>
-<li>ospitare il binario del processo, con le istruzione per il processore</li>
-<li>ospitare i dati che vengono manipolati dal processo durante la sua esecuzione</li>
-</ul>
-<h2><a class="header" href="#caricare-un-processo-in-memoria" id="caricare-un-processo-in-memoria">Caricare un processo in memoria</a></h2>
-<p>La memoria su cui opera il <em>processore</em> è detta <em>memoria centrale</em>, che corrisponde quasi sempre la memoria <em>RAM</em>. La memoria centrale può essere vista come un lunghissimo array di byte, a cui si può accedere liberamente semplicemente sapendo la sua posizione nell'array.</p>
-<blockquote>
-<p>Altri tipi di memoria, come per esempio l'hard-disk, non possono essere visti come una semplice sequenza di byte a cui accedere.</p>
-</blockquote>
-<p>Per esempio, immaginiamo una piccola memoria centrale di 96 bytes. Per accedere al primo byte, leggo l'indirizzo di memoria 0x00 (gli indirizzi di memoria si esprimono sempre in esadecimali, per comodità, e partono da zero). Per accedere all'ultimo byte, leggo l'indirizzo di memoria 0x5F (che equivale a 95, ricordiamoci che siamo partiti da zero!).</p>
-<p align="center">
-<img title='memory on blackboard' src='./assets/memory-board.jpg' width='70%'>
-</p>
-<p>Quando lanciamo un eseguibile,  stiamo chiedendo al sistema operativo di copiare il file binario del nostro processo dalla memoria persistente, chiamata anche <em>memoria secondaria</em>, alla memoria centrale. Nel caso della Raspberry, la memoria secondaria è la scheda SD.</p>
-<pre><code>memoria secondaria (SDCard) -- ./memory --&gt; memoria centrale (RAM)
-</code></pre>
-<p>La domanda è: quale indirizzo di memoria ci assegna il kernel?</p>
-<h3><a class="header" href="#allocazione-della-memoria-centrale" id="allocazione-della-memoria-centrale">Allocazione della memoria centrale</a></h3>
-<p>Dove il nostro eseguibile verrà caricato in memoria, dipende da tante cose e ci possono essere varie strategie di assegnazione. L'assegnazione della memoria viene detta in termini tecnici <strong>allocazione</strong>.</p>
-<p>La soluzione più semplice è che il kernel ci assegni la prima zona di memoria disponibile che sia abbastanza grande da contenere il processo. Questa è una soluzione molto usata, e viene detta <strong>first-fit</strong>. Questa è anche stata la vostra scelta durante la simulazione alla lavagna con i post-it.</p>
-<p>Un'altra soluzione potrebbe essere cercare in memoria uno spazio delle dimensioni più simili al processo che devo caricare, in modo da ridurre la <em>frammentazione</em>: in questo caso si parla di <strong>best-fit</strong>.</p>
-<blockquote>
-<p>Per approfondimenti sulle strategie di allocazione e sulla frammentazione, andate a pag. 258 del vostro libro.</p>
-</blockquote>
-<p>In qualche modo comunque, il kernel assegna una zona di memoria al processo, ed il processore può cominciare a leggerne il contenuto. Ricordiamo che il processore può leggere solo dalla memoria centrale; non può leggere direttamente dall'hard-disk.</p>
-<p>Adesso analizziamo in dettaglio da cosa è composto questo eseguibile.</p>
-<h2><a class="header" href="#analisi-di-un-oggetto" id="analisi-di-un-oggetto">Analisi di un oggetto</a></h2>
-<p>Immaginiamo di avere il seguente programma, nel file <code>memory.c</code>:</p>
-<pre><code>int main(void) {
-  int a = 1;
-  int b = 2;
-  int c = a+b;
-  return c;
-}
-</code></pre>
-<p>Pur nella sua semplicità, è un programma abbastanza completo: c'è una funzione, ci sono delle assegnazioni e un'operazione matematica. Come estrema semplificazione, è tutto quello che deve fare un processore.</p>
-<p>Compiliamo sulla Raspberry il nostro programma con il nostro amico <code>❤️gcc❤️</code>, aggiungendo alcune opzioni che ci torneranno utili:</p>
-<ul>
-<li><code>-g</code>: aggiunge i simboli di debug all'eseguibile: verrà di dimensioni più grandi, ma è fondamentale in fase di sviluppo</li>
-<li><code>-O0</code>: disabilita le ottimizzazioni, in modo che ogni operazione del codice sorgente corrisponda ad una operazione nel codice binario</li>
-<li><code>-c</code>: crea l'oggetto senza la fase di <em>link</em> con le librerie esterne, in modo che il file binario generto corrisponde esattamente al nostro programma, senza nient'altro</li>
-</ul>
-<p>Il comando completo è quindi così:</p>
-<pre><code>gcc -g -O0 -c memory.c
-</code></pre>
-<p>Eseguendo <code>❤️gcc❤️</code> con queste opzioni, viene generato il file <code>memory.o</code>. L'estensione <code>.o</code> significa che il file è un <em>oggetto</em>, ovvero solo un pezzo di applicazione, e non una applicazione completa. Vediamo come è fatto questo oggetto.</p>
-<h3><a class="header" href="#nano" id="nano">Nano</a></h3>
-<p>Per prima cosa proviamo ad aprirlo con <code>nano</code>:</p>
-<p align="center">
-<img title='nano memory' src='./assets/nano.png' width='100%'>
-</p>
-<p>Mh... niente di particolarmente interessante. Il problema è che <code>nano</code> prova ad aprire il file come documento di testo ASCII, ma il che stiamo esaminando è un binario. Quindi la maggior parte dei byte è illegibile!</p>
-<p>Quando vi capita un caso come questo, la prima cosa da fare è cercare di capire che tipo di file stiamo analizzando. Per questa operazione molto comune esiste un comando dedicato di Linux, che si chiama appunto <code>file</code>:</p>
-<pre><code>$ file memory.o
-memory.o: ELF 32-bit LSB relocatable, ARM, EABI5 version 1 (SYSV), not stripped
-</code></pre>
-<p>Dall'output del comando, vediamo che <code>memory.o</code> è un file oggetto compilato per ARM a 32 bit. Bene. Allora lo possiamo analizzare con uno strumento che si chiama <code>objdump</code>.</p>
-<blockquote>
-<p>Per analizzare un qualsiasi file (non solo gli oggetti), esiste un altro comando molto simile, che si chiama <code>hexdump</code>. Se volete provare ad analizzare un qualsiasi file, provate ad eseguire il comando <code>hexdump -C &lt;nomefile&gt;</code> per vedere il contenuto in esadecimale.</p>
-</blockquote>
-<h3><a class="header" href="#objdump" id="objdump">Objdump</a></h3>
-<p>Objdump è un comando estremamente versatile per analizzare oggetti ed eseguibili. Ha tantissime opzioni per analizzare nel dettaglio ogni aspetto del file. Noi utilizzeremo le seguenti:</p>
-<ul>
-<li><code>-s</code>: visualizza il contenuto di ogni sezione (le sezioni le vedremo tra poco)</li>
-<li><code>--source</code>: visualizza anche il codice sorgente, se disponibile (nel nostro caso è disponibile perché abbiamo compilato con l'opzione di debug)</li>
-</ul>
-<p>Vediamo l'output:</p>
-<pre><code>$ objdump -s --source memory.o
-
-memory.o:     file format elf32-littlearm
-
-Contents of section .text:
- 0000 04b02de5 00b08de2 14d04de2 0130a0e3  ..-.......M..0..
- 0010 08300be5 0230a0e3 0c300be5 08201be5  .0...0...0... ..
- 0020 0c301be5 033082e0 10300be5 10301be5  .0...0...0...0..
- 0030 0300a0e1 00d08be2 04b09de4 1eff2fe1  ............../.
-
-... altre sezioni ...
-
-Disassembly of section .text:
-
-00000000 &lt;main&gt;:
-int main(void) {
-   0:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
-   4:	e28db000 	add	fp, sp, #0
-   8:	e24dd014 	sub	sp, sp, #20
-	int a = 1;
-   c:	e3a03001 	mov	r3, #1
-  10:	e50b3008 	str	r3, [fp, #-8]
-	int b = 2;
-  14:	e3a03002 	mov	r3, #2
-  18:	e50b300c 	str	r3, [fp, #-12]
-	int c = a+b;
-  1c:	e51b2008 	ldr	r2, [fp, #-8]
-  20:	e51b300c 	ldr	r3, [fp, #-12]
-  24:	e0823003 	add	r3, r2, r3
-  28:	e50b3010 	str	r3, [fp, #-16]
-
-	return c;
-  2c:	e51b3010 	ldr	r3, [fp, #-16]
-}
-  30:	e1a00003 	mov	r0, r3
-  34:	e28bd000 	add	sp, fp, #0
-  38:	e49db004 	pop	{fp}		; (ldr fp, [sp], #4)
-  3c:	e12fff1e 	bx	lr
-</code></pre>
-<p>Una parte del file è stata tagliata per motivi di spazio. Potete visualizzare il file completo <a href="./assets/objdump.html">qui</a>.</p>
-<p>Analizziamo riga per riga l'output.</p>
-<pre><code>memory.o:     file format elf32-littlearm
-</code></pre>
-<p>In questa prima riga, vediamo un output molto simile a quello di <code>file</code>, che ci dice che tipo di file stiamo analizzando.</p>
-<pre><code>Contents of section .text:
- 0000 04b02de5 00b08de2 14d04de2 0130a0e3  ..-.......M..0..
- 0010 08300be5 0230a0e3 0c300be5 08201be5  .0...0...0... ..
- 0020 0c301be5 033082e0 10300be5 10301be5  .0...0...0...0..
- 0030 0300a0e1 00d08be2 04b09de4 1eff2fe1  ............../.
-
- ... altre sezioni ...
-</code></pre>
-<p>Viene visualizzato il contenuto del binario, byte per byte, diviso per <strong>sezioni</strong>. Cos'è una sezione?</p>
-<p>Per comodità, le varie parti di un oggetto vengono divise in sezioni, ognuna contenente una parte specifica dell'oggetto. Una sezione fondamentale è la sezione <code>.text</code>, detta anche <em>sezione del codice</em>, perché contiene le istruzioni per il processore. È in pratica dove si trova il nostro codice compilato.</p>
-<blockquote>
-<p>Altre sezioni sono ad esempio <code>.data</code>, che contiene dati statici, <code>.debug_info</code>, che contiene le informazioni di debug.</p>
-</blockquote>
-<p>Analizziamo le varie colonne:</p>
-<ul>
-<li>la prima colonna è l'offset dei byte di questa riga rispetto all'inizio del file</li>
-<li>le quattro colonne successive sono i valori dei byte della sezione</li>
-<li>l'ultima colonna è un tentativo di interpretare i byte in ASCII: è utile perché spesso all'interno dei file binari sono contenute delle stringhe, ed in questo modo possiamo leggerle facilmente.</li>
-</ul>
-<pre><code>Disassembly of section .text:
-</code></pre>
-<p>Qui comincia il <em>disassemblato</em> della sezione <code>.text</code>. Con il termine disassemblato intendiamo le istruzioni in assembly corrispondenti al nostro scritto in C.</p>
-<pre><code>00000000 &lt;main&gt;:
-</code></pre>
-<p>Ci dice che stiamo per analizzare la funzione <code>main</code>.</p>
-<pre><code>int main(void) {
-   0:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
-   4:	e28db000 	add	fp, sp, #0
-   8:	e24dd014 	sub	sp, sp, #20
-</code></pre>
-<p>Qui entriamo nel vivo. La riga che abbiamo scritto in C <code>int main(void)</code> viene tradotta nei comandi assembly (cioè per il processore) delle righe successive. Ogni riga è divisa in tre parti; analizziamo la prima riga:</p>
-<ul>
-<li><code>0:</code> come prima, la posizione (<em>offset</em>) del primo byte rispetto all'inizio del file; in questo caso è 0 perché è il primo byte in assoluto</li>
-<li><code>e52db004</code>: il valore dei byte</li>
-<li><code>push	{fp}		; (str fp, [sp, #-4]!)</code>: la corrispondenza con il mnemonico di assembly</li>
-</ul>
-<p>OK, ricapitoliamo. Stiamo vedendo in maniera esatta e puntuale cosa succede quando <em>compiliamo</em> un programma. Vediamo che <code>❤️gcc❤️</code> converte un file ASCII (<code>memory.c</code>, che abbiamo scritto noi) in un file binario (<code>memory.o</code>, leggibile dal processore).</p>
-<blockquote>
-<p>Possiamo notare che i processori, al giorno d'oggi, ragionano in maniera molto differente da noi. Per quanto ora si parli moltissimo di AI, le differenze nel modo di percepire il mondo tra esseri umani e macchine rimangono ancora abissali.</p>
-</blockquote>
-<h2><a class="header" href="#analisi-dinamica-del-processo" id="analisi-dinamica-del-processo">Analisi dinamica del processo</a></h2>
-<p>A questo punto, abbiamo una idea di come è composto un oggetto. Per renderlo eseguibile, dobbiamo far eseguire al compilatore <code>❤️gcc❤️</code> anche la fase di linking, con il comando che abbiamo visto nelle lezioni precedenti. Dopo averlo compilato, eseguiamolo.</p>
-<pre><code>$ gcc memory.c -o memory
-$ ./memory
-$
-</code></pre>
-<p>Mh...è successo qualcosa? Il nostro eseguibile <em>sembra</em> non aver fatto nulla: in effetti non c'è nessuna stampa al suo interno. Ma qualcosa dovrebbe aver fatto: dovrebbe aver restituito il valore 3. Come facciamo a verificare?</p>
-<p>Esiste un comando che serve proprio per visualizzare il valore di ritorno dell'ultimo comando eseguito.</p>
-<pre><code>$ echo $?
-3
-</code></pre>
-<p>Perfetto, quello che volevamo! Ricordatevi che il comando <code>echo $?</code> ritorna il valore di ritorno <strong>dell'ultimo</strong> comando, quindi deve essere eseguito subito dopo <code>./memory</code>.</p>
-<p>A questo punto ci piacerebbe vedere che indirizzi hanno le varie sezioni del nostro eseguibile. Per farlo, il modo più semplice è inserire delle stampe di debug (<code>printf</code>) all'interno del nostro codice:</p>
-<pre><code>#include  &lt;stdio.h&gt;
-
-int main(void) {
-  int a = 1;
-  int b = 2;
-  int c = a+b;
-
-  printf(&quot;posizione in memoria di a: 0x%08x\n&quot;,(int)&amp;a);
-
-  return c;
-}
-</code></pre>
-<p>Alcune note:</p>
-<ul>
-<li><code>0x%08x</code>: stampa il valore che segue in esadecimale, con padding a 8 caratteri</li>
-<li><code>(int)&amp;a</code>: stampa l'indirizzo di memoria di una variabile invece del valore</li>
-</ul>
-<p>Compiliamo ed eseguiamo:</p>
-<pre><code>$ gcc memory.c -o memory
-$ ./memory
-posizione in memoria di a: 0x7e8591ec
-</code></pre>
-<p>Ora sappiamo dove la nostra variabile <code>a</code> è stata allocata in memoria! 🎉🎉🎉</p>
-<p>Ma cosa signifia esattamente questo valore? Corrisponde ad un indirizzo in valore assoluto della nostra memoria centrale, ovvero della nostra RAM? La risposta è <strong>no</strong>.</p>
-<h3><a class="header" href="#memoria-virtuale-e-memoria-fisica" id="memoria-virtuale-e-memoria-fisica">Memoria virtuale e memoria fisica</a></h3>
-<p>Quella che vediamo qui è un indirizzo riferito ad una <strong>memoria virtuale</strong>. Tra la memoria virtuale e quella fisica c'è una mappatura, che associa ad ogni indirizzo della memoria virtuale un indirizzo della memoria fisica.</p>
-<p>Perché questa mappatura? Ci sono molte e valide ragioni. Una di queste è ridurre la frammentazione della memoria centrale, in modo che la RAM sia sfruttata nel modo più efficiente possibile. Un'altra ragione è poter caricare in memoria solo alcune parti dell'eseguibile, quelle che stiamo usando, e lasciare le altre sull'hard-disk. Tutto questo senza disturbare lo sviluppatore, che all'interno del suo processo vede sempre gli stessi indirizzi di memoria.</p>
-<p>Per design del kernel, dall'interno del nostro applicativo non abbiamo nessun modo di sapere a quale indirizzo fisico corrisponde un certo indirizzo reale. In effetti, questa informazione non ha alcuna utilità per uno sviluppatore, e potrebbe essere utilizzata in maniera pericolosa da un malintenzionato.</p>
-<blockquote>
-<p>Per approfondimenti, consultate le pagine da 259 in poi del vostro libro</p>
-</blockquote>
-<h3><a class="header" href="#address-space-layout-randomization" id="address-space-layout-randomization">Address space layout randomization</a></h3>
-<p>Che succede se proviamo ad eseguire nuovamente l'applicazione? Proviamo:</p>
-<pre><code>$ ./memory
-posizione in memoria di a: 0x7e9391ec
-</code></pre>
-<p>La posizione in memoria è leggermente cambiata... perché? Questo piccolo cambiamento è dovuto a motivi di sicurezza: per evitare attacchi informatici, viene aggiunto un offset casuale ai dati in memoria. Questo meccaniscmo è chiamato <em>address space layout randomization (ASLR)</em> ed è stata introdotta nel kernel Linux a partire dal 2001.</p>
-<blockquote>
-<p>È possibile disabilitare temporaneamente l'ASLR con il comando: <code>setarch `uname -m` -R ./memory</code></p>
-</blockquote>
-<h3><a class="header" href="#stack" id="stack">Stack</a></h3>
-<p>Proviamo ora a modificare <code>memory.c</code> in modo da stampare anche l'indirizzo di <code>b</code>:</p>
-<pre><code>#include  &lt;stdio.h&gt;
-
-int main(void) {
-  int a = 1;
-  int b = 2;
-  int c = a+b;
-
-  printf(&quot;posizione in memoria di a: 0x%08x\n&quot;,(int)&amp;a);
-  printf(&quot;posizione in memoria di b: 0x%08x\n&quot;,(int)&amp;b);
-
-  return c;
-}
-</code></pre>
-<p>Compiliamo ed eseguiamo:</p>
-<pre><code>$ gcc memory.c -o memory
-$ ./memory
-posizione in memoria di a: 0x7ef7c1f0
-posizione in memoria di b: 0x7ef7c1ec
-</code></pre>
-<p>Vediamo che gli indirizzi di memoria di <code>a</code> e <code>b</code> sono molto vicini tra di loro, per l'esattezza differiscono esattamente di 4 bytes. In effetti, le due variabili sono dichiarate come <code>int</code>, ed un <code>int</code> occupa esattamente 4 byte...🤔 coincidenza? No! Quando in un programma allochiamo delle variabili in sequenza come in questo caso, gli indirizzi differiranno esattamente delle dimensioni delle variabili allocate.</p>
-<p>Ma guardiamo meglio i valori: <code>b</code> che è stata allocata dopo, ha un indirizzo di memoria precedente di <code>a</code>! 😲</p>
-<p>Indaghiamo ancora. Facciamoci stampare l'indirizzo di memoria della funzione <code>main</code>, vediamo che succede. Aggiungiamo la seguente stampa in <code>memory.c</code>:</p>
-<pre><code>printf(&quot;posizione in memoria di main: 0x%08x\n&quot;,(int)&amp;main);
-</code></pre>
-<p>Compiliamo ed eseguiamo:</p>
-<pre><code>$ ./memory
-posizione in memoria di a: 0x7e4af1f0
-posizione in memoria di b: 0x7e4af1ec
-posizione in memoria di main: 0x00010440
-</code></pre>
-<p>Mh... la zona di memoria è completamente diversa, mooolto più bassa rispetto alle altre. Che sta succedendo?</p>
-<p>L'indirizzo di memoria di <code>main</code> punta alle istruzioni in assembly per il processore, quelle che si trovano nella sezione <code>.text</code> che abbiamo analizzato con <code>objdump</code>. Nel momento in cui lanciamo l'eseguibile c'è solo questa sezione.</p>
-<p>Le variabili <code>a</code> e <code>b</code> vengono allocate durante l'esecuzione del processo.</p>
-<p>La sezione di memoria dove vengono create queste variabili viene detta <code>.stack</code>, che si può tradurre in &quot;catasta&quot;. Questo nome deriva dal fatto che le variabili (e le funzioni) si &quot;accatastano&quot; una sopra l'altra, e si possono togliere solo dall'alto: in altre parole, non si può togliere (cioè eliminare/liberare/deallocare) una variabile nel mezzo della stack. In termini tecnici, viene chiamata una memoria FILO (First-In-Last-Out).</p>
-<p align="center">
-<img title='stack logo' src='./assets/stack-logo.jpg' width='30%'><br>
-<i>Immagine presa dal gioco 'Stack' di Ketchapp. Tutti i diritti riservati.</i>
-</p>
-<p>Il linguaggio C, o meglio il compilatore <code>❤️gcc❤️</code>, definisce degli indirizzi virtuali convenzionali per l'inizio e la fine dello spazio di memoria di un processo, e anche per ogni singola sezione. Possiamo vedere questi valori dalle stampe qui sopra del nostro applicativo.</p>
-<ul>
-<li>la variabile <code>a</code>, che è la prima ad essere allocata ed ha quindi il valore più alto, ha un indirizzo intorno a <code>0x7e000000</code>.</li>
-<li>l'indirizzo di <code>main</code> è intorno a <code>0x00010440</code>.</li>
-</ul>
-<p>La sezione <code>.stack</code> parte dall'indirizzo più alto e <em>cresce verso il basso</em>. La sezione <code>.text</code> parte da un indirizzo più in basso ed ha una <em>dimensione fissa</em>, perché è stata definita nel momento della compilazione</p>
-<p>Per esattezza, i valori definiti da <code>❤️gcc❤️</code> sono i seguenti:</p>
-<ul>
-<li><code>.text</code>: parte da <code>0x00010000</code></li>
-<li><code>stack</code>: parte da <code>0x7ffffff</code> (e cresce verso il basso)</li>
-</ul>
-<p align="center">
- <img title='stack' src='./assets/stack-address.png' width='40%'><br>
- </p>
-<blockquote>
-<p>Cosa succede se la <code>.stack</code> aumenta fino a raggiungere la sezione <code>.text</code>? Nella maggior parte dei casi, il processo crasha con un errore di <em>segmentation fault</em>. Questo è uno dei problemi più classici e imprevedibili della programmazione, tanto che ha dato il nome al più grande e noto sito di programmatori del web: <a href="https://stackoverflow.com">stackoverflow</a>. <p align="center">
-<img title='stackoveflow logo' src='./assets/stackoverflow.png' width='25%' style="padding: 0 0 0 0;"><br></p>
-</blockquote>
-</p>
-<blockquote>
-<p>Esiste un'altra sezione di memoria, chiamata <code>.heap</code> (o memoria dinamica): è una zona di memoria dove si possono allocare e liberare variabili in maniera programmatica. Uno dei problemi più frequenti con la <code>.heap</code> è che qualche variabile può rimanere in memoria anche quando non viene più usata, occupando spazio inutile; questo problema è noto come <code>memory leak</code>.</p>
-</blockquote>
-<pre><code>$ cat objdump.txt
-
-memory.o:     file format elf32-littlearm
-
-Contents of section .text:
- 0000 04b02de5 00b08de2 14d04de2 0130a0e3  ..-.......M..0..
- 0010 08300be5 0230a0e3 0c300be5 08201be5  .0...0...0... ..
- 0020 0c301be5 033082e0 10300be5 10301be5  .0...0...0...0..
- 0030 0300a0e1 00d08be2 04b09de4 1eff2fe1  ............../.
-Contents of section .debug_info:
- 0000 67000000 04000000 00000401 14000000  g...............
- 0010 0c6c0000 00000000 00000000 00400000  .l...........@..
- 0020 00000000 00020f00 00000101 63000000  ............c...
- 0030 00000000 40000000 019c6300 00000361  ....@.....c....a
- 0040 00010263 00000002 91740362 00010363  ...c.....t.b...c
- 0050 00000002 91700363 00010463 00000002  .....p.c...c....
- 0060 916c0004 0405696e 740000             .l....int..
-Contents of section .debug_abbrev:
- 0000 01110125 0e130b03 0e1b0e11 01120610  ...%............
- 0010 17000002 2e013f19 030e3a0b 3b0b2719  ......?...:.;.'.
- 0020 49131101 12064018 97421901 13000003  I.....@..B......
- 0030 34000308 3a0b3b0b 49130218 00000424  4...:.;.I......$
- 0040 000b0b3e 0b030800 0000               ...&gt;......
-Contents of section .debug_aranges:
- 0000 1c000000 02000000 00000400 00000000  ................
- 0010 00000000 40000000 00000000 00000000  ....@...........
-Contents of section .debug_line:
- 0000 37000000 02001f00 00000201 fb0e0d00  7...............
- 0010 01010101 00000001 00000100 6d656d6f  ............memo
- 0020 72792e63 00000000 00000502 00000000  ry.c............
- 0030 01674b4b 842f0208 000101             .gKK./.....
-Contents of section .debug_str:
- 0000 2f686f6d 652f7069 2f334269 6e66006d  /home/pi/3Binf.m
- 0010 61696e00 474e5520 43313120 362e332e  ain.GNU C11 6.3.
- 0020 30203230 31373035 3136202d 6d617263  0 20170516 -marc
- 0030 683d6172 6d763620 2d6d666c 6f61742d  h=armv6 -mfloat-
- 0040 6162693d 68617264 202d6d66 70753d76  abi=hard -mfpu=v
- 0050 6670202d 6d746c73 2d646961 6c656374  fp -mtls-dialect
- 0060 3d676e75 202d6720 2d4f3000 6d656d6f  =gnu -g -O0.memo
- 0070 72792e63 00                          ry.c.
-Contents of section .comment:
- 0000 00474343 3a202852 61737062 69616e20  .GCC: (Raspbian
- 0010 362e332e 302d3138 2b727069 312b6465  6.3.0-18+rpi1+de
- 0020 62397531 2920362e 332e3020 32303137  b9u1) 6.3.0 2017
- 0030 30353136 00                          0516.
-Contents of section .debug_frame:
- 0000 0c000000 ffffffff 0100027c 0e0c0d00  ...........|....
- 0010 1c000000 00000000 00000000 40000000  ............@...
- 0020 420e048b 01420d0b 580d0d42 cb0e0000  B....B..X..B....
-Contents of section .ARM.attributes:
- 0000 412e0000 00616561 62690001 24000000  A....aeabi..$...
- 0010 05360006 06080109 010a0212 04140115  .6..............
- 0020 01170318 0119011a 021c011e 062201    .............&quot;.
-
-Disassembly of section .text:
-
-00000000 &lt;main&gt;:
-#include &lt;stdio.h&gt;
-   0:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
-   4:	e28db000 	add	fp, sp, #0
-   8:	e24dd014 	sub	sp, sp, #20
-int main(void) {
-   c:	e3a03001 	mov	r3, #1
-  10:	e50b3008 	str	r3, [fp, #-8]
-	int a = 1;
-  14:	e3a03002 	mov	r3, #2
-  18:	e50b300c 	str	r3, [fp, #-12]
-	int b = 2;
-  1c:	e51b2008 	ldr	r2, [fp, #-8]
-  20:	e51b300c 	ldr	r3, [fp, #-12]
-  24:	e0823003 	add	r3, r2, r3
-  28:	e50b3010 	str	r3, [fp, #-16]
-	int c = a+b;
-	printf(&quot;posizione in memoria di a: 0x%08llx\n&quot;,(long int)&amp;a);
-  2c:	e51b3010 	ldr	r3, [fp, #-16]
-	printf(&quot;posizione in memoria di b: 0x%08llx\n&quot;,(long int)&amp;b);
-  30:	e1a00003 	mov	r0, r3
-  34:	e28bd000 	add	sp, fp, #0
-  38:	e49db004 	pop	{fp}		; (ldr fp, [sp], #4)
-  3c:	e12fff1e 	bx	lr
-</code></pre>
+                        <h1 id="shell"><a class="header" href="#shell">Shell</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="comandi"><a class="header" href="#comandi">Comandi</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
-
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-
-                
             </nav>
 
         </div>
 
-        
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
-        
-
-        
-
-        
-
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-        
         <script type="text/javascript">
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
-        
-        
-
     </body>
 </html>
