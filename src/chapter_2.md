@@ -242,7 +242,7 @@ $ export PS1="test>"
 ```
 
 Di seguito alcune variabili di ambiente che abbiamo visto:
-- $TERM: quale standard rispetta l'applicazione terminale in uno, di solito è `xterm` o `xterm-256color`
+- $TERM: quale standard rispetta l'applicazione terminale in uso, di solito è `xterm` o `xterm-256color`
 - $SHELL: quale shell sto utilizzando, su Ubuntu di default è bash (quella sviluppata da GNU)
 - $PS1: il prompt dei comandi, ovvero tutto quello che c'è prima del dollaro (dollaro compreso), solitamente include la directory corrente ed il nome utente
 
