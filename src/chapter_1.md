@@ -34,3 +34,12 @@ Per poter usare in maniera le chiamate di sistema che ci mette a disposizione il
 
 Anche in questo caso possiamo andare a cercare il [codice sorgente](http://git.savannah.gnu.org/cgit/coreutils.git).
 
+# Terminale
+Per poter interagire con la shell, abbiamo bisogno di un'applicazione specifica che ci permetta di farlo. Quest'applicazione si chiama "terminale".
+
+<p align="center">
+<img title="shell-kernel" src='./assets/terminal.png' width='70%' style="padding: 50px 0 30px 0;">
+</p>
+
+Nell'immagine vedete l'applicazione "iTerm2", molto usata in ambito Apple come terminale.
+
