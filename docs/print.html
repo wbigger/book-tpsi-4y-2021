@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -135,8 +135,229 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="shell"><a class="header" href="#shell">Shell</a></h1>
+                        <h1 id="organizzazione-di-un-sistema-operativo"><a class="header" href="#organizzazione-di-un-sistema-operativo">Organizzazione di un sistema operativo</a></h1>
+<p>Il sistema operativo gestisce le risorse della macchina (memoria, processore, periferiche) per permettere a più applicazioni di poter funzionare contemporaneamente. Ma ogni cosa ha un suo costo: il sistema operativo utilizza per sé stesso una porzione a volte considerevole delle risorse stesse del nostro computer: pensiamo a quanti GB sul disco occupa una installazione di Windows o Mac, a quanta memoria occupa, e che ha volte i loro processi impegnano la CPU senza una ragione apparente. Oltre a questo pensiamo a problemi di vulnerabilità, aggiornamento, etc.</p>
+<blockquote>
+<p>Se noi vogliamo far girare un solo programma sul computer, possiamo non aver bisogno di un sistema operativo. Tipicamente quest accade per piccoli elaboratori per compiti molto specifici: questo sistemi vengono chiamati <em>embedded</em>.</p>
+</blockquote>
+<p>Il sistema operativo è una componente software molto complessa: per poter essere gestita in maniera ottimale, è stata divisa in sotto-componenti. Di seguito vediamo i principali.</p>
+<h1 id="kernel"><a class="header" href="#kernel">Kernel</a></h1>
+<p>Per rappresentare i componenti del sistema operativo, si usa spesso la metafora delle sfere concentriche, in cui al centro di tutto c'è l'hardware.</p>
+<p align="center">
+<img title="shell-kernel" src='./assets/shell-kernel.png' width='70%' style="padding: 50px 0 30px 0;">
+</p>
+<p>Il programma che è più vicino all'hardware viene chiamato <strong>kernel</strong>. Noi ci occuperemo in particolare del kernel <strong>Linux</strong>, un kernel open-source,.</p>
+<blockquote>
+<p>Il kernel Linux è stato creato nel 1991 dal finlandese Linus Torvalds ed è distribuito attraverso la licenza di software libero GNU GPLv2. Questa licenza è stata ideata da Richard Stallman (dell'MIT di Boston) per tutelare il software &quot;libero&quot; (in inglese free software, in cui la parola free ha il significato di libero come in &quot;free as in speech&quot;).</p>
+</blockquote>
+<p>Il kernel si occupa di mediare l'accesso delle applicazioni alle risorse del computer:</p>
+<ul>
+<li>central processing unit (CPU)</li>
+<li>memoria volatile (RAM)</li>
+<li>periferiche di input/output (hard disk, tastiera, mouse, stampanti, etc.)</li>
+</ul>
+<p>Il kernel è un programma come gli altri, non ha niente di &quot;magico&quot;. In particolare il kernel è un insieme di librerie scritte principalmente in C/C++. Del kernel Linux possiamo anche vederne il <a href="https://github.com/torvalds/linux">codice sorgente</a>, visto che è un software libero e quindi anche aperto.</p>
+<h1 id="shell"><a class="header" href="#shell">Shell</a></h1>
+<p>Per usare direttamente il kernel dovremmo scrivere dei programmi in C/C++, ad esempio per interrogare l'hard-disk e farci restituire i file all'interno di una certa cartella. Scrivere un programma noi per ogni operazione che dobbiamo svolgere, ovviamente non è molto comodo.</p>
+<p>Per poter usare in maniera le chiamate di sistema che ci mette a disposizione il kernel, ci sono una serie di strumenti che ci facilitano i compito. Per Linux, queste utilità sono state sviluppate dal <a href="www.gnu.org">progetto GNU</a>, e si chiamano <strong>GNU coreutils</strong>.</p>
+<blockquote>
+<p>Il progetto GNU è stato fondato nel 1983 da Richard Stallman, al MIT di Boston. GNU ha lo scopo in primo luogo di permettere agli sviluppatori di tutto il mondo di poter sviluppare <em>liberamente</em> software, ovvero avendo a disposizione il codice sorgente dei programmi di altre aziende che usano, e senza la necessità di pagare licenze. Le utilità che useremo in questo corso sono solo parte del progetto; un'altra parte fondamentale è la licenza che permette al software di essere usato legalmente, rispettando le libertà fondamentali del free software. Il nome di questa licenza è GPL (General Public Licence), di cui l'ultima versione è la <a href="https://www.gnu.org/licenses/gpl.html">GPLv3</a> <p align="center"><a href='https://www.gnu.org/licenses/gpl.html'><img src='./assets/gpl.png' width='200px'></a></p></p>
+</blockquote>
+<p>Anche in questo caso possiamo andare a cercare il <a href="http://git.savannah.gnu.org/cgit/coreutils.git">codice sorgente</a>.</p>
+<h1 id="terminale"><a class="header" href="#terminale">Terminale</a></h1>
+<p>Per poter interagire con la shell, abbiamo bisogno di un'applicazione specifica che ci permetta di farlo. Quest'applicazione si chiama &quot;terminale&quot;.</p>
+<p align="center">
+<img title="shell-kernel" src='./assets/terminal.png' width='70%' style="padding: 50px 0 30px 0;">
+</p>
+<p>Nell'immagine vedete l'applicazione &quot;iTerm2&quot;, molto usata in ambito Apple come terminale.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="comandi"><a class="header" href="#comandi">Comandi</a></h1>
+<h2 id="echo"><a class="header" href="#echo">echo</a></h2>
+<p>Ritorna un &quot;eco&quot; del suo argomento sul terminale.</p>
+<pre><code class="language-sh">$ echo ciao
+ciao
+</code></pre>
+<h1 id="touch"><a class="header" href="#touch">touch</a></h1>
+<p>Crea un file o, se già esiste, ne aggiorna la data di ultima modifica.</p>
+<pre><code class="language-sh">$ touch ciao
+</code></pre>
+<h1 id="cat"><a class="header" href="#cat">cat</a></h1>
+<p>Abbreviazione di &quot;concatenate&quot;, mostra il contenuto di un file.</p>
+<pre><code class="language-sh">$ cat ciao
+</code></pre>
+<h2 id="redirect"><a class="header" href="#redirect">Redirect</a></h2>
+<p>Il carattere <code>&gt;</code> redirige l'output di un comando verso un file, invece del terminale. Se il file non esiste, viene creato. Se il file esiste, viene sovrascritto.</p>
+<pre><code class="language-sh">$ echo &quot;buongiorno&quot; &gt; buongiorno.txt
+</code></pre>
+<p>Se si vuole aggiungere il testo alla fine del file senza sovrascriverlo, si può usare il <code>&gt;&gt;</code>.</p>
+<pre><code class="language-sh">$ echo &quot;buongiorno&quot; &gt;&gt; buongiorno.txt
+$ cat buongiorno.txt
+buongiorno
+buongiorno
+</code></pre>
+<h2 id="ls"><a class="header" href="#ls">ls</a></h2>
+<p>Elenca i file nella cartella corrente</p>
+<pre><code class="language-sh">$ ls
+buongiorno.txt	ciao
+</code></pre>
+<p>L'opzione <code>-l</code> mostra i dettagli del file.</p>
+<pre><code class="language-sh">$ ls -l
+total 8
+-rw-r--r--  1 claudio  staff   11 Oct 12 07:03 buongiorno.txt
+-rw-r--r--  1 claudio  staff    0 Oct 12 07:00 ciao
+</code></pre>
+<p>Aggiungendo anche l'opzione <code>-h</code> mostra i dettagli del file in un formato più leggibile per l'essere umano (&quot;human&quot;). Notare la B alla fine della quinta colonna, che sta per &quot;Byte&quot;.</p>
+<pre><code class="language-sh">$ ls -lh
+total 8
+total 8
+-rw-r--r--  1 claudio  staff    11B Oct 12 07:03 buongiorno.txt
+-rw-r--r--  1 claudio  staff     0B Oct 12 07:00 ciao
+</code></pre>
+<p>Un'altra opzione utile è <code>-a</code>, per visualizzare anche i file nascosti. Su linux, un file è nascosto semplicemente se inizia con il carattere punto (<code>.</code>).</p>
+<pre><code class="language-sh">$ ls -lha
+total 8
+drwxr-xr-x  4 claudio  staff   128B Oct 12 07:03 .
+drwxr-xr-x  4 claudio  staff   128B Oct 12 07:00 ..
+-rw-r--r--  1 claudio  staff    11B Oct 12 07:03 buongiorno.txt
+-rw-r--r--  1 claudio  staff     0B Oct 12 07:00 ciao
+</code></pre>
+<h2 id="pwd"><a class="header" href="#pwd">pwd</a></h2>
+<p>Abbreviazione di Print Working Directory, visualizza la directory corrente.</p>
+<pre><code class="language-sh">$ pwd
+/Users/claudio/try/bash
+</code></pre>
+<h2 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h2>
+<p>Abbreviazione di &quot;make directory&quot;, crea una nuova cartella.</p>
+<pre><code class="language-sh">$ mkdir food
+$ ls
+-rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
+drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
+</code></pre>
+<p>Si può capire che è una cartella perché il primo carattere nella riga di &quot;food&quot; è una <code>d</code> che sta appunto per &quot;directory&quot;. I file hanno invece un trattino. Alcuni terminali mostrano le cartelle anche con un colore diverso.</p>
+<h2 id="cd"><a class="header" href="#cd">cd</a></h2>
+<p>Abbreviazione di &quot;change directory&quot;, permette di spostarsi tra cartelle.</p>
+<pre><code class="language-sh">$ cd food
+$ pwd
+/Users/claudio/try/bash/food
+</code></pre>
+<p>Usando <code>cd</code> senza argomenti, torno alla &quot;home directory&quot;, che viene anche rappresentata con il comando <code>~</code> (si legge tilde).</p>
+<pre><code class="language-sh">$ cd
+$ pwd
+/Users/claudio/
+$ cd ~ # comando equivalente al precedente
+$ pwd
+/Users/claudio/
+</code></pre>
+<p>Per tornare alla directory precedente, si può usare il simbolo <code>-</code> (trattino).</p>
+<pre><code class="language-sh">$ cd -
+$ pwd
+/Users/claudio/try/bash/food
+</code></pre>
+<p>Per salire di una directory si può usare il doppio punto.</p>
+<pre><code class="language-sh">$ cd ..
+$ pwd
+/Users/claudio/try/bash
+</code></pre>
+<h2 id="cp"><a class="header" href="#cp">cp</a></h2>
+<p>Copia un file, abbreviazione di copy.</p>
+<pre><code class="language-sh">$ cp ciao hello
+$ ls
+total 8
+-rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
+drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:20 hello
+</code></pre>
+<h2 id="mv"><a class="header" href="#mv">mv</a></h2>
+<p>Sposta un file da una cartella ad un'' altra. Se la cartella di partenza e destinazione coincidono, semplicemente rinomina il file.</p>
+<pre><code class="language-sh">$ mv hello hola
+$ ls
+-rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
+drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:20 hola
+</code></pre>
+<h2 id="rm"><a class="header" href="#rm">rm</a></h2>
+<p>Elimina un file, abbreviazione di remove.</p>
+<pre><code class="language-sh">$ rm hola
+$ ls
+-rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
+drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
+</code></pre>
+<h2 id="top"><a class="header" href="#top">top</a></h2>
+<p>Visualizza i processi attualmente in esecuzione nella macchina.</p>
+<pre><code class="language-sh">$ top
+</code></pre>
+<p>Viene visualizzata una tabella a schermo intero. Per uscire, premere la combinazione di tasti <code>ctrl-c</code></p>
+<h1 id="kill"><a class="header" href="#kill">kill</a></h1>
+<p>Termina (uccide) un processo in esecuzione. Come argomento deve avere il numero del processo (PID - process ID) che viene visualizzato ad esempio con top.</p>
+<pre><code class="language-sh">$ kill 11459 # termina il processo con PID 11459
+</code></pre>
+<h2 id="yes"><a class="header" href="#yes">yes</a></h2>
+<p>Stampa su terminale una stringa all'infinito. Di default stampa 'y' ma si può personalizzare passandogli un argomento.</p>
+<pre><code class="language-sh">$ yes marconi
+marconi
+marconi
+marconi
+....
+</code></pre>
+<p>Anche in questo caso uscire con <code>ctrl-c</code></p>
+<h2 id="devnull"><a class="header" href="#devnull">/dev/null</a></h2>
+<p>Un file speciale all'interno del file system linux che è un pozzo senza fondo.</p>
+<pre><code class="language-sh">$ yes &gt; /dev/null ## l'output di yes viene sostanzialmente scartato
+</code></pre>
+<h2 id="ctrl-c"><a class="header" href="#ctrl-c">ctrl-c</a></h2>
+<p>Termina (uccide) il processo corrente.</p>
+<h2 id="ctrl-z"><a class="header" href="#ctrl-z">ctrl-z</a></h2>
+<p>Sospende il processo corrente. Per rimetterlo in esecuzione, si possono usare i comandi <code>bg</code> o <code>fg</code></p>
+<h2 id="jobs"><a class="header" href="#jobs">jobs</a></h2>
+<p>Visualizza i lavori in esecuzione. Un &quot;lavoro&quot; è un processo (o più precisamente può essere un insieme di processi) che è stato lanciato dalla shell corrente. </p>
+<pre><code class="language-sh">$ yes uno &gt; /dev/null
+# ctrl-z
+suspended  yes uno &gt; /dev/null
+$ yes due &gt; /dev/null
+# ctrl-z
+suspended  yes due &gt; /dev/null
+$ yes tre &gt; /dev/null
+# ctrl-z
+suspended  yes tre &gt; /dev/null
+$ jobs
+[1]    suspended  yes uno &gt; /dev/null
+[2]  - suspended  yes due &gt; /dev/null
+[3]  + suspended  yes tre &gt; /dev/null
+</code></pre>
+<p>Per riprendere un lavoro e portarlo in &quot;foreground&quot;, ovvero accessibile dalla shell, si usa <code>fg</code>. Se uso <code>fg</code> senza argomenti, mette in foreground il lavoro contrassegnato dal +.</p>
+<p>Per riprendere un lavoro e portarlo in &quot;background&quot;, ovvero <em>non</em> accessibile dalla shell, si usa <code>bg</code>.</p>
+<p>Per terminare un lavoro, posso usare sempre <code>kill</code>, ma l'argomento deve avere il simbolo %.</p>
+<pre><code class="language-sh">$ kill %2
+[2]  - terminated  yes due &gt; /dev/null
+$ jobs
+[1]  - suspended  yes uno &gt; /dev/null
+[3]  + suspended  yes tre &gt; /dev/null
+</code></pre>
+<h2 id="variabili-di-ambiente"><a class="header" href="#variabili-di-ambiente">Variabili di ambiente</a></h2>
+<p>Ogni terminale usa delle variabili che sono definite automaticamente quando viene aperto. Queste variabili vengono dette <em>variabili di ambiente</em>. Per visualizzarle si può usare il comando <code>env</code>.</p>
+<pre><code class="language-sh">$ env
+TERM_SESSION_ID=w1t0p0:3B371076-0F20-4C26-ACD4-4656F13F9AEA
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.P5eh4I2m5h/Listeners
+LC_TERMINAL_VERSION=3.4.10
+COLORFGBG=7;0
+......continua.......
+</code></pre>
+<p>Per visualizzare una sola variabile, si può usare <code>echo</code> e la variabile deve essere preceduta dal carattere dollaro.</p>
+<pre><code class="language-sh">$ echo $SHELL
+/bin/bash
+</code></pre>
+<p>Per assegnare una variabile, si può usare il comando <code>export</code>.</p>
+<pre><code class="language-sh">$ export $PS1=&quot;test&gt;&quot;
+</code></pre>
+<p>Di seguito alcune variabili di ambiente che abbiamo visto:</p>
+<ul>
+<li>$TERM: quale standard rispetta l'applicazione terminale in uno, di solito è <code>xterm</code> o <code>xterm-256color</code></li>
+<li>$SHELL: quale shell sto utilizzando, su Ubuntu di default è bash (quella sviluppata da GNU)</li>
+<li>$PS1: il prompt dei comandi, ovvero tutto quello che c'è prima del dollaro (dollaro compreso), solitamente include la directory corrente ed il nome utente</li>
+</ul>
 
                     </main>
 
@@ -152,6 +373,20 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>

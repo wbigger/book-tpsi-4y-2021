@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html" class="active"><strong aria-hidden="true">2.</strong> Comandi</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html" class="active"><strong aria-hidden="true">2.</strong> Comandi</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -135,6 +135,193 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="comandi"><a class="header" href="#comandi">Comandi</a></h1>
+<h2 id="echo"><a class="header" href="#echo">echo</a></h2>
+<p>Ritorna un &quot;eco&quot; del suo argomento sul terminale.</p>
+<pre><code class="language-sh">$ echo ciao
+ciao
+</code></pre>
+<h1 id="touch"><a class="header" href="#touch">touch</a></h1>
+<p>Crea un file o, se già esiste, ne aggiorna la data di ultima modifica.</p>
+<pre><code class="language-sh">$ touch ciao
+</code></pre>
+<h1 id="cat"><a class="header" href="#cat">cat</a></h1>
+<p>Abbreviazione di &quot;concatenate&quot;, mostra il contenuto di un file.</p>
+<pre><code class="language-sh">$ cat ciao
+</code></pre>
+<h2 id="redirect"><a class="header" href="#redirect">Redirect</a></h2>
+<p>Il carattere <code>&gt;</code> redirige l'output di un comando verso un file, invece del terminale. Se il file non esiste, viene creato. Se il file esiste, viene sovrascritto.</p>
+<pre><code class="language-sh">$ echo &quot;buongiorno&quot; &gt; buongiorno.txt
+</code></pre>
+<p>Se si vuole aggiungere il testo alla fine del file senza sovrascriverlo, si può usare il <code>&gt;&gt;</code>.</p>
+<pre><code class="language-sh">$ echo &quot;buongiorno&quot; &gt;&gt; buongiorno.txt
+$ cat buongiorno.txt
+buongiorno
+buongiorno
+</code></pre>
+<h2 id="ls"><a class="header" href="#ls">ls</a></h2>
+<p>Elenca i file nella cartella corrente</p>
+<pre><code class="language-sh">$ ls
+buongiorno.txt	ciao
+</code></pre>
+<p>L'opzione <code>-l</code> mostra i dettagli del file.</p>
+<pre><code class="language-sh">$ ls -l
+total 8
+-rw-r--r--  1 claudio  staff   11 Oct 12 07:03 buongiorno.txt
+-rw-r--r--  1 claudio  staff    0 Oct 12 07:00 ciao
+</code></pre>
+<p>Aggiungendo anche l'opzione <code>-h</code> mostra i dettagli del file in un formato più leggibile per l'essere umano (&quot;human&quot;). Notare la B alla fine della quinta colonna, che sta per &quot;Byte&quot;.</p>
+<pre><code class="language-sh">$ ls -lh
+total 8
+total 8
+-rw-r--r--  1 claudio  staff    11B Oct 12 07:03 buongiorno.txt
+-rw-r--r--  1 claudio  staff     0B Oct 12 07:00 ciao
+</code></pre>
+<p>Un'altra opzione utile è <code>-a</code>, per visualizzare anche i file nascosti. Su linux, un file è nascosto semplicemente se inizia con il carattere punto (<code>.</code>).</p>
+<pre><code class="language-sh">$ ls -lha
+total 8
+drwxr-xr-x  4 claudio  staff   128B Oct 12 07:03 .
+drwxr-xr-x  4 claudio  staff   128B Oct 12 07:00 ..
+-rw-r--r--  1 claudio  staff    11B Oct 12 07:03 buongiorno.txt
+-rw-r--r--  1 claudio  staff     0B Oct 12 07:00 ciao
+</code></pre>
+<h2 id="pwd"><a class="header" href="#pwd">pwd</a></h2>
+<p>Abbreviazione di Print Working Directory, visualizza la directory corrente.</p>
+<pre><code class="language-sh">$ pwd
+/Users/claudio/try/bash
+</code></pre>
+<h2 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h2>
+<p>Abbreviazione di &quot;make directory&quot;, crea una nuova cartella.</p>
+<pre><code class="language-sh">$ mkdir food
+$ ls
+-rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
+drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
+</code></pre>
+<p>Si può capire che è una cartella perché il primo carattere nella riga di &quot;food&quot; è una <code>d</code> che sta appunto per &quot;directory&quot;. I file hanno invece un trattino. Alcuni terminali mostrano le cartelle anche con un colore diverso.</p>
+<h2 id="cd"><a class="header" href="#cd">cd</a></h2>
+<p>Abbreviazione di &quot;change directory&quot;, permette di spostarsi tra cartelle.</p>
+<pre><code class="language-sh">$ cd food
+$ pwd
+/Users/claudio/try/bash/food
+</code></pre>
+<p>Usando <code>cd</code> senza argomenti, torno alla &quot;home directory&quot;, che viene anche rappresentata con il comando <code>~</code> (si legge tilde).</p>
+<pre><code class="language-sh">$ cd
+$ pwd
+/Users/claudio/
+$ cd ~ # comando equivalente al precedente
+$ pwd
+/Users/claudio/
+</code></pre>
+<p>Per tornare alla directory precedente, si può usare il simbolo <code>-</code> (trattino).</p>
+<pre><code class="language-sh">$ cd -
+$ pwd
+/Users/claudio/try/bash/food
+</code></pre>
+<p>Per salire di una directory si può usare il doppio punto.</p>
+<pre><code class="language-sh">$ cd ..
+$ pwd
+/Users/claudio/try/bash
+</code></pre>
+<h2 id="cp"><a class="header" href="#cp">cp</a></h2>
+<p>Copia un file, abbreviazione di copy.</p>
+<pre><code class="language-sh">$ cp ciao hello
+$ ls
+total 8
+-rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
+drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:20 hello
+</code></pre>
+<h2 id="mv"><a class="header" href="#mv">mv</a></h2>
+<p>Sposta un file da una cartella ad un'' altra. Se la cartella di partenza e destinazione coincidono, semplicemente rinomina il file.</p>
+<pre><code class="language-sh">$ mv hello hola
+$ ls
+-rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
+drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:20 hola
+</code></pre>
+<h2 id="rm"><a class="header" href="#rm">rm</a></h2>
+<p>Elimina un file, abbreviazione di remove.</p>
+<pre><code class="language-sh">$ rm hola
+$ ls
+-rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
+-rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
+drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
+</code></pre>
+<h2 id="top"><a class="header" href="#top">top</a></h2>
+<p>Visualizza i processi attualmente in esecuzione nella macchina.</p>
+<pre><code class="language-sh">$ top
+</code></pre>
+<p>Viene visualizzata una tabella a schermo intero. Per uscire, premere la combinazione di tasti <code>ctrl-c</code></p>
+<h1 id="kill"><a class="header" href="#kill">kill</a></h1>
+<p>Termina (uccide) un processo in esecuzione. Come argomento deve avere il numero del processo (PID - process ID) che viene visualizzato ad esempio con top.</p>
+<pre><code class="language-sh">$ kill 11459 # termina il processo con PID 11459
+</code></pre>
+<h2 id="yes"><a class="header" href="#yes">yes</a></h2>
+<p>Stampa su terminale una stringa all'infinito. Di default stampa 'y' ma si può personalizzare passandogli un argomento.</p>
+<pre><code class="language-sh">$ yes marconi
+marconi
+marconi
+marconi
+....
+</code></pre>
+<p>Anche in questo caso uscire con <code>ctrl-c</code></p>
+<h2 id="devnull"><a class="header" href="#devnull">/dev/null</a></h2>
+<p>Un file speciale all'interno del file system linux che è un pozzo senza fondo.</p>
+<pre><code class="language-sh">$ yes &gt; /dev/null ## l'output di yes viene sostanzialmente scartato
+</code></pre>
+<h2 id="ctrl-c"><a class="header" href="#ctrl-c">ctrl-c</a></h2>
+<p>Termina (uccide) il processo corrente.</p>
+<h2 id="ctrl-z"><a class="header" href="#ctrl-z">ctrl-z</a></h2>
+<p>Sospende il processo corrente. Per rimetterlo in esecuzione, si possono usare i comandi <code>bg</code> o <code>fg</code></p>
+<h2 id="jobs"><a class="header" href="#jobs">jobs</a></h2>
+<p>Visualizza i lavori in esecuzione. Un &quot;lavoro&quot; è un processo (o più precisamente può essere un insieme di processi) che è stato lanciato dalla shell corrente. </p>
+<pre><code class="language-sh">$ yes uno &gt; /dev/null
+# ctrl-z
+suspended  yes uno &gt; /dev/null
+$ yes due &gt; /dev/null
+# ctrl-z
+suspended  yes due &gt; /dev/null
+$ yes tre &gt; /dev/null
+# ctrl-z
+suspended  yes tre &gt; /dev/null
+$ jobs
+[1]    suspended  yes uno &gt; /dev/null
+[2]  - suspended  yes due &gt; /dev/null
+[3]  + suspended  yes tre &gt; /dev/null
+</code></pre>
+<p>Per riprendere un lavoro e portarlo in &quot;foreground&quot;, ovvero accessibile dalla shell, si usa <code>fg</code>. Se uso <code>fg</code> senza argomenti, mette in foreground il lavoro contrassegnato dal +.</p>
+<p>Per riprendere un lavoro e portarlo in &quot;background&quot;, ovvero <em>non</em> accessibile dalla shell, si usa <code>bg</code>.</p>
+<p>Per terminare un lavoro, posso usare sempre <code>kill</code>, ma l'argomento deve avere il simbolo %.</p>
+<pre><code class="language-sh">$ kill %2
+[2]  - terminated  yes due &gt; /dev/null
+$ jobs
+[1]  - suspended  yes uno &gt; /dev/null
+[3]  + suspended  yes tre &gt; /dev/null
+</code></pre>
+<h2 id="variabili-di-ambiente"><a class="header" href="#variabili-di-ambiente">Variabili di ambiente</a></h2>
+<p>Ogni terminale usa delle variabili che sono definite automaticamente quando viene aperto. Queste variabili vengono dette <em>variabili di ambiente</em>. Per visualizzarle si può usare il comando <code>env</code>.</p>
+<pre><code class="language-sh">$ env
+TERM_SESSION_ID=w1t0p0:3B371076-0F20-4C26-ACD4-4656F13F9AEA
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.P5eh4I2m5h/Listeners
+LC_TERMINAL_VERSION=3.4.10
+COLORFGBG=7;0
+......continua.......
+</code></pre>
+<p>Per visualizzare una sola variabile, si può usare <code>echo</code> e la variabile deve essere preceduta dal carattere dollaro.</p>
+<pre><code class="language-sh">$ echo $SHELL
+/bin/bash
+</code></pre>
+<p>Per assegnare una variabile, si può usare il comando <code>export</code>.</p>
+<pre><code class="language-sh">$ export $PS1=&quot;test&gt;&quot;
+</code></pre>
+<p>Di seguito alcune variabili di ambiente che abbiamo visto:</p>
+<ul>
+<li>$TERM: quale standard rispetta l'applicazione terminale in uno, di solito è <code>xterm</code> o <code>xterm-256color</code></li>
+<li>$SHELL: quale shell sto utilizzando, su Ubuntu di default è bash (quella sviluppata da GNU)</li>
+<li>$PS1: il prompt dei comandi, ovvero tutto quello che c'è prima del dollaro (dollaro compreso), solitamente include la directory corrente ed il nome utente</li>
+</ul>
 
                     </main>
 
@@ -156,6 +343,20 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>

@@ -1,4 +1,4 @@
 # Summary
 
-- [Shell](./chapter_1.md)
+- [Kernel&Shell](./chapter_1.md)
 - [Comandi](./chapter_2.md)
