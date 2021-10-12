@@ -238,7 +238,7 @@ $ echo $SHELL
 
 Per assegnare una variabile, si può usare il comando `export`.
 ```sh
-$ export $PS1="test>"
+$ export PS1="test>"
 ```
 
 Di seguito alcune variabili di ambiente che abbiamo visto:
