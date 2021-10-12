@@ -131,7 +131,7 @@ drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
 -rw-r--r--  1 claudio  staff   0 Oct 12 07:20 hello
 ```
 ## mv
-Sposta un file da una cartella ad un'' altra. Se la cartella di partenza e destinazione coincidono, semplicemente rinomina il file.
+Sposta un file da una cartella ad un'altra. Se la cartella di partenza e destinazione coincidono, semplicemente rinomina il file.
 
 ```sh
 $ mv hello hola
