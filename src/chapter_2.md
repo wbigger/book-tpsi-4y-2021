@@ -94,7 +94,7 @@ $ pwd
 /Users/claudio/try/bash/food
 ```
 
-Usando `cd` senza argomenti, torno alla "home directory", che viene anche rappresentata con il comando `~` (si legge tilde).
+Usando `cd` senza argomenti, torno alla "home directory", che viene anche rappresentata con il simbolo `~` (si legge tilde).
 
 ```sh
 $ cd
