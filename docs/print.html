@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="custom.css">
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -111,6 +112,9 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        <a href="https://github.com/wbigger/book-tpsi-4y-2021.git" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -176,11 +180,11 @@
 <pre><code class="language-sh">$ echo ciao
 ciao
 </code></pre>
-<h1 id="touch"><a class="header" href="#touch">touch</a></h1>
+<h2 id="touch"><a class="header" href="#touch">touch</a></h2>
 <p>Crea un file o, se già esiste, ne aggiorna la data di ultima modifica.</p>
 <pre><code class="language-sh">$ touch ciao
 </code></pre>
-<h1 id="cat"><a class="header" href="#cat">cat</a></h1>
+<h2 id="cat"><a class="header" href="#cat">cat</a></h2>
 <p>Abbreviazione di &quot;concatenate&quot;, mostra il contenuto di un file.</p>
 <pre><code class="language-sh">$ cat ciao
 </code></pre>
@@ -290,7 +294,7 @@ drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
 <pre><code class="language-sh">$ top
 </code></pre>
 <p>Viene visualizzata una tabella a schermo intero. Per uscire, premere la combinazione di tasti <code>ctrl-c</code></p>
-<h1 id="kill"><a class="header" href="#kill">kill</a></h1>
+<h2 id="kill"><a class="header" href="#kill">kill</a></h2>
 <p>Termina (uccide) un processo in esecuzione. Come argomento deve avere il numero del processo (PID - process ID) che viene visualizzato ad esempio con top.</p>
 <pre><code class="language-sh">$ kill 11459 # termina il processo con PID 11459
 </code></pre>

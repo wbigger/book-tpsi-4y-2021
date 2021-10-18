@@ -7,13 +7,13 @@ $ echo ciao
 ciao
 ```
 
-# touch
+## touch
 Crea un file o, se già esiste, ne aggiorna la data di ultima modifica.
 ```sh
 $ touch ciao
 ```
 
-# cat
+## cat
 Abbreviazione di "concatenate", mostra il contenuto di un file.
 ```sh
 $ cat ciao
@@ -157,7 +157,7 @@ $ top
 ```
 Viene visualizzata una tabella a schermo intero. Per uscire, premere la combinazione di tasti `ctrl-c`
 
-# kill
+## kill
 Termina (uccide) un processo in esecuzione. Come argomento deve avere il numero del processo (PID - process ID) che viene visualizzato ad esempio con top.
 ```sh
 $ kill 11459 # termina il processo con PID 11459
