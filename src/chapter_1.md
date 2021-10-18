@@ -14,7 +14,7 @@ Per rappresentare i componenti del sistema operativo, si usa spesso la metafora 
 <img title="shell-kernel" src='./assets/shell-kernel.png' width='70%' style="padding: 50px 0 30px 0;">
 </p>
 
-Il programma che è più vicino all'hardware viene chiamato **kernel**. Noi ci occuperemo in particolare del kernel **Linux**, un kernel open-source,.
+Il programma che è più vicino all'hardware viene chiamato **kernel**. Noi ci occuperemo in particolare del kernel **Linux**, un kernel open-source.
 
 > Il kernel Linux è stato creato nel 1991 dal finlandese Linus Torvalds ed è distribuito attraverso la licenza di software libero GNU GPLv2. Questa licenza è stata ideata da Richard Stallman (dell'MIT di Boston) per tutelare il software "libero" (in inglese free software, in cui la parola free ha il significato di libero come in "free as in speech").
 

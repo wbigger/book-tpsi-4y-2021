@@ -1,7 +1,7 @@
 # Comandi
 
 ## echo
-Ritorna un "eco" del suo argomento sul terminale.
+Ritorna un'"eco" del suo argomento sul terminale.
 ```sh
 $ echo ciao
 ciao
@@ -79,7 +79,7 @@ $ pwd
 Abbreviazione di "make directory", crea una nuova cartella.
 ```sh
 $ mkdir food
-$ ls
+$ ls -l
 -rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
 -rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
 drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
@@ -94,7 +94,7 @@ $ pwd
 /Users/claudio/try/bash/food
 ```
 
-Usando `cd` senza argomenti, torno alla "home directory", che viene anche rappresentata con il comando `~` (si legge tilde).
+Usando `cd` senza argomenti, torno alla "home directory", che viene anche rappresentata con il simbolo `~` (si legge tilde).
 
 ```sh
 $ cd
@@ -131,7 +131,7 @@ drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
 -rw-r--r--  1 claudio  staff   0 Oct 12 07:20 hello
 ```
 ## mv
-Sposta un file da una cartella ad un'' altra. Se la cartella di partenza e destinazione coincidono, semplicemente rinomina il file.
+Sposta un file da una cartella ad un'altra. Se la cartella di partenza e destinazione coincidono, semplicemente rinomina il file.
 
 ```sh
 $ mv hello hola
@@ -238,11 +238,11 @@ $ echo $SHELL
 
 Per assegnare una variabile, si può usare il comando `export`.
 ```sh
-$ export $PS1="test>"
+$ export PS1="test>"
 ```
 
 Di seguito alcune variabili di ambiente che abbiamo visto:
-- $TERM: quale standard rispetta l'applicazione terminale in uno, di solito è `xterm` o `xterm-256color`
+- $TERM: quale standard rispetta l'applicazione terminale in uso, di solito è `xterm` o `xterm-256color`
 - $SHELL: quale shell sto utilizzando, su Ubuntu di default è bash (quella sviluppata da GNU)
 - $PS1: il prompt dei comandi, ovvero tutto quello che c'è prima del dollaro (dollaro compreso), solitamente include la directory corrente ed il nome utente
 
