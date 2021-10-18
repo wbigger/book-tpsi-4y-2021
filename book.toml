@@ -9,3 +9,7 @@ description = "Materiale di supporto alle lezioni."
 [build]
 build-dir = "docs"
 create-missing = true
+
+[output.html]
+additional-css = ["custom.css"]
+git-repository-url = "https://github.com/wbigger/book-tpsi-4y-2021.git"
