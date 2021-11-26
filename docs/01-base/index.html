@@ -3,34 +3,34 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Kernel&amp;Shell - TPSI - Quarto anno - 2021</title>
+        <title>Programmazione - TPSI - Quarto anno - 2021</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Materiale di supporto alle lezioni.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="custom.css">
+        <link rel="stylesheet" href="../custom.css">
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="01-base/index.html"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">3.2.</strong> Installazione di Python</a></li><li class="chapter-item expanded "><a href="01-base/03-webapp.html"><strong aria-hidden="true">3.3.</strong> Web app</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="../01-base/index.html" class="active"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">3.2.</strong> Installazione di Python</a></li><li class="chapter-item expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">3.3.</strong> Web app</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -108,7 +108,7 @@
                     <h1 class="menu-title">TPSI - Quarto anno - 2021</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/wbigger/book-tpsi-4y-2021.git" title="Git repository" aria-label="Git repository">
@@ -138,47 +138,22 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="organizzazione-di-un-sistema-operativo"><a class="header" href="#organizzazione-di-un-sistema-operativo">Organizzazione di un sistema operativo</a></h1>
-<p>Il sistema operativo gestisce le risorse della macchina (memoria, processore, periferiche) per permettere a più applicazioni di poter funzionare contemporaneamente. Ma ogni cosa ha un suo costo: il sistema operativo utilizza per sé stesso una porzione a volte considerevole delle risorse stesse del nostro computer: pensiamo a quanti GB sul disco occupa una installazione di Windows o Mac, a quanta memoria occupa, e che ha volte i loro processi impegnano la CPU senza una ragione apparente. Oltre a questo pensiamo a problemi di vulnerabilità, aggiornamento, etc.</p>
-<blockquote>
-<p>Se noi vogliamo far girare un solo programma sul computer, possiamo non aver bisogno di un sistema operativo. Tipicamente quest accade per piccoli elaboratori per compiti molto specifici: questo sistemi vengono chiamati <em>embedded</em>.</p>
-</blockquote>
-<p>Il sistema operativo è una componente software molto complessa: per poter essere gestita in maniera ottimale, è stata divisa in sotto-componenti. Di seguito vediamo i principali.</p>
-<h1 id="kernel"><a class="header" href="#kernel">Kernel</a></h1>
-<p>Per rappresentare i componenti del sistema operativo, si usa spesso la metafora delle sfere concentriche, in cui al centro di tutto c'è l'hardware.</p>
-<p align="center">
-<img title="shell-kernel" src='./assets/shell-kernel.png' width='70%' style="padding: 50px 0 30px 0;">
-</p>
-<p>Il programma che è più vicino all'hardware viene chiamato <strong>kernel</strong>. Noi ci occuperemo in particolare del kernel <strong>Linux</strong>, un kernel open-source.</p>
-<blockquote>
-<p>Il kernel Linux è stato creato nel 1991 dal finlandese Linus Torvalds ed è distribuito attraverso la licenza di software libero GNU GPLv2. Questa licenza è stata ideata da Richard Stallman (dell'MIT di Boston) per tutelare il software &quot;libero&quot; (in inglese free software, in cui la parola free ha il significato di libero come in &quot;free as in speech&quot;).</p>
-</blockquote>
-<p>Il kernel si occupa di mediare l'accesso delle applicazioni alle risorse del computer:</p>
-<ul>
-<li>central processing unit (CPU)</li>
-<li>memoria volatile (RAM)</li>
-<li>periferiche di input/output (hard disk, tastiera, mouse, stampanti, etc.)</li>
-</ul>
-<p>Il kernel è un programma come gli altri, non ha niente di &quot;magico&quot;. In particolare il kernel è un insieme di librerie scritte principalmente in C/C++. Del kernel Linux possiamo anche vederne il <a href="https://github.com/torvalds/linux">codice sorgente</a>, visto che è un software libero e quindi anche aperto.</p>
-<h1 id="shell"><a class="header" href="#shell">Shell</a></h1>
-<p>Per usare direttamente il kernel dovremmo scrivere dei programmi in C/C++, ad esempio per interrogare l'hard-disk e farci restituire i file all'interno di una certa cartella. Scrivere un programma noi per ogni operazione che dobbiamo svolgere, ovviamente non è molto comodo.</p>
-<p>Per poter usare in maniera le chiamate di sistema che ci mette a disposizione il kernel, ci sono una serie di strumenti che ci facilitano i compito. Per Linux, queste utilità sono state sviluppate dal <a href="www.gnu.org">progetto GNU</a>, e si chiamano <strong>GNU coreutils</strong>.</p>
-<blockquote>
-<p>Il progetto GNU è stato fondato nel 1983 da Richard Stallman, al MIT di Boston. GNU ha lo scopo in primo luogo di permettere agli sviluppatori di tutto il mondo di poter sviluppare <em>liberamente</em> software, ovvero avendo a disposizione il codice sorgente dei programmi di altre aziende che usano, e senza la necessità di pagare licenze. Le utilità che useremo in questo corso sono solo parte del progetto; un'altra parte fondamentale è la licenza che permette al software di essere usato legalmente, rispettando le libertà fondamentali del free software. Il nome di questa licenza è GPL (General Public Licence), di cui l'ultima versione è la <a href="https://www.gnu.org/licenses/gpl.html">GPLv3</a> <p align="center"><a href='https://www.gnu.org/licenses/gpl.html'><img src='./assets/gpl.png' width='200px'></a></p></p>
-</blockquote>
-<p>Anche in questo caso possiamo andare a cercare il <a href="http://git.savannah.gnu.org/cgit/coreutils.git">codice sorgente</a>.</p>
-<h1 id="terminale"><a class="header" href="#terminale">Terminale</a></h1>
-<p>Per poter interagire con la shell, abbiamo bisogno di un'applicazione specifica che ci permetta di farlo. Quest'applicazione si chiama &quot;terminale&quot;.</p>
-<p align="center">
-<img title="shell-kernel" src='./assets/terminal.png' width='70%' style="padding: 50px 0 30px 0;">
-</p>
-<p>Nell'immagine vedete l'applicazione &quot;iTerm2&quot;, molto usata in ambito Apple come terminale.</p>
+                        <h1 id="premessa-concetti-base-di-programmazione"><a class="header" href="#premessa-concetti-base-di-programmazione">Premessa: concetti base di programmazione</a></h1>
+<p>Quando vogliamo imparare a programmare, in qualsiasi linguaggio, ci troviamo di fronte ad una pagina vuota.</p>
+<p>Cosa dobbiamo fare? Cosa dobbiamo scrivere in questa pagina che ci si presenta davanti?</p>
+<p>Quello che facciamo quando scriviamo un programma è qualcosa di fortemente creativo: non andremo solo a scrivere del codice che esegue istruzioni, ma andremo a creare un mondo nuovo, in cui ci potremo muovere ed agire con i concetti e le relazioni che avremo definito noi stessi.</p>
+<p>Scrivere codice è come scrivere un romanzo o dipingere su una tela. Le nostre penne e pennelli sono tastiera e mouse, e la tela è lo schermo. Quello che andremo a realizzare però sarà qualcosa che non solo <em>rappresenta</em> la realtà, ma andrà anche ad <em>interagire</em> con essa, e in un medio periodo può anche modificarla ed a sua volta esserne modificato. In altre parole il codice è una cosa viva, in continua evoluzione, la cui capacità di replicazione e mutazione (soprattutto per il codice open-source) lo rende vicino per certi versi ad un essere vivente.</p>
+<h2 id="un-programmatore-è-un-bravo-osservatore"><a class="header" href="#un-programmatore-è-un-bravo-osservatore">Un programmatore è un bravo osservatore</a></h2>
+<p>Un programmatore è un informatico ed il compito principale di un informatico è... risolvere problemi. Per poter risolvere un problema, però, bisogna prima capire <em>qual è</em> il problema, <em>chi</em> ha il problema e <em>perché</em>. Per poter fare questo, un programmatore deve essere un bravo osservatore della realtà. Più importante del QI o della genialità, è la capacità di saper osservare il mondo, ascoltare le persone, immedesimarsi negli altri e saper trasformare tutto questo in righe di codice che funzionino.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="chapter_2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="prev" href="../chapter_2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../01-base/02-python.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -187,7 +162,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="chapter_2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="prev" href="../chapter_2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../01-base/02-python.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -211,12 +189,12 @@
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
     </body>

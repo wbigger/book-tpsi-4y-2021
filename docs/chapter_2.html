@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html" class="active"><strong aria-hidden="true">2.</strong> Comandi</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html" class="active"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="01-base/index.html"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">3.2.</strong> Installazione di Python</a></li><li class="chapter-item expanded "><a href="01-base/03-webapp.html"><strong aria-hidden="true">3.3.</strong> Web app</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,7 +140,7 @@
                     <main>
                         <h1 id="comandi"><a class="header" href="#comandi">Comandi</a></h1>
 <h2 id="echo"><a class="header" href="#echo">echo</a></h2>
-<p>Ritorna un &quot;eco&quot; del suo argomento sul terminale.</p>
+<p>Ritorna un'&quot;eco&quot; del suo argomento sul terminale.</p>
 <pre><code class="language-sh">$ echo ciao
 ciao
 </code></pre>
@@ -196,7 +196,7 @@ drwxr-xr-x  4 claudio  staff   128B Oct 12 07:00 ..
 <h2 id="mkdir"><a class="header" href="#mkdir">mkdir</a></h2>
 <p>Abbreviazione di &quot;make directory&quot;, crea una nuova cartella.</p>
 <pre><code class="language-sh">$ mkdir food
-$ ls
+$ ls -l
 -rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
 -rw-r--r--  1 claudio  staff   0 Oct 12 07:00 ciao
 drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
@@ -208,7 +208,7 @@ drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
 $ pwd
 /Users/claudio/try/bash/food
 </code></pre>
-<p>Usando <code>cd</code> senza argomenti, torno alla &quot;home directory&quot;, che viene anche rappresentata con il comando <code>~</code> (si legge tilde).</p>
+<p>Usando <code>cd</code> senza argomenti, torno alla &quot;home directory&quot;, che viene anche rappresentata con il simbolo <code>~</code> (si legge tilde).</p>
 <pre><code class="language-sh">$ cd
 $ pwd
 /Users/claudio/
@@ -237,7 +237,7 @@ drwxr-xr-x  2 claudio  staff  64 Oct 12 07:14 food
 -rw-r--r--  1 claudio  staff   0 Oct 12 07:20 hello
 </code></pre>
 <h2 id="mv"><a class="header" href="#mv">mv</a></h2>
-<p>Sposta un file da una cartella ad un'' altra. Se la cartella di partenza e destinazione coincidono, semplicemente rinomina il file.</p>
+<p>Sposta un file da una cartella ad un'altra. Se la cartella di partenza e destinazione coincidono, semplicemente rinomina il file.</p>
 <pre><code class="language-sh">$ mv hello hola
 $ ls
 -rw-r--r--  1 claudio  staff  22 Oct 12 07:12 buongiorno.txt
@@ -318,11 +318,11 @@ COLORFGBG=7;0
 /bin/bash
 </code></pre>
 <p>Per assegnare una variabile, si può usare il comando <code>export</code>.</p>
-<pre><code class="language-sh">$ export $PS1=&quot;test&gt;&quot;
+<pre><code class="language-sh">$ export PS1=&quot;test&gt;&quot;
 </code></pre>
 <p>Di seguito alcune variabili di ambiente che abbiamo visto:</p>
 <ul>
-<li>$TERM: quale standard rispetta l'applicazione terminale in uno, di solito è <code>xterm</code> o <code>xterm-256color</code></li>
+<li>$TERM: quale standard rispetta l'applicazione terminale in uso, di solito è <code>xterm</code> o <code>xterm-256color</code></li>
 <li>$SHELL: quale shell sto utilizzando, su Ubuntu di default è bash (quella sviluppata da GNU)</li>
 <li>$PS1: il prompt dei comandi, ovvero tutto quello che c'è prima del dollaro (dollaro compreso), solitamente include la directory corrente ed il nome utente</li>
 </ul>
@@ -334,6 +334,9 @@ COLORFGBG=7;0
                             <a rel="prev" href="chapter_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+                            <a rel="next" href="01-base/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -342,6 +345,9 @@ COLORFGBG=7;0
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="chapter_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="01-base/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
