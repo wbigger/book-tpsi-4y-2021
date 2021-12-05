@@ -77,7 +77,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="01-base/index.html"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">3.2.</strong> Installazione di Python</a></li><li class="chapter-item expanded "><a href="01-base/03-webapp.html"><strong aria-hidden="true">3.3.</strong> Web app</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="01-base/index.html"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-base/01-types.html"><strong aria-hidden="true">3.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">3.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">3.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="01-base/03-tris.html"><strong aria-hidden="true">3.4.</strong> Gioco del Tris</a></li><li class="chapter-item expanded "><a href="01-base/04-test.html"><strong aria-hidden="true">3.5.</strong> Test del gioco</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -369,12 +369,83 @@ COLORFGBG=7;0
 <p>Scrivere codice è come scrivere un romanzo o dipingere su una tela. Le nostre penne e pennelli sono tastiera e mouse, e la tela è lo schermo. Quello che andremo a realizzare però sarà qualcosa che non solo <em>rappresenta</em> la realtà, ma andrà anche ad <em>interagire</em> con essa, e in un medio periodo può anche modificarla ed a sua volta esserne modificato. In altre parole il codice è una cosa viva, in continua evoluzione, la cui capacità di replicazione e mutazione (soprattutto per il codice open-source) lo rende vicino per certi versi ad un essere vivente.</p>
 <h2 id="un-programmatore-è-un-bravo-osservatore"><a class="header" href="#un-programmatore-è-un-bravo-osservatore">Un programmatore è un bravo osservatore</a></h2>
 <p>Un programmatore è un informatico ed il compito principale di un informatico è... risolvere problemi. Per poter risolvere un problema, però, bisogna prima capire <em>qual è</em> il problema, <em>chi</em> ha il problema e <em>perché</em>. Per poter fare questo, un programmatore deve essere un bravo osservatore della realtà. Più importante del QI o della genialità, è la capacità di saper osservare il mondo, ascoltare le persone, immedesimarsi negli altri e saper trasformare tutto questo in righe di codice che funzionino.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tipi"><a class="header" href="#tipi">Tipi</a></h1>
+<p>Tutto comincia con i tipi. </p>
+<p>Per dare una forma ed un senso a quello che ci circonda, dobbiamo poter <em>assegnare</em> a quello che ci percepiamo un <em>nome</em> che rappresenta una categoria, un insieme di proprietà e caratteristiche che accumunano un qualcosa ad altre cose che conosciamo già. Questo &quot;nome comune&quot; di cosa, persona o animale&quot; che ci ricorda i nostri studi elementari e che ha posto le basi alla nostra comprensione della lingua parlata e scritte, si ripropone ora all'inizio dei nostri studi dei linguaggi di programmazione. Questi nomi in programmazione prendono il nome di <em>tipi</em>.</p>
+<h2 id="tipi-fondamentali"><a class="header" href="#tipi-fondamentali">Tipi fondamentali</a></h2>
+<p>Esistono alcuni tipi che, più o meno universalmente, costituiscono i mattoncini base per tutti gli altri tipi nella programmazione. Questi tipi rappresentano delle caratteristiche base di ciò che ci circonda.</p>
+<p>Guardiamoci intorno. Io adesso sono ne salotto di casa mia. Cosa vedo? Cosa sento? Cosa percepisco? Vedo una libreria con un certo numero di libri dentro. Sento una musica a basso volume. Sento un po' caldo. Vedo una tastiera con tanti caratteri scritti sopra, ed uno schermo con tante parole. </p>
+<p>I tipi fondamentali sono:</p>
+<ul>
+<li>numeri interi: per rappresentare qualcosa che nella nostra descrizione del mondo non può essere diviso o non ci interessa che sia diviso. Ad esempio il numero di libri nella libreria.</li>
+<li>numeri decimali: per rappresentare qualcosa che ha un valore continuo e divisibile. Ad esempio il volume della musica, la temperatura della stanza.</li>
+<li>caratteri: per rappresentare un singolo carattere, numero o in generale simbolo. Ad esempio i singoli caratteri che vediamo sulla tastiera: <code>i</code>, <code>7</code>, <code>€</code>, etc.</li>
+<li>stringhe: per rappresentare una sequenza di caratteri. Ad esempio una stringa può essere una parola sullo schermo, o un'intera riga, o il titolo di un libro, etc.</li>
+<li>boolean: per cose che possono essere solo vere o false. Ad esempio se la luce è accesa o spenta.</li>
+<li>liste (o array): per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.</li>
+</ul>
+<p>Di seguito un approfondimento su alcuni tipi sopra descritti.</p>
+<h3 id="numeri-interi"><a class="header" href="#numeri-interi">Numeri interi</a></h3>
+<p>In matematica, i <a href="https://it.wikipedia.org/wiki/Numero_intero">numero interi</a> possono essere o naturali (zero e i numeri positivi: 0,1,2,3,... ) e relativi (numeri naturali più numeri negativi: ...,-3,-2,-1,0,1,2,3,...). Non c'è un limite inferiore o superiore al valore che un certo numero può assumere</p>
+<p>In informatica, oltre a questo, dobbiamo fare i conti anche con le risorse finite della macchina su cui operiamo. Dobbiamo quindi sempre tener presente che un certo numero intero, occuperà in base alla sua grandezza un certo numero di byte in memoria. Il numero di byte che tipicamente può assumere un intero in memoria è: 1 byte, 2 byte, 4 byte o 8 byte. Un intero di 8 byte è sufficientemente enorme da rappresentare qualsiasi cosa, e di solito non ne servono di più.</p>
+<p>Riassumendo, bisogna avere in mente due cose quando parliamo di interi:</p>
+<ul>
+<li>se il numero sarà sicuramente sempre positivo, o ha senso che possa essere negativo</li>
+<li>quant'è il valore massimo o minimo che nella pratica il numero può avere, che determina il numero di byte da riservare in memoria.</li>
+</ul>
+<blockquote>
+<p>In C/C++, il segno e la grandezza si dichiara esplicitamente. In Python, i numeri interi sono sempre con il segno ed il compilatore assegna automaticamente il numero di byte in base al valore.</p>
+</blockquote>
+<h3 id="numeri-decimali"><a class="header" href="#numeri-decimali">Numeri decimali</a></h3>
+<p>I numeri decimali sono quelli con la virgola, e vengono detti anche numeri a virgola mobile, o <em>floating point numbers</em>.</p>
+<p>I numeri decimali in informatica sono sempre con il segno. Anche in questo caso dobbiamo però decidere il numero di byte che occupa in memoria. Il numero di byte che può assumere un numero decimale è: 4 byte o 8 byte. Anche in questo caso, un numero decimale di 8 byte può rappresentare bene praticamente qualsiasi cosa che conosciamo, e non servono più byte.</p>
+<p>Nei processori a 64bit, la dimensione tipica dei numeri decimali è sempre 8 byte, che vengono detti anche <em>double precision floating point numbers</em>, o semplicemente <em>double</em>. Nei processori a 8, 16 o 32 bit, per motivi di performance di solito si assegnano 4 byte e solo in caso di necessità se ne assegnano 8.</p>
+<blockquote>
+<p>Come per gli interi, in C/C++ bisogna dichiarare esplicitamente se un float occupa 4 o 8 byte. In Python occupa sempre 8 byte.</p>
+</blockquote>
+<h3 id="caratteri-e-stringhe"><a class="header" href="#caratteri-e-stringhe">Caratteri e stringhe</a></h3>
+<p>Per la rappresentazione dei caratteri bisogna fare più attenzione rispetto a quella degli interi perché esistono tanti standard diversi che co-esistono tra di loro. Semplificando, attualmente esistono due standard principali:</p>
+<ul>
+<li><a href="https://it.wikipedia.org/wiki/ASCII">ASCII</a>: rappresenta i caratteri inglesi (senza accenti o altri segni diacritici), i numeri e alcuni simboli base come <code>@</code>, <code>!</code>, <code>#</code>,<code>5</code> e simili. Usa un byte di memoria e viene utilizzato in casi particolari o in vecchi sistemi</li>
+<li><a href="https://it.wikipedia.org/wiki/UTF-8">UTF-8</a>: rappresenta i caratteri di tutte le lingue (italiano, spagnolo, cinese, indiano, sanscrito, greco antico, etc), i segni matematici, le emoji e tanti altri simboli. Usa un numero variabile di byte: per i caratteri più comuni (essenzialmente quelli ASCII) usa un solo byte, in tutti gli altri casi usa due byte. Alcuni esempi di caratteri UTF-8 sono:,<code>Ẽ</code>,<code>≢</code>,<code>©</code>,<code>∂</code>,<code>🌷</code>, etc.</li>
+</ul>
+<p>Nel linguaggio C, per rappresentare un singolo carattere si usa il singolo apice, ad esempio <code>'k'</code> è il singolo carattere <code>k</code>; per rappresentare le stringhe si usa il doppio apice, ad esempio <code>&quot;hello&quot;</code> è la stringa <code>hello</code>. In C l'espressione <code>'hello'</code> ritorna un errore.</p>
+<p>In Python, non si può rappresentare un singolo carattere, ma esistono solo stringhe. Per rappresentare le stringhe, si può usare sia indifferentemente sia il singolo che il doppio apice, quindi le espressioni <code>&quot;hello&quot;</code> ed <code>'hello'</code> sono equivalenti.</p>
+<blockquote>
+<p>Come scegliere tra singolo e doppio apice? Dipende se all'interno della stringa che vogliamo rappresentare, ci sono degli apici. Se ci sono dei singoli apici all'interno, conviene usare i doppi apici per le stringhe, in modo che la stringa <code>&quot;l'alba è meravigliosa&quot;</code> sia valida. Se invece all'interno della stringa abbiamo doppi apici, conviene usare esternamente i singoli apici, in modo che ad esempio <code>'&quot;Python&quot; è bello'</code> sia una stringa valida. Se all'interno della nostra stringa ci sono sia singoli che doppi apici, dobbiamo usare il carattere di escape <code>\'</code> e <code>\&quot;</code>; ad esempio possiamo scrivere <code>'l\'alba è &quot;meravigliosa&quot;</code> oppure `&quot;l'alba è &quot;meravigliosa&quot;'. In caso di incertezza comunque, lo standard è utilizzare il singolo apice.</p>
+</blockquote>
+<blockquote>
+<p>In Python esistono anche altri modi di rappresentare le stringhe, lo vedremo più avanti.</p>
+</blockquote>
+<h3 id="boolean"><a class="header" href="#boolean">Boolean</a></h3>
+<p>Come abbiamo detto, un boolean rappresenta qualcosa che può essere o  solo vero o solo falso. Una variabile boolean può essere assegnata in uno dei seguenti modi:</p>
+<ul>
+<li>direttamente a vero o falso, ad esempio <code>a = True</code></li>
+<li>come risultato di una operazione logica, ad esempio <code>a = 3 &gt; 2</code></li>
+</ul>
+<p>Attenzione a non abusare del tipo boolean: usarlo solo quando concettualmente nel nostro mondo non possono esserci altri valori o valori intermedi. Ad esempio immaginiamo che nel nostro mondo ci sono sedie rosse e gialle. Mettere una variabile boolean del tipo <code>is_red</code>, che mi dice se la sedia è rossa, è una pessima idea. Primo perché non è chiaro cosa succede quando il valore è falso e secondo perché se domani arrivano delle sedie blu, devo cambiare tutto il codice :(</p>
+<blockquote>
+<p>Uno dei punti su cui variano molto i diversi linguaggi è come e se convertire altri tipi in boolean. Ad esempio, posso considerare il valore <code>0</code> come falso, ed <code>1</code> come vero? Posso dire che una lista vuota è falsa, ed una lista non vuota è vera? Oppure che una stringa vuota è falsa, ed una stringa non vuota è vera? Questo in informatica viene detto &quot;Truthy and Falsy&quot; del linguaggio. Per sapere cosa è vero e falso in Python leggete <a href="https://docs.python.org/2.4/lib/truth.html">qui</a>, in C++ leggete <a href="https://www.geeksforgeeks.org/bool-data-type-in-c/">qui</a>.</p>
+</blockquote>
+<h3 id="liste-o-array"><a class="header" href="#liste-o-array">Liste (o array)</a></h3>
+<p>In quanto esseri umani, una delle cose fondamentali che facciamo continuamente è raggruppare insieme le intorno a noi che abbiano una qualche caratteristica in comune. Potrebbero essere un insieme di libri che si trovano sullo stesso scaffale, o tutta la frutta che abbiamo in casa, o gli articoli che si trovano nel magazzino. Questi insiemi sono rappresentati nei diversi linguaggi di programmazione in modo molto vario e con diversi nomi, ma quasi sempre sono un tipo base del linguaggio stesso.</p>
+<p>Nonostante le diversità, una caratteristica comune di tutti i linguaggi è che per definire e manipolare le liste si usano le parentesi quadre <code>[]</code>. Ad esempio, una lista di nomi si può definire come <code>names = [&quot;John&quot;,&quot;Mario&quot;,Akira&quot;]</code>, e per leggere un elemento di una lista si usa ad esempio <code>names[1]</code>.</p>
+<p>Attenzione: per convenzione, quasi tutti i linguaggi, inclusi C e Python, cominciano a contare da <code>0</code>, mentre noi nella vita quotidiana cominciamo da <code>1</code>. Nella pratica dell'informatica quindi, se una lista ha 3 elementi, il primo elemento della lista è l'elemento <code>0</code>, e l'ultimo è l'elemento <code>2</code>. Vedremo degli esempi in seguito.</p>
+<p>Una nota sulla nomenclatura: il tipo base di lista in C si chiama <em>array</em>, mentre in Python si chiama <em>list</em>. Tecnicamente tra liste e array ci sono delle differenze, ma quello che interessa a noi in questo momento è che in tutti i linguaggi esistono dei tipi base per rappresentare un insieme di oggetti con delle caratteristiche in comune.</p>
+<h2 id="approfondimento-tipi-statici-dinamici-deboli-e-forti"><a class="header" href="#approfondimento-tipi-statici-dinamici-deboli-e-forti">Approfondimento: tipi statici, dinamici, deboli e forti</a></h2>
+<p>La caratteristica che probabilmente differenzia maggiormente i vari linguaggi di programmazione tra di loro, è come il linguaggio gestisce i tipi. Ci sono due assi su cui ci si può muovere:</p>
+<ul>
+<li>static vs dynamic</li>
+<li>weak vs strong</li>
+</ul>
+<p>L'argomento è molto interessante ma anche altrettanto complesso, e richiede una buona conoscenza di come funziona la gestione della memoria, sia durante la compilazione che a runtime.</p>
+<p>Questo piccolo paragrafo è solo per mettervi un po' di curiosità e farvi capire che l'oceano è grande :) Ne parleremo in modo più approfondito l'anno prossimo :D</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
-<p class="img-container">
-<img class="right_side w20p" title="Python logo" alt="Python logo" src="01-base/assets/python-logo.png">
 <p>Il linguaggio che vedremo quest'anno è <a href="https://www.python.org/">Python</a>. Python è un linguaggio completamente open-source, il codice sorgente è reperibile sulla pagina <a href="https://github.com/python">ufficiale di GitHub</a> ed è rilasciato sotto la <a href="https://opensource.org/licenses/Python-2.0">Python License</a>.</p>
-<p class="img-container w20p">
-<img class="left_side" title="Guido van Rossum" alt="Python logo" src="01-base/assets/guido-van-rossum.jpg">
+<p style="margin:auto;width:500px">
+<img class="right_side w20p" title="Python logo" alt="Python logo" src="01-base/assets/python-logo.png" width=200>
+<img class="left_side" title="Guido van Rossum" alt="Python logo" src="01-base/assets/guido-van-rossum.jpg" width=200>
+</p>
 <p>Python è stato creato alla fine degli anni '80 dall'olandese <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a>, all'età di circa trent'anni. Come molti colleghi nell'ambito informatico, il suo operato è stato costantemente guidato da alcuni ideali, in particolare van Rossum credeva che la programmazione dovesse essere accessibile a tutti; le sue scelte per la sintassi del linguaggio hanno avuto sempre questa direzione. Nel 1999 sono state pubblicate delle linee guida che riassumevano questi concetti, conosciute come <a href="https://www.python.org/dev/peps/pep-0020/">&quot;The Zen of Python&quot;</a>.</p>
 <blockquote>
 <p>È anche possibile leggere queste linee guida direttamente dentro Python, scrivendo <code>import this</code> :)</p>
@@ -409,37 +480,6 @@ print(datetime.now())
 <pre><code>2019-11-29 21:57:27.676783
 </code></pre>
 <p>In generale, dopo il <code>from</code> ci va il nome di un file Python (senza estensione), e dopo <code>import</code> il nome di una variabile. In questo esempio, nella prima riga importiamo la variabile <code>datetime</code> da un file che si chiama con lo stesso nome. Il file <code>datetime</code> nel caso specifico non è creato da noi ma è una libreria di sistema, ma possiamo usare la stessa sintassi anche per i nostri file.</p>
-<h2 id="creare-una-classe"><a class="header" href="#creare-una-classe">Creare una classe</a></h2>
-<p>Per creare una classe, ad esempio la classe <code>Book</code>, si usa la seguente sintassi:</p>
-<pre><code class="language-py">class Book:
-   def __init__(self,title,author):
-      self.title = title
-      self.author = author
-</code></pre>
-<p>Vediamo bene cosa abbiamo fatto. La prima riga <code>class Book</code> dichiara la classe Book. Nella seconda riga stiamo usando la funzione di sistema <code>__init__(self,...)</code> che è il <em>costruttore</em> della classe, ovvero serve per costruire un nuovo <em>oggetto</em> della classe. Il primo parametro è sempre la keyword <code>self</code>, che identifica l'oggetto che stiamo andando a creare. I parametri successivi servono per inizializzare l'oggetto; nel nostro caso stiamo dicendo che il nostro libro deve sempre avere un autore ed un titolo.</p>
-<blockquote>
-<p>Si può vedere che <strong>init</strong> è una funzione di sistema perché il nome inizia e finisce con due trattini bassi. Questa è una convenzione specifica di Python.</p>
-</blockquote>
-<p>Per creare un oggetto di questa classe, usiamo la seguente sintassi:</p>
-<pre><code class="language-py">harry_potter = Book(&quot;Harry Potter ed il principe mezzosangue&quot;,&quot;J.K.Rowling&quot;)
-
-print(harry_potter.title)
-</code></pre>
-<p>Stiamo dichiarando una variabile chiamata <code>harry_potter</code> che è un oggetto della classe <code>Book</code>, inizializzata con i parametri che seguono. Fate attenzione: <em>non</em> bisogna specificare il parametro <code>self</code> quando si costruisce un oggetto, perché è una variabile che passa Python automaticamente alla funzione <code>__init__</code>.</p>
-<p>Mettendo insieme i pezzi, il codice finale per creare una classe ed un oggetto di questa classe sarà:</p>
-<pre><code class="language-py">class Book:
-   def __init__(self,title,author):
-      self.title = title
-      self.author = author
-   
-harry_potter = Book(&quot;Harry Potter ed il principe mezzosangue&quot;,&quot;J.K.Rowling&quot;)
-
-print(harry_potter.title)
-</code></pre>
-<p>L'output di questo snippet sarà:</p>
-<pre><code>Harry Potter ed il principe mezzosangue
-</code></pre>
-<p>Notate l'indentazione: si può capire che la variabile <code>harry_potter</code> viene dichiarata <em>fuori</em> dalla classe perché non ha indentazione.</p>
 <h3 id="librerie-aggiuntive"><a class="header" href="#librerie-aggiuntive">Librerie aggiuntive</a></h3>
 <p>Solo le librerie esterne più comuni, come <code>datetime</code>, sono già pre-installate in Python. Esistono infatti decine di migliaia di librerie, in continuo cambiamento, scaricarle tutte all'inizio sarebbe impossibile oltre che inutile! </p>
 <p>Fortunatamente esiste un semplice comando per scaricare ed installare nuove librerie. Aprire un terminale sul proprio computer (anche all'interno di Visual Studio Code), e scrivere:</p>
@@ -460,9 +500,13 @@ print(harry_potter.title)
 <li><a href="https://www.w3schools.com/python/python_json.asp">JSON</a></li>
 <li><a href="https://www.w3schools.com/python/python_pip.asp">PIP</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="installare-python"><a class="header" href="#installare-python">Installare Python</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="come-usare-python"><a class="header" href="#come-usare-python">Come usare Python</a></h1>
+<h2 id="usare-python-sul-server-della-scuola"><a class="header" href="#usare-python-sul-server-della-scuola">Usare Python sul server della scuola</a></h2>
+<p>Per gli studenti del Marconi, è possibile esercitarsi con Python senza installare nulla collegandosi direttamente al server della scuola.</p>
+<p>Collegatevi via SSH o con l'estensione Remote SSH al server ed usate il comando <code>python3</code> per eseguire il vostro codice Python.</p>
+<h2 id="usare-python-con-visual-studio-code-sul-proprio-computer"><a class="header" href="#usare-python-con-visual-studio-code-sul-proprio-computer">Usare Python con Visual Studio Code sul proprio computer</a></h2>
+<h3 id="1-installare-python"><a class="header" href="#1-installare-python">1. Installare Python</a></h3>
 <p>Per installare Python su Visual Studio Code, <a href="https://code.visualstudio.com/docs/python/python-tutorial">questa</a> è la guida ufficiale. Riepiloghiamo in breve qui i passaggi.</p>
-<h2 id="1-installare-python-sul-proprio-computer"><a class="header" href="#1-installare-python-sul-proprio-computer">1. Installare Python sul proprio computer</a></h2>
 <p>Andare sul sito <a href="https://www.python.org/downloads/">Python downloads</a> e scaricare l'ultima versione di Python premendo il bottoncione giallo grande con scritto &quot;Download Python&quot;.</p>
 <p>Quando lo avviate, vedrete una schermata di questo genere (la versione di Python potrebbe cambiare):</p>
 <p class="img-container centered">
@@ -470,7 +514,7 @@ print(harry_potter.title)
 </p>
 <p>Attenzione: selezionate l'ultima spunta in basso &quot;Add Python to PATH&quot; per poter usare i comandi Python anche da terminale.</p>
 <p>Seguite le istruzioni fino in fondo, e se necessario riavviate Visual Studio Code.</p>
-<h2 id="2-installare-lestensione-per-visual-studio-code"><a class="header" href="#2-installare-lestensione-per-visual-studio-code">2. Installare l'estensione per Visual Studio Code</a></h2>
+<h3 id="2-installare-lestensione-per-visual-studio-code"><a class="header" href="#2-installare-lestensione-per-visual-studio-code">2. Installare l'estensione per Visual Studio Code</a></h3>
 <p>Aprite Visual Studio Code ed installate l'estensione <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python di Microsoft</a>. </p>
 <p class="img-container centered">
 <img class="w80p" src="01-base/assets/python-extension.png" alt="Install Python extension">
@@ -479,190 +523,228 @@ print(harry_potter.title)
 <p class="img-container centered">
 <img class="w50p" src="01-base/assets/python-select-env.png" alt="Select Python Interpreter">
 </p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="creare-una-web-app-con-html5-e-python"><a class="header" href="#creare-una-web-app-con-html5-e-python">Creare una web app con HTML5 e Python</a></h1>
-<p>Vorrei collegarmi subito a quello che state studiando in TPSI quest'anno e creare una semplicissima applicazione con HTML e Python.</p>
-<h2 id="caso-di-studio"><a class="header" href="#caso-di-studio">Caso di studio</a></h2>
-<p>Immaginiamo di voler gestire una biblioteca scolastica. Da un lato ci serve del codice che gira da qualche parte nel cloud che gestisce la biblioteca, ed una pagina web per poter visualizzare la lista dei libri.</p>
-<p>Useremo Python per la prima parte (server), e HTML per la seconda parte (pagina web).</p>
-<svg height='140' width='100%'>
-<rect width='40%' height='100%' style='fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)'/>
-<text x="15%" y="50%" font-size="30" text-anchor="middle" fill="white">
-   HTML
-   </text>
-<rect width='40%' height='100%' style='fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)' x="60%"/>
-<text x="75%" y="50%" font-size="30" text-anchor="middle" fill="white">
-   Python
-   </text>
-</svg>
-<h2 id="python-1"><a class="header" href="#python-1">Python</a></h2>
-<p>Immaginiamo in maniera veramente minimale che il nostro catalogo sia formato solo dal seguente file Python, a cui diamo il nome di <code>library.py</code>.</p>
-<pre><code class="language-py"># library.py
-catalogue = [&quot;Harry Potter e il calice di fuoco&quot;, &quot;Il rosso e il nero&quot;, &quot;Il piccolo principe&quot;]
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gioco-del-tris"><a class="header" href="#gioco-del-tris">Gioco del Tris</a></h1>
+<p>Usiamo come caso di studio il gioco del tris (Tic Tac Toe, in inglese).</p>
+<h2 id="creazione-della-board-di-gioco"><a class="header" href="#creazione-della-board-di-gioco">Creazione della board di gioco</a></h2>
+<p>Il tabellone di gioco (board) del tris è formato da 3 righe e 3 colonne. Possiamo rappresentarlo con una matrie 3x3. </p>
+<p>In Python possiamo creare una matrice così:</p>
+<pre><code class="language-py">board = [
+          ['-','-','-'],
+          ['-','-','-'],
+          ['-','-','-']
+        ]
 </code></pre>
-<p>Più essenziale di così, si muore... eppure è un codice valido e funzionante.</p>
-<h3 id="web-server"><a class="header" href="#web-server">Web server</a></h3>
-<p>Per poter far comunicare Python con la pagina HTML però, serve qualcuno che faccia da intermediario. Non posso infatti chiamare del codice Python direttamente dalla pagina web! Le pagine web possono infatti interagire unicamente tramite dei link, o più precisamente degli URL, e noi ancora non abbiamo nulla del genere.</p>
-<p>L'intermediario che mette in comunicazione pagina web e codice sul server si chiama, in modo non troppo sorprendente, <strong>web server</strong>. Vediamo come si fa su Python.</p>
-<p>Esistono diverse librerie che forniscono un web server, noi in questo tutorial useremo <a href="https://www.palletsprojects.com/p/flask/">Flask</a>, che è estremamente leggero e semplice da usare, anche se magari non ha tutte le funzionalità che offrono altre librerie.</p>
-<p>Essendo una libreria esterna non di sistema, bisogna prima di tutto installarla. Come abbiamo visto, apriamo un terminale e scriviamo:</p>
-<pre><code>pip3 install flask
+<p>Come vedete, nella dichiarazione della variabile non è necessario specificare la dimensione, perché viene automaticamente inferito dal valore assegnato.</p>
+<p>Per stampare a schermo lo stato del tabellone, possiamo scrivere un doppio ciclo che va da uno a tre:</p>
+<pre><code class="language-py">    for i in range(3):
+        for j in range(3):
+            print(board[i][j], end=&quot; &quot;)
+        print()
 </code></pre>
-<p>et voilà! La libreria è installata e pronta all'uso.</p>
-<p>Ora creiamo un nuovo file nel nostro progetto, che chiamiamo <code>app.py</code>. Attenzione: il nome deve essere esattamente questo, altrimenti non funziona tutto automagicamente 🎩.</p>
-<pre><code class="language-py">from flask import Flask
-from library import catalogue
-import json
-
-app = Flask(&quot;marconi&quot;)
-
-@app.route(&quot;/&quot;)
-def data_book():
-    return json.dumps(
-        [book for book in catalogue]
-        )
-</code></pre>
-<p>Vediamo cosa abbiamo fatto. Abbiamo importato <code>Flask</code> dalla libreria <code>flask</code> e il nostro catalogo dal file <code>library</code> che abbiamo creato precedentemente. Importiamo anche la libreria di sistema <code>json</code>, che è utile per convertire le variabili Python nel formato stringa JSON (vedi dopo. </p>
-<p>La riga <code>app = Flask(&quot;marconi&quot;)</code> crea un web server e gli da il nome di &quot;marconi&quot; (possiamo mettere quello che preferiamo).</p>
-<p>La riga <code>@app.route(&quot;/&quot;)</code> è un'annotazione: sta ad indicare che la funzione successiva deve essere chiamata quando qualcuno prova ad accedere alla pagina web.</p>
-<p>La funzione <code>data_book()</code> viene quindi chiamata quando interroghiamo il web server. Questa funzione ritorna il nostro catalogo in formato JSON. È formata dalle seguenti parti:</p>
-<ul>
-<li><code>json.dumps()</code> è una funzione che converte il parametro che gli viene passato in formato JSON</li>
-<li><code>[book for book in catalogue]</code> è una sintassi tipica di Python, che crea una nuova lista con all'interno tutti gli elementi di <code>catalogue</code>.</li>
-</ul>
-<p>Nel dettaglio, stiamo dicendo che per ogni elemento <code>book</code> all'interno della lista <code>catalogue</code>, vogliamo creare un elemento con esattamente lo stesso valore di <code>book</code>.</p>
-<p>La precedente forma compatta è equivalente al seguente codice:</p>
-<pre><code class="language-py">mylist = []
-for book in catalogue:
-    mylist.append(book)
-</code></pre>
-<p>Come si può vedere, nella forma compatta non abbiamo bisogno di dichiarare la variabile di appoggio <code>mylist</code>.</p>
-<p>Attenzione: se book <strong>non</strong> fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo <code>Book</code> in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà <code>__dict__</code>, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:</p>
-<pre><code class="language-py">def data_book():
-    return json.dumps(
-        [book.__dict__ for book in catalogue]
-        )
-</code></pre>
-<h3 id="il-formato-json"><a class="header" href="#il-formato-json">Il formato JSON</a></h3>
-<p>Fate attenzione: <a href="https://www.json.org/">JSON</a> è un formato per scambiarsi i dati tra macchine (machine-to-machine), ma che può essere letto e scritto abbastanza facilmente anche dagli esseri umani. JSON quindi non è un codice, o un'applicazione, o una libreria, ma è un formato di stringa che permette alle macchine di comunicare fra loro in modo comprensibile. Volendo fare un paragone con la lingua umana, è come la sintassi della frase: per capirsi le persone devono mettere nel corretto ordine soggetto, verbo e complementi, altrimenti non ci si capisce.</p>
-<p>JSON usa le seguenti convenzioni:</p>
-<ul>
-<li>le parentesi graffe per definire gli oggetti</li>
-<li>le parentesi quadre per le liste</li>
-<li>la virgola per separare gli elementi di una lista</li>
-<li>i due punti per definire le proprietà di un oggetto</li>
-</ul>
-<p>Ad esempio, per definire una lista di due oggetti, ognuno con le proprietà <code>title</code> e <code>author</code>, scriveremo:</p>
-<pre><code class="language-json">[
-    {
-        &quot;title&quot;:&quot;Harry Potter e il calice di fuoco&quot;,
-        &quot;author&quot;:&quot;J.K.Rowling&quot;
-    },
-    {
-        &quot;title&quot;:&quot;Il rosso e il nero&quot;,
-        &quot;author&quot;:&quot;Stendhal&quot;
-    },
-    {
-        &quot;title&quot;:&quot;Il piccolo principe&quot;,
-        &quot;author&quot;:&quot;Antoine de Saint-Exupéry&quot;
-    }
-]
-</code></pre>
-<p>Per generare o validare stringhe JSON, è possibile usare servizi online come ad esempio <a href="https://jsonlint.com/?json=%5B%7B%22title%22:%22Harry%20Potter%20e%20il%20calice%20di%20fuoco%22,%22author%22:%22J.K.Rowling%22%7D,%7B%22title%22:%22Il%20rosso%20e%20il%20nero%22,%22author%22:%22Stendhal%22%7D,%7B%22title%22:%22Il%20piccolo%20principe%22,%22author%22:%22Antoine%20de%20Saint-Exup%C3%A9ry%22%7D%5D">JSON lint</a>.</p>
-<h3 id="lanciare-il-web-server"><a class="header" href="#lanciare-il-web-server">Lanciare il web server</a></h3>
-<p>Per lanciare il web server, aprite un terminale nella cartella del vostro progetto e scrivete:</p>
-<pre><code>python3 -m flask run
-</code></pre>
-<p>Se tutto va bene, vi dovrebbe comparire la scritta <code>Running on http://127.0.0.1:5000/</code>. Ecco quindi il link che ci serviva per far comunicare la pagina web con la nostra applicazione!</p>
-<h2 id="html"><a class="header" href="#html">HTML</a></h2>
-<p>Ora creiamo un nuovo file, sempre nel nostro progetto, che chiamiamo <code>index.html</code>.</p>
-<pre><code class="language-hmtl">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;it&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Biblioteca scolastica&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;ul&gt;
-    &lt;/ul&gt;    
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>È una semplice pagina che visualizza una lista, in questo momento vuota.</p>
-<p>Come facciamo a riempire la lista con i dati presi dal web server? Ci serve un po' di JavaScript.</p>
-<h3 id="javascript"><a class="header" href="#javascript">JavaScript</a></h3>
-<p>Subito dopo il tag <code>&lt;/body&gt;</code> e subito prima del tag <code>&lt;/html&gt;</code>, nella penultima riga insomma, aggiungiamo il codice che ci serve. </p>
-<p>Prima di tutto scarichiamo ed importiamo una libreria JavaScript che ci semplificherà molto la vita e chi si chiama <a href="https://jquery.com">JQuery</a>. Potete scaricare il file direttamente cliccando con il tasto destro <a href="https://code.jquery.com/jquery-3.4.1.min.js">qui</a> e scegliendo &quot;Salva link come&quot; o qualcosa di simile. Salvate il file sempre nella cartella di progetto.</p>
-<p>Quindi aggiungiamo la seguente riga:</p>
-<pre><code class="language-html">&lt;script src=&quot;jquery-3.4.1.min.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<p>OK, abbiamo importato la libreria. Ora dobbiamo prendere i dati dal web server. Lo facciamo scrivendo subito dopo un nostro pezzo di codice all'interno del tag <code>&lt;script&gt;</code>.</p>
-<pre><code class="language-html">&lt;script&gt;
-    // Prende i dati come JSON dall'URL
-    // quando ha finito di prendere i dati, chiama la funzione &quot;makeList&quot;
-    $.getJSON(&quot;http://127.0.0.1:5000/&quot;).done(makeList);
-&lt;/script&gt;
-</code></pre>
-<p>Attenzione a quello che succede. Il codice dentro il tag script è JavaScript. Il simbolo del dollaro (<code>$</code>) indica che stiamo usando la libreria JQuery che abbiamo importato subito prima. Quando i dati sono stati completamente ricevuti (ci potrebbe volere del tempo, se i libri fossero molti), viene chiamata la funzione <code>makeList</code>, che dobbiamo ancora definire.</p>
-<p>Subito dopo la riga precedente, creiamo ora la funzione <code>makeList</code>:</p>
-<pre><code class="language-js">function makeList(jsonBooks) {
-    for (book of jsonBooks) {
-        let newItem = `&lt;li&gt;${book}&lt;/li&gt;`;
-        $(&quot;ul&quot;).append(newItem);
-    }
-}
-</code></pre>
-<p>Vediamo cosa abbiamo fatto. Nella prima riga abbiamo creato una funzione con la keyword <code>function</code>; la funzione prende in input un parametro che gli viene passato da JQuery quando i dati sono stati ricevuti.</p>
-<p>Subito dopo c'è un ciclo <code>for</code>, molto simile a quello del Python, con qualche differenza:</p>
-<ul>
-<li>JavaScript usa le parentesi dopo la keyword <code>for</code></li>
-<li>JavaScript usa la keyword <code>of</code> invece che <code>in</code> per iterare all'interno di una lista</li>
-<li>JavaScript usa le parentesi graffe per contenere il corpo del <code>for</code></li>
-</ul>
-<p>All'interno del <code>for</code>, nella prima riga creiamo il nuovo item che vogliamo andare ad aggiungere alla lista.</p>
-<p>Nella riga successiva, c'è un istruzione che dice:</p>
-<ul>
-<li>usando JQuery (<code>$</code>), seleziona la lista non ordinata (<code>ul</code>)</li>
-<li>all'interno della lista, aggiungi alla fine (<code>append</code>) il nuovo elemento appena creato</li>
-</ul>
-<p>Il codice finale di tutta la pagina verrà come segue:</p>
-<pre><code class="language-hmtl">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;it&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Biblioteca scolastica&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;ul&gt;
-    &lt;/ul&gt;    
-&lt;/body&gt;
-&lt;script src=&quot;jquery-3.4.1.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-    // Prende i dati come JSON dall'URL
-    // quando ha finito di prendere i dati, chiama la funzione &quot;makeList&quot;
-    $.getJSON(&quot;http://127.0.0.1:5000/&quot;).done(makeList);
-    function makeList(jsonBooks) {
-    for (book of jsonBooks) {
-        let newItem = `&lt;li&gt;${book}&lt;/li&gt;`;
-        $(&quot;ul&quot;).append(newItem);
-    }
-}
-&lt;/script&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="go-live"><a class="header" href="#go-live">Go Live</a></h3>
-<p>Su Visual Studio Code (detto anche VSCode per brevità), potete lanciare questa pagina con &quot;Go Live&quot; nella barra in basso, lo trovate sulla destra. Se non lo vedete, assicuratevi di aver installato l'estensione &quot;Live Server&quot; su VSCode.</p>
-<p>Al primo lancio vedrete che non succede niente. Per controllare cosa è successo, aprite la console di debug premendo con il tasto destro in qualsiasi punto della pagina web nel browser e cliccando su &quot;Analizza elemento&quot; o &quot;Ispeziona elemento&quot;, quindi nel pannello che si apre, selezionate la tab console.</p>
-<p>Se avete fatto tutto correttamente, dovrebbe comparirvi un messaggio di errore del tipo:</p>
-<pre><code>Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://127.0.0.1:5000/. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
-</code></pre>
-<p>È normale, perché state usando due web-server diversi per la stessa pagina, questa è una cosa potenzialmente pericolosa ed il browser vi impedisce di farlo. Per aggirare la limitazione, il modo più semplice è installare queste estensioni per <a href="https://addons.mozilla.org/it/firefox/addon/cors-everywhere/">Firefox</a> o per <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf">Chrome</a>. In questo modo vi caricherà la pagina correttamente anche in questo caso.</p>
+<p>La funzione <code>range(n)</code> permette di iterare tra ed 0 e n-1; in questo caso quindi <code>i</code> assumerà i valori da 0 a 2.</p>
 <blockquote>
-<p>Ovviamente non è questo il modo più corretto di procedere. Per fare le cose per bene, bisogna spostare tutto su Flask, anche le pagine HTML. È un'operazione abbastanza semplice ma la vedremo dopo che vi sarete impratichiti con questa parte.</p>
+<p><code>range(n)</code> può essere usato per iterare in molti modi, vedi <a href="https://docs.python.org/3/library/stdtypes.html#ranges">qui</a>.</p>
 </blockquote>
+<p>Mettiamo questo doppio ciclo all'interno di una funzione, in modo da poterlo richiamare quando ci è necessario.</p>
+<pre><code class="language-py"># definisco la funzione
+def mostra_tabellone():
+    for i in range(3):
+        for j in range(3):
+            print(board[i][j], end=&quot; &quot;)
+        print()
+
+# richiamo di funzione
+mostra_tabellone()
+</code></pre>
+<p>Notare come tutto quello che appartiene alla funzione è indentato, mentre ciò che non ne fa parte non ha nessuna indentazione.</p>
+<p>Ricordiamo anche che è buona norma che le funzioni comincino con un verbo, in quanto rappresentano delle azioni.</p>
+<h2 id="richiesta-di-un-valore-in-input"><a class="header" href="#richiesta-di-un-valore-in-input">Richiesta di un valore in input</a></h2>
+<p>Per chiedere un valore in modo interattivo in input all'utente, si può usare la funzione <code>input()</code>.</p>
+<p>Ad esempio per chiedere la riga in cui inserire il proprio segno nel tabellone, potremmo scrivere:</p>
+<pre><code class="language-py">r = input(&quot;Inserisci la riga (valori da 0 a 2): &quot;)
+</code></pre>
+<p>Attenzione però: la funzione <code>input()</code> ritorna una stringa, mentre noi vorremmo avere un intero. Per convertire da stringa ad intero, possiamo usare la funzione <code>int()</code>:</p>
+<pre><code class="language-py">r = int(input(&quot;Inserisci la riga (valori da 0 a 2): &quot;))
+</code></pre>
+<p>Analogamente per la colonna. Complessivamente:</p>
+<pre><code class="language-py">r = int(input(&quot;Inserisci la riga (valori da 0 a 2): &quot;))
+c = int(input(&quot;Inserisici la colonna (valori da 0 a 2): &quot;))
+</code></pre>
+<h2 id="inserire-i-simboli-nel-tabellone"><a class="header" href="#inserire-i-simboli-nel-tabellone">Inserire i simboli nel tabellone</a></h2>
+<p>Per inserire il simbolo di un giocatore è sufficiente assegnare il carattere nel tabellone:</p>
+<pre><code class="language-py">board[r][c] = symbol
+</code></pre>
+<p>Ora però vogliamo ripetere questa operazione finché il tabellone non è pieno oppure finché qualcuno non ha vinto. Creiamo un ciclo che al massimo può essere eseguito 9 volte. Il </p>
+<pre><code class="language-py">for idx in range(9):
+    mostra_tabellone()
+
+    r = int(input(&quot;Inserisci la riga (valori da 0 a 2): &quot;))
+    c = int(input(&quot;Inserisici la colonna (valori da 0 a 2): &quot;))
+    #  aggiungere anche condizione che r,c devono essere compresi tra 0 e 2
+    if board[r][c]=='-':
+        board[r][c] = 'O'
+</code></pre>
+<p>In questo modo però stiamo assegnando sempre il simbolo 'O' , che ovviamente non è quello che vogliamo. Vogliamo alternare i simboli 'X' e 'O'. Potremmo fare che per <code>idx</code> pari mettiamo un simbolo, e per i dispari l'altro. Per fare questo possiamo creare una lista con i due simboli, ed assegnare il simbolo in base all'indice, come di seguito.</p>
+<pre><code class="language-py">symList = ['X','O']
+
+for idx in range(9):
+    
+    symbol = symList[idx%2]
+
+    mostra_tabellone()
+
+    print(&quot;Il tuo simbolo è: &quot;+symbol)
+
+    r = int(input(&quot;Inserisci la riga (valori da 0 a 2): &quot;))
+    c = int(input(&quot;Inserisici la colonna (valori da 0 a 2): &quot;))
+    #  aggiungere anche condizione che r,c devono essere compresi tra 0 e 2
+    if board[r][c]=='-':
+        board[r][c] = symbol
+</code></pre>
+<p>Con questa soluzione per il simbolo, riusciamo ad evitare di inserire un if. In generale, è una buona regola di programmazione ridurre il numero di condizioni, sia perché di solito facilita la lettura, sia perché il codice è più facile da testare. Ovviamente è solo un suggerimento da usare in base al proprio giudizio.</p>
+<h2 id="controllo-dei-valori-di-ingresso"><a class="header" href="#controllo-dei-valori-di-ingresso">Controllo dei valori di ingresso</a></h2>
+<p>È importante controllare sempre i valori di ingresso forniti dall'utente, per rendere il codice più robusto.</p>
+<p>Per fare questo, ci serve un ciclo che chiede all'infinito i valori di input finché questi non sono corretti.</p>
+<pre><code class="language-py"># while True esegue un ciclo infinito
+while True:
+        r = int(input(&quot;Inserisci la riga (valori da 0 a 2): &quot;))
+        c = int(input(&quot;Inserisici la colonna (valori da 0 a 2): &quot;))
+        #  aggiungere anche condizione che r,c devono essere compresi tra 0 e 2
+        if board[r][c]=='-':
+            board[r][c] = symbol
+            # break esce dal ciclo
+            break
+</code></pre>
+<h2 id="controllo-della-condizione-di-vittoria"><a class="header" href="#controllo-della-condizione-di-vittoria">Controllo della condizione di vittoria</a></h2>
+<p>Creiamo una funzione che controlla se qualcuno ha vinto.</p>
+<p>Vogliamo creare una funzione che ritorni <code>False</code> nel caso in cui nessuno ha vinto, altrimenti il simbolo del vincitore.</p>
+<pre><code class="language-py">def win(board):
+    # ripete il controllo per ogni giocatore
+    for sym in symList:
+        # controlla se ci sono 3 simboli uguali in una riga
+        for i in range(3):
+            if board[i].count(sym)==3:
+                return sym
+
+        # controlla se ci sono 3 simboli uguali in una colonna
+        for i in range(3):
+            if (board[0][i]==sym and 
+               board[1][i]==sym and
+               board[2][i]==sym):
+                return sym
+
+        # controlla le due diagonali
+        if (board[0][0]==sym and
+           board[1][1]==sym and
+           board[2][2]==sym):
+            return sym
+        if (board[0][2]==sym and
+           board[1][1]==sym and
+           board[2][0]==sym):
+            return sym
+    
+    return False
+</code></pre>
+<h2 id="codice-finale"><a class="header" href="#codice-finale">Codice finale</a></h2>
+<pre><code class="language-py">#!/usr/bin/env python3
+
+print(&quot;Gioco del tic tac toe&quot;)
+
+board = [
+          ['-','-','-'],
+          ['-','-','-'],
+          ['-','-','-']
+        ]
+
+symList = ['X','O']
+
+def mostra_tabellone():
+    for i in range(3):
+        for j in range(3):
+            print(board[i][j], end=&quot; &quot;)
+        print()
+
+def win(board):
+    for sym in symList:
+
+        #check rows
+        for i in range(3):
+            if board[i].count(sym)==3:
+                return sym
+
+        #check columns
+        for i in range(3):
+            if (board[0][i]==sym and 
+               board[1][i]==sym and
+               board[2][i]==sym):
+                return sym
+        # check diagonals
+        if (board[0][0]==sym and
+           board[1][1]==sym and
+           board[2][2]==sym):
+            return sym
+        if (board[0][2]==sym and
+           board[1][1]==sym and
+           board[2][0]==sym):
+            return sym
+    
+    return False
+
+
+winner=False
+
+for idx in range(9):
+    
+    symbol = symList[idx%2]
+
+    mostra_tabellone()
+
+    print(&quot;Il tuo simbolo è: &quot;+symbol)
+
+    while True:
+        r = int(input(&quot;Inserisci la riga (valori da 0 a 2): &quot;))
+        c = int(input(&quot;Inserisici la colonna (valori da 0 a 2): &quot;))
+        #  aggiungere anche condizione che r,c devono essere compresi tra 0 e 2
+        if board[r][c]=='-':
+            board[r][c] = symbol
+            break
+    winner=win()
+    if winner:
+        break
+        
+
+mostra_tabellone()
+print(&quot;The winner is... &quot;+winner+&quot;!&quot;)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="test-del-gioco"><a class="header" href="#test-del-gioco">Test del gioco</a></h1>
+<p>Prima di andare avanti, è bene creare una struttura di test che ci permetta di assicurarci che, qualsiasi modifica faremo in futuro al nostro codice, le funzionalità base continueranno sempre ad essere corrette.</p>
+<p>I test sono uno degli strumenti più importanti nella cassetta degli sviluppatori per poter scrivere del buon codice nel tempo.</p>
+<h2 id="creazione-del-file-di-test"><a class="header" href="#creazione-del-file-di-test">Creazione del file di test</a></h2>
+<p>Creiamo un nuovo file chiamato <code>test_tris.py</code>. In generale il file di test ha lo stesso nome del file che deve testare, con il prefisso <code>test_</code>.</p>
+<p>Come prima riga, importiamo la funzione che vogliamo testare.</p>
+<pre><code class="language-py">from tris import win
+</code></pre>
+<p>Ora creiamo una funzione di test. Ogni funzione deve avere al suo interno l'istruzione <code>assert</code> con la condizione che si vuole testare.</p>
+<pre><code class="language-py">def test_win_1():
+    board = [
+              ['X','X','X'],
+              ['-','O','O'],
+              ['-','-','-']
+            ]
+    assert win(board) == 'X'
+</code></pre>
+<p>Alla fine della funzione di test dobbiamo ricordarci di chiamare il test.</p>
+<pre><code class="language-py">test_win_1()
+</code></pre>
+<h2 id="funzioni-di-test"><a class="header" href="#funzioni-di-test">Funzioni di test</a></h2>
+<p>&quot;Un programmatore entra in un pub ed ordina una birra, 2 birre, 10 birre, 1000 birre, 0 birre, -1 birra, asdasdqwe birre.&quot;</p>
+<p>Questa &quot;barzelletta&quot; nerd ricorda come dovrebbero disegnarsi i test. Bisogna testare tutte le condizioni &quot;normali&quot;, che ci si aspetta, e cercare di immaginarsi anche tutte le cose che potrebbero andare storte.</p>
+<p>Nel nostro caso dobbiamo prevedere:</p>
+<ul>
+<li>8 test per la vittoria di 'X' (3 righe, 3 colonne, 2 diagonali)</li>
+<li>8 test per la vittoria di 'O'</li>
+<li>un certo numero di test per le situazioni di non vittoria (il gioco continua)</li>
+</ul>
 
                     </main>
 
@@ -678,6 +760,20 @@ for book in catalogue:
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>

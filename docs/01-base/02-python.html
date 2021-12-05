@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="../01-base/index.html"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-base/02-python.html" class="active"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">3.2.</strong> Installazione di Python</a></li><li class="chapter-item expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">3.3.</strong> Web app</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="../01-base/index.html"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">3.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="../01-base/02-python.html" class="active"><strong aria-hidden="true">3.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">3.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="../01-base/03-tris.html"><strong aria-hidden="true">3.4.</strong> Gioco del Tris</a></li><li class="chapter-item expanded "><a href="../01-base/04-test.html"><strong aria-hidden="true">3.5.</strong> Test del gioco</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -139,11 +139,11 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="python"><a class="header" href="#python">Python</a></h1>
-<p class="img-container">
-<img class="right_side w20p" title="Python logo" alt="Python logo" src="assets/python-logo.png">
 <p>Il linguaggio che vedremo quest'anno è <a href="https://www.python.org/">Python</a>. Python è un linguaggio completamente open-source, il codice sorgente è reperibile sulla pagina <a href="https://github.com/python">ufficiale di GitHub</a> ed è rilasciato sotto la <a href="https://opensource.org/licenses/Python-2.0">Python License</a>.</p>
-<p class="img-container w20p">
-<img class="left_side" title="Guido van Rossum" alt="Python logo" src="assets/guido-van-rossum.jpg">
+<p style="margin:auto;width:500px">
+<img class="right_side w20p" title="Python logo" alt="Python logo" src="assets/python-logo.png" width=200>
+<img class="left_side" title="Guido van Rossum" alt="Python logo" src="assets/guido-van-rossum.jpg" width=200>
+</p>
 <p>Python è stato creato alla fine degli anni '80 dall'olandese <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a>, all'età di circa trent'anni. Come molti colleghi nell'ambito informatico, il suo operato è stato costantemente guidato da alcuni ideali, in particolare van Rossum credeva che la programmazione dovesse essere accessibile a tutti; le sue scelte per la sintassi del linguaggio hanno avuto sempre questa direzione. Nel 1999 sono state pubblicate delle linee guida che riassumevano questi concetti, conosciute come <a href="https://www.python.org/dev/peps/pep-0020/">&quot;The Zen of Python&quot;</a>.</p>
 <blockquote>
 <p>È anche possibile leggere queste linee guida direttamente dentro Python, scrivendo <code>import this</code> :)</p>
@@ -178,37 +178,6 @@ print(datetime.now())
 <pre><code>2019-11-29 21:57:27.676783
 </code></pre>
 <p>In generale, dopo il <code>from</code> ci va il nome di un file Python (senza estensione), e dopo <code>import</code> il nome di una variabile. In questo esempio, nella prima riga importiamo la variabile <code>datetime</code> da un file che si chiama con lo stesso nome. Il file <code>datetime</code> nel caso specifico non è creato da noi ma è una libreria di sistema, ma possiamo usare la stessa sintassi anche per i nostri file.</p>
-<h2 id="creare-una-classe"><a class="header" href="#creare-una-classe">Creare una classe</a></h2>
-<p>Per creare una classe, ad esempio la classe <code>Book</code>, si usa la seguente sintassi:</p>
-<pre><code class="language-py">class Book:
-   def __init__(self,title,author):
-      self.title = title
-      self.author = author
-</code></pre>
-<p>Vediamo bene cosa abbiamo fatto. La prima riga <code>class Book</code> dichiara la classe Book. Nella seconda riga stiamo usando la funzione di sistema <code>__init__(self,...)</code> che è il <em>costruttore</em> della classe, ovvero serve per costruire un nuovo <em>oggetto</em> della classe. Il primo parametro è sempre la keyword <code>self</code>, che identifica l'oggetto che stiamo andando a creare. I parametri successivi servono per inizializzare l'oggetto; nel nostro caso stiamo dicendo che il nostro libro deve sempre avere un autore ed un titolo.</p>
-<blockquote>
-<p>Si può vedere che <strong>init</strong> è una funzione di sistema perché il nome inizia e finisce con due trattini bassi. Questa è una convenzione specifica di Python.</p>
-</blockquote>
-<p>Per creare un oggetto di questa classe, usiamo la seguente sintassi:</p>
-<pre><code class="language-py">harry_potter = Book(&quot;Harry Potter ed il principe mezzosangue&quot;,&quot;J.K.Rowling&quot;)
-
-print(harry_potter.title)
-</code></pre>
-<p>Stiamo dichiarando una variabile chiamata <code>harry_potter</code> che è un oggetto della classe <code>Book</code>, inizializzata con i parametri che seguono. Fate attenzione: <em>non</em> bisogna specificare il parametro <code>self</code> quando si costruisce un oggetto, perché è una variabile che passa Python automaticamente alla funzione <code>__init__</code>.</p>
-<p>Mettendo insieme i pezzi, il codice finale per creare una classe ed un oggetto di questa classe sarà:</p>
-<pre><code class="language-py">class Book:
-   def __init__(self,title,author):
-      self.title = title
-      self.author = author
-   
-harry_potter = Book(&quot;Harry Potter ed il principe mezzosangue&quot;,&quot;J.K.Rowling&quot;)
-
-print(harry_potter.title)
-</code></pre>
-<p>L'output di questo snippet sarà:</p>
-<pre><code>Harry Potter ed il principe mezzosangue
-</code></pre>
-<p>Notate l'indentazione: si può capire che la variabile <code>harry_potter</code> viene dichiarata <em>fuori</em> dalla classe perché non ha indentazione.</p>
 <h3 id="librerie-aggiuntive"><a class="header" href="#librerie-aggiuntive">Librerie aggiuntive</a></h3>
 <p>Solo le librerie esterne più comuni, come <code>datetime</code>, sono già pre-installate in Python. Esistono infatti decine di migliaia di librerie, in continuo cambiamento, scaricarle tutte all'inizio sarebbe impossibile oltre che inutile! </p>
 <p>Fortunatamente esiste un semplice comando per scaricare ed installare nuove librerie. Aprire un terminale sul proprio computer (anche all'interno di Visual Studio Code), e scrivere:</p>
@@ -234,7 +203,7 @@ print(harry_potter.title)
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../01-base/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../01-base/01-types.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                             <a rel="next" href="../01-base/02-1-python-install.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
@@ -246,7 +215,7 @@ print(harry_potter.title)
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../01-base/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../01-base/01-types.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     <a rel="next" href="../01-base/02-1-python-install.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
@@ -256,6 +225,20 @@ print(harry_potter.title)
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>

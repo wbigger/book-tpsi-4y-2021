@@ -1,6 +1,5 @@
-# Creare una web app con HTML5 e Python
-Vorrei collegarmi subito a quello che state studiando in TPSI quest'anno e creare una semplicissima applicazione con HTML e Python.
-
+# Web App
+Trasformiamo il gioco del tris in una web application con Python.
 ## Caso di studio
 Immaginiamo di voler gestire una biblioteca scolastica. Da un lato ci serve del codice che gira da qualche parte nel cloud che gestisce la biblioteca, ed una pagina web per poter visualizzare la lista dei libri.
 

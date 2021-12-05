@@ -1,12 +1,13 @@
 # Python
 
-<p class="img-container">
-<img class="right_side w20p" title="Python logo" alt="Python logo" src="assets/python-logo.png">
+
 
 Il linguaggio che vedremo quest'anno è [Python](https://www.python.org/). Python è un linguaggio completamente open-source, il codice sorgente è reperibile sulla pagina [ufficiale di GitHub](https://github.com/python) ed è rilasciato sotto la [Python License](https://opensource.org/licenses/Python-2.0).
 
-<p class="img-container w20p">
-<img class="left_side" title="Guido van Rossum" alt="Python logo" src="assets/guido-van-rossum.jpg">
+<p style="margin:auto;width:500px">
+<img class="right_side w20p" title="Python logo" alt="Python logo" src="assets/python-logo.png" width=200>
+<img class="left_side" title="Guido van Rossum" alt="Python logo" src="assets/guido-van-rossum.jpg" width=200>
+</p>
 
 Python è stato creato alla fine degli anni '80 dall'olandese [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum), all'età di circa trent'anni. Come molti colleghi nell'ambito informatico, il suo operato è stato costantemente guidato da alcuni ideali, in particolare van Rossum credeva che la programmazione dovesse essere accessibile a tutti; le sue scelte per la sintassi del linguaggio hanno avuto sempre questa direzione. Nel 1999 sono state pubblicate delle linee guida che riassumevano questi concetti, conosciute come ["The Zen of Python"](https://www.python.org/dev/peps/pep-0020/).
 
@@ -58,50 +59,6 @@ che avrà come output il giorno e l'ora attuali, ad esempio:
 ```
 
 In generale, dopo il `from` ci va il nome di un file Python (senza estensione), e dopo `import` il nome di una variabile. In questo esempio, nella prima riga importiamo la variabile `datetime` da un file che si chiama con lo stesso nome. Il file `datetime` nel caso specifico non è creato da noi ma è una libreria di sistema, ma possiamo usare la stessa sintassi anche per i nostri file.
-
-## Creare una classe
-Per creare una classe, ad esempio la classe `Book`, si usa la seguente sintassi:
-```py
-class Book:
-   def __init__(self,title,author):
-      self.title = title
-      self.author = author
-```
-
-Vediamo bene cosa abbiamo fatto. La prima riga `class Book` dichiara la classe Book. Nella seconda riga stiamo usando la funzione di sistema `__init__(self,...)` che è il _costruttore_ della classe, ovvero serve per costruire un nuovo _oggetto_ della classe. Il primo parametro è sempre la keyword `self`, che identifica l'oggetto che stiamo andando a creare. I parametri successivi servono per inizializzare l'oggetto; nel nostro caso stiamo dicendo che il nostro libro deve sempre avere un autore ed un titolo.
-
-> Si può vedere che __init__ è una funzione di sistema perché il nome inizia e finisce con due trattini bassi. Questa è una convenzione specifica di Python.
-
-Per creare un oggetto di questa classe, usiamo la seguente sintassi:
-
-```py
-harry_potter = Book("Harry Potter ed il principe mezzosangue","J.K.Rowling")
-
-print(harry_potter.title)
-```
-
-Stiamo dichiarando una variabile chiamata `harry_potter` che è un oggetto della classe `Book`, inizializzata con i parametri che seguono. Fate attenzione: _non_ bisogna specificare il parametro `self` quando si costruisce un oggetto, perché è una variabile che passa Python automaticamente alla funzione `__init__`.
-
-Mettendo insieme i pezzi, il codice finale per creare una classe ed un oggetto di questa classe sarà:
-
-```py
-class Book:
-   def __init__(self,title,author):
-      self.title = title
-      self.author = author
-   
-harry_potter = Book("Harry Potter ed il principe mezzosangue","J.K.Rowling")
-
-print(harry_potter.title)
-```
-
-L'output di questo snippet sarà:
-
-```
-Harry Potter ed il principe mezzosangue
-```
-
-Notate l'indentazione: si può capire che la variabile `harry_potter` viene dichiarata _fuori_ dalla classe perché non ha indentazione.
 
 ### Librerie aggiuntive
 Solo le librerie esterne più comuni, come `datetime`, sono già pre-installate in Python. Esistono infatti decine di migliaia di librerie, in continuo cambiamento, scaricarle tutte all'inizio sarebbe impossibile oltre che inutile! 

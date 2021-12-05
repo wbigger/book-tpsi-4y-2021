@@ -77,7 +77,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="01-base/index.html"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">3.2.</strong> Installazione di Python</a></li><li class="chapter-item expanded "><a href="01-base/03-webapp.html"><strong aria-hidden="true">3.3.</strong> Web app</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="01-base/index.html"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-base/01-types.html"><strong aria-hidden="true">3.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">3.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">3.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="01-base/03-tris.html"><strong aria-hidden="true">3.4.</strong> Gioco del Tris</a></li><li class="chapter-item expanded "><a href="01-base/04-test.html"><strong aria-hidden="true">3.5.</strong> Test del gioco</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -156,6 +156,20 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
