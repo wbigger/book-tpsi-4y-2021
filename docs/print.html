@@ -526,7 +526,7 @@ print(datetime.now())
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gioco-del-tris"><a class="header" href="#gioco-del-tris">Gioco del Tris</a></h1>
 <p>Usiamo come caso di studio il gioco del tris (Tic Tac Toe, in inglese).</p>
 <h2 id="creazione-della-board-di-gioco"><a class="header" href="#creazione-della-board-di-gioco">Creazione della board di gioco</a></h2>
-<p>Il tabellone di gioco (board) del tris è formato da 3 righe e 3 colonne. Possiamo rappresentarlo con una matrie 3x3. </p>
+<p>Il tabellone di gioco (board) del tris è formato da 3 righe e 3 colonne. Possiamo rappresentarlo con una matrice 3x3. </p>
 <p>In Python possiamo creare una matrice così:</p>
 <pre><code class="language-py">board = [
           ['-','-','-'],
@@ -534,16 +534,16 @@ print(datetime.now())
           ['-','-','-']
         ]
 </code></pre>
-<p>Come vedete, nella dichiarazione della variabile non è necessario specificare la dimensione, perché viene automaticamente inferito dal valore assegnato.</p>
+<p>Come vedete, nella dichiarazione della variabile non è necessario specificare la dimensione, perché viene automaticamente inferita dal valore assegnato.</p>
 <p>Per stampare a schermo lo stato del tabellone, possiamo scrivere un doppio ciclo che va da uno a tre:</p>
 <pre><code class="language-py">    for i in range(3):
         for j in range(3):
             print(board[i][j], end=&quot; &quot;)
         print()
 </code></pre>
-<p>La funzione <code>range(n)</code> permette di iterare tra ed 0 e n-1; in questo caso quindi <code>i</code> assumerà i valori da 0 a 2.</p>
+<p>La funzione <code>range(n)</code> permette di iterare tra ed 0 e n-1; in questo caso quindi <code>i</code> e <code>j</code> assumeranno i valori da 0 a 2.</p>
 <blockquote>
-<p><code>range(n)</code> può essere usato per iterare in molti modi, vedi <a href="https://docs.python.org/3/library/stdtypes.html#ranges">qui</a>.</p>
+<p><code>range(n)</code> può essere usato per iterare in molti altri modi, vedi <a href="https://docs.python.org/3/library/stdtypes.html#ranges">qui</a> per maggiori dettagli.</p>
 </blockquote>
 <p>Mettiamo questo doppio ciclo all'interno di una funzione, in modo da poterlo richiamare quando ci è necessario.</p>
 <pre><code class="language-py"># definisco la funzione
@@ -553,10 +553,10 @@ def mostra_tabellone():
             print(board[i][j], end=&quot; &quot;)
         print()
 
-# richiamo di funzione
+# richiamo la funzione
 mostra_tabellone()
 </code></pre>
-<p>Notare come tutto quello che appartiene alla funzione è indentato, mentre ciò che non ne fa parte non ha nessuna indentazione.</p>
+<p>Notare come tutto quello che appartiene alla funzione è indentato al suo interno, mentre ciò che non ne fa parte non ha nessuna indentazione.</p>
 <p>Ricordiamo anche che è buona norma che le funzioni comincino con un verbo, in quanto rappresentano delle azioni.</p>
 <h2 id="richiesta-di-un-valore-in-input"><a class="header" href="#richiesta-di-un-valore-in-input">Richiesta di un valore in input</a></h2>
 <p>Per chiedere un valore in modo interattivo in input all'utente, si può usare la funzione <code>input()</code>.</p>
@@ -571,10 +571,10 @@ mostra_tabellone()
 c = int(input(&quot;Inserisici la colonna (valori da 0 a 2): &quot;))
 </code></pre>
 <h2 id="inserire-i-simboli-nel-tabellone"><a class="header" href="#inserire-i-simboli-nel-tabellone">Inserire i simboli nel tabellone</a></h2>
-<p>Per inserire il simbolo di un giocatore è sufficiente assegnare il carattere nel tabellone:</p>
+<p>Per inserire il simbolo di un giocatore è sufficiente assegnare il carattere nel giusto elemento della variabile tabellone:</p>
 <pre><code class="language-py">board[r][c] = symbol
 </code></pre>
-<p>Ora però vogliamo ripetere questa operazione finché il tabellone non è pieno oppure finché qualcuno non ha vinto. Creiamo un ciclo che al massimo può essere eseguito 9 volte. Il </p>
+<p>Vogliamo ripetere questa operazione finché il tabellone non è pieno oppure finché qualcuno non ha vinto. Creiamo un ciclo viene essere eseguito 9 volte. </p>
 <pre><code class="language-py">for idx in range(9):
     mostra_tabellone()
 
@@ -584,7 +584,7 @@ c = int(input(&quot;Inserisici la colonna (valori da 0 a 2): &quot;))
     if board[r][c]=='-':
         board[r][c] = 'O'
 </code></pre>
-<p>In questo modo però stiamo assegnando sempre il simbolo 'O' , che ovviamente non è quello che vogliamo. Vogliamo alternare i simboli 'X' e 'O'. Potremmo fare che per <code>idx</code> pari mettiamo un simbolo, e per i dispari l'altro. Per fare questo possiamo creare una lista con i due simboli, ed assegnare il simbolo in base all'indice, come di seguito.</p>
+<p>In questo modo però stiamo assegnando sempre il simbolo 'O' , che ovviamente non è quello che vogliamo: vogliamo alternare i simboli 'X' e 'O'. Possiamo fare in modo che per <code>idx</code> pari mettiamo un simbolo, e per i dispari l'altro. Per fare questo possiamo creare una lista con i due simboli, ed assegnare il simbolo in base all'indice, come di seguito.</p>
 <pre><code class="language-py">symList = ['X','O']
 
 for idx in range(9):
@@ -601,10 +601,11 @@ for idx in range(9):
     if board[r][c]=='-':
         board[r][c] = symbol
 </code></pre>
-<p>Con questa soluzione per il simbolo, riusciamo ad evitare di inserire un if. In generale, è una buona regola di programmazione ridurre il numero di condizioni, sia perché di solito facilita la lettura, sia perché il codice è più facile da testare. Ovviamente è solo un suggerimento da usare in base al proprio giudizio.</p>
+<p>Abbiamo utilizzato l'operatore modulo (<code>%</code>), che ritorna il resto di una divisione; siccome stiamo dividendo per due, il resto potrà essere solamente <code>0</code> o <code>1</code>, quindi non potrà mai succedere che esco fuori dall'array <code>symList</code> che ha esattamente due elementi.</p>
+<p>Con questa soluzione riusciamo ad evitare di inserire un <code>if</code>. In generale è una buona regola di programmazione ridurre il numero di condizioni, sia perché di solito facilita la lettura (le condizioni sono spesso faticose da interpretare), sia perché il codice è più facile da testare. Ovviamente è solo un suggerimento da usare in base al proprio giudizio, non un obbligo.</p>
 <h2 id="controllo-dei-valori-di-ingresso"><a class="header" href="#controllo-dei-valori-di-ingresso">Controllo dei valori di ingresso</a></h2>
 <p>È importante controllare sempre i valori di ingresso forniti dall'utente, per rendere il codice più robusto.</p>
-<p>Per fare questo, ci serve un ciclo che chiede all'infinito i valori di input finché questi non sono corretti.</p>
+<p>Per fare questo, ci serve un ciclo che chiede all'infinito i valori di input finché questi non sono corretti. Per uscire da un ciclo si usa la parola chiave <code>break</code>.</p>
 <pre><code class="language-py"># while True esegue un ciclo infinito
 while True:
         r = int(input(&quot;Inserisci la riga (valori da 0 a 2): &quot;))
@@ -618,6 +619,7 @@ while True:
 <h2 id="controllo-della-condizione-di-vittoria"><a class="header" href="#controllo-della-condizione-di-vittoria">Controllo della condizione di vittoria</a></h2>
 <p>Creiamo una funzione che controlla se qualcuno ha vinto.</p>
 <p>Vogliamo creare una funzione che ritorni <code>False</code> nel caso in cui nessuno ha vinto, altrimenti il simbolo del vincitore.</p>
+<p>Esistono diversi modi per realizzare questa funzione. Qui ne presento una, ma ce ne sono molte altre altrettanto valide, anche senza usare cicli <code>for</code>.</p>
 <pre><code class="language-py">def win(board):
     # ripete il controllo per ogni giocatore
     for sym in symList:
@@ -717,14 +719,15 @@ mostra_tabellone()
 print(&quot;The winner is... &quot;+winner+&quot;!&quot;)
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="test-del-gioco"><a class="header" href="#test-del-gioco">Test del gioco</a></h1>
-<p>Prima di andare avanti, è bene creare una struttura di test che ci permetta di assicurarci che, qualsiasi modifica faremo in futuro al nostro codice, le funzionalità base continueranno sempre ad essere corrette.</p>
-<p>I test sono uno degli strumenti più importanti nella cassetta degli sviluppatori per poter scrivere del buon codice nel tempo.</p>
+<p>Prima di andare avanti, è bene creare dei &quot;test&quot; che ci permettano di assicurarci che, qualsiasi modifica faremo in futuro al nostro codice, le funzionalità continueranno sempre ad essere corrette.</p>
+<p>I test sono uno degli strumenti più importanti nella cassetta degli sviluppatori per poter scrivere del buon codice .</p>
 <h2 id="creazione-del-file-di-test"><a class="header" href="#creazione-del-file-di-test">Creazione del file di test</a></h2>
-<p>Creiamo un nuovo file chiamato <code>test_tris.py</code>. In generale il file di test ha lo stesso nome del file che deve testare, con il prefisso <code>test_</code>.</p>
+<p>Creiamo un nuovo file chiamato <code>test_tris.py</code>. In generale si usa la convenzione che il file di test ha lo stesso nome del file che deve testare, con il prefisso <code>test_</code>.</p>
 <p>Come prima riga, importiamo la funzione che vogliamo testare.</p>
 <pre><code class="language-py">from tris import win
 </code></pre>
-<p>Ora creiamo una funzione di test. Ogni funzione deve avere al suo interno l'istruzione <code>assert</code> con la condizione che si vuole testare.</p>
+<p>Ricordiamo che dopo il <code>from</code> mettiamo il nome del file, senza <code>.py</code>, e dopo <code>import</code> i nomi delle funzioni o delle variabili che vogliamo importare.</p>
+<p>Ora creiamo una funzione di test. Ogni funzione deve avere al suo interno l'istruzione <code>assert</code> con la condizione che si vuole verificare sia vera.</p>
 <pre><code class="language-py">def test_win_1():
     board = [
               ['X','X','X'],
@@ -733,8 +736,11 @@ print(&quot;The winner is... &quot;+winner+&quot;!&quot;)
             ]
     assert win(board) == 'X'
 </code></pre>
-<p>Alla fine della funzione di test dobbiamo ricordarci di chiamare il test.</p>
-<pre><code class="language-py">test_win_1()
+<p>Alla fine del file dobbiamo ricordarci di chiamare le funzioni di test.</p>
+<pre><code class="language-py"># definisco tutte le funzioni...
+ 
+test_win_1()
+# ...chiamo tutte le funzioni di test...
 </code></pre>
 <h2 id="funzioni-di-test"><a class="header" href="#funzioni-di-test">Funzioni di test</a></h2>
 <p>&quot;Un programmatore entra in un pub ed ordina una birra, 2 birre, 10 birre, 1000 birre, 0 birre, -1 birra, asdasdqwe birre.&quot;</p>
@@ -745,6 +751,20 @@ print(&quot;The winner is... &quot;+winner+&quot;!&quot;)
 <li>8 test per la vittoria di 'O'</li>
 <li>un certo numero di test per le situazioni di non vittoria (il gioco continua)</li>
 </ul>
+<h2 id="adattamento-del-file-apppy"><a class="header" href="#adattamento-del-file-apppy">Adattamento del file app.py</a></h2>
+<p>Quando importiamo la funzione <code>win</code>, l'interprete di Python esegue tutto il file &quot;tris.py&quot;, compresa la parte finale in cui chiede l'input dei giocatori. Non è però quello che vogliamo quando importiamo un file come libreria.</p>
+<p>Per risolvere questo problema, Python mette a disposizione la variabile di ambiente <code>__name__</code> che assume un valore diverso in base a come è invocato il file. Per <strong>variabile di ambiente</strong> si intende una variabile che non è creata o assegnata direttamente da noi nel file, ma è esterna ad esso, gestita dall'interprete o dal sistema operativo. In Python queste variabili hanno sempre un doppio trattino basso come prefisso, e per questo sono anche chiamate <em>dunder variables</em>(abbreviazione di <em>double under score variables</em>), oppure <em>magic variables</em>.</p>
+<p>In particolare, la variabile <strong>name</strong> assume il valore: </p>
+<ul>
+<li><code>&quot;__main__&quot;</code> se il file è chiamato direttamente </li>
+<li>il nome del modulo in cui si trova, che di default è uguale al nome del file</li>
+</ul>
+<p>In altre parole, per non eseguire del codice quando il file viene importato come libreria, dobbiamo aggiungere la condizione:</p>
+<pre><code class="language-py">if __name__ == &quot;__main__&quot;:
+  # codice da eseguire
+</code></pre>
+<h2 id="versione-definitiva-del-codice"><a class="header" href="#versione-definitiva-del-codice">Versione definitiva del codice</a></h2>
+<p>Potete trovare la versione completa del codice <a href="https://github.com/wbigger/2021-tris/tree/v1.0-CLI">qui</a>.</p>
 
                     </main>
 
