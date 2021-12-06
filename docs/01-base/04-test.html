@@ -156,15 +156,16 @@
             ]
     assert win(board) == 'X'
 </code></pre>
+<p>Se la verifica van a buon fine, la funzione assert non ritorna nulla; in caso contrario invece stampa un messaggio di errore.</p>
 <p>Alla fine del file dobbiamo ricordarci di chiamare le funzioni di test.</p>
 <pre><code class="language-py"># definisco tutte le funzioni...
  
 test_win_1()
 # ...chiamo tutte le funzioni di test...
 </code></pre>
-<h2 id="funzioni-di-test"><a class="header" href="#funzioni-di-test">Funzioni di test</a></h2>
+<h3 id="quanti-test-devo-effettuare"><a class="header" href="#quanti-test-devo-effettuare">Quanti test devo effettuare?</a></h3>
 <p>&quot;Un programmatore entra in un pub ed ordina una birra, 2 birre, 10 birre, 1000 birre, 0 birre, -1 birra, asdasdqwe birre.&quot;</p>
-<p>Questa &quot;barzelletta&quot; nerd ricorda come dovrebbero disegnarsi i test. Bisogna testare tutte le condizioni &quot;normali&quot;, che ci si aspetta, e cercare di immaginarsi anche tutte le cose che potrebbero andare storte.</p>
+<p>Questa è una &quot;freddura&quot; nerd che fa capire come dovrebbero essere progettati i test. Bisogna verificare sia tutte le condizioni &quot;normali&quot;, che ci si aspetta dall'utente o dal regolare funzionamento del programma, sia cercare di immaginarsi tutte le cose che potrebbero andare storte.</p>
 <p>Nel nostro caso dobbiamo prevedere:</p>
 <ul>
 <li>8 test per la vittoria di 'X' (3 righe, 3 colonne, 2 diagonali)</li>
@@ -173,17 +174,17 @@ test_win_1()
 </ul>
 <h2 id="adattamento-del-file-apppy"><a class="header" href="#adattamento-del-file-apppy">Adattamento del file app.py</a></h2>
 <p>Quando importiamo la funzione <code>win</code>, l'interprete di Python esegue tutto il file &quot;tris.py&quot;, compresa la parte finale in cui chiede l'input dei giocatori. Non è però quello che vogliamo quando importiamo un file come libreria.</p>
-<p>Per risolvere questo problema, Python mette a disposizione la variabile di ambiente <code>__name__</code> che assume un valore diverso in base a come è invocato il file. Per <strong>variabile di ambiente</strong> si intende una variabile che non è creata o assegnata direttamente da noi nel file, ma è esterna ad esso, gestita dall'interprete o dal sistema operativo. In Python queste variabili hanno sempre un doppio trattino basso come prefisso, e per questo sono anche chiamate <em>dunder variables</em>(abbreviazione di <em>double under score variables</em>), oppure <em>magic variables</em>.</p>
-<p>In particolare, la variabile <strong>name</strong> assume il valore: </p>
+<p>Per risolvere questo problema, Python mette a disposizione la variabile di ambiente <code>__name__</code> che assume un valore diverso in base a come è invocato il file. Per <strong>variabile di ambiente</strong> si intende una variabile che non è creata o assegnata direttamente da noi, ma è gestita dall'interprete o dal sistema operativo. In Python queste variabili hanno sempre un doppio trattino basso come prefisso e per questo sono anche chiamate <em>dunder variables</em> (abbreviazione di <em>double under score variables</em>), oppure <em>magic variables</em>.</p>
+<p>In particolare, la variabile <code>__name__</code> assume il valore: </p>
 <ul>
-<li><code>&quot;__main__&quot;</code> se il file è chiamato direttamente </li>
+<li>la stringa <code>&quot;__main__&quot;</code> se il file è chiamato direttamente </li>
 <li>il nome del modulo in cui si trova, che di default è uguale al nome del file</li>
 </ul>
 <p>In altre parole, per non eseguire del codice quando il file viene importato come libreria, dobbiamo aggiungere la condizione:</p>
 <pre><code class="language-py">if __name__ == &quot;__main__&quot;:
-  # codice da eseguire
+  # codice da eseguire solo quando il file è chiamato direttamente da riga di comando (python3 tris.py)
 </code></pre>
-<h2 id="versione-definitiva-del-codice"><a class="header" href="#versione-definitiva-del-codice">Versione definitiva del codice</a></h2>
+<h2 id="versione-del-codice-con-test"><a class="header" href="#versione-del-codice-con-test">Versione del codice con test</a></h2>
 <p>Potete trovare la versione completa del codice <a href="https://github.com/wbigger/2021-tris/tree/v1.0-CLI">qui</a>.</p>
 
                     </main>

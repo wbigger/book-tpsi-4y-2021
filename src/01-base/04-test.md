@@ -25,6 +25,8 @@ def test_win_1():
     assert win(board) == 'X'
 ```
 
+Se la verifica van a buon fine, la funzione assert non ritorna nulla; in caso contrario invece stampa un messaggio di errore.
+
 Alla fine del file dobbiamo ricordarci di chiamare le funzioni di test.
 
 ```py
@@ -34,11 +36,13 @@ test_win_1()
 # ...chiamo tutte le funzioni di test...
 ```
 
-## Funzioni di test
+
+
+### Quanti test devo effettuare?
 
 "Un programmatore entra in un pub ed ordina una birra, 2 birre, 10 birre, 1000 birre, 0 birre, -1 birra, asdasdqwe birre."
 
-Questa "barzelletta" nerd ricorda come dovrebbero disegnarsi i test. Bisogna testare tutte le condizioni "normali", che ci si aspetta, e cercare di immaginarsi anche tutte le cose che potrebbero andare storte.
+Questa è una "freddura" nerd che fa capire come dovrebbero essere progettati i test. Bisogna verificare sia tutte le condizioni "normali", che ci si aspetta dall'utente o dal regolare funzionamento del programma, sia cercare di immaginarsi tutte le cose che potrebbero andare storte.
 
 Nel nostro caso dobbiamo prevedere:
 - 8 test per la vittoria di 'X' (3 righe, 3 colonne, 2 diagonali)
@@ -48,18 +52,18 @@ Nel nostro caso dobbiamo prevedere:
 ## Adattamento del file app.py
 Quando importiamo la funzione `win`, l'interprete di Python esegue tutto il file "tris.py", compresa la parte finale in cui chiede l'input dei giocatori. Non è però quello che vogliamo quando importiamo un file come libreria.
 
-Per risolvere questo problema, Python mette a disposizione la variabile di ambiente `__name__` che assume un valore diverso in base a come è invocato il file. Per **variabile di ambiente** si intende una variabile che non è creata o assegnata direttamente da noi nel file, ma è esterna ad esso, gestita dall'interprete o dal sistema operativo. In Python queste variabili hanno sempre un doppio trattino basso come prefisso, e per questo sono anche chiamate _dunder variables_(abbreviazione di _double under score variables_), oppure _magic variables_.
+Per risolvere questo problema, Python mette a disposizione la variabile di ambiente `__name__` che assume un valore diverso in base a come è invocato il file. Per **variabile di ambiente** si intende una variabile che non è creata o assegnata direttamente da noi, ma è gestita dall'interprete o dal sistema operativo. In Python queste variabili hanno sempre un doppio trattino basso come prefisso e per questo sono anche chiamate _dunder variables_ (abbreviazione di _double under score variables_), oppure _magic variables_.
 
-In particolare, la variabile __name__ assume il valore: 
-- `"__main__"` se il file è chiamato direttamente 
+In particolare, la variabile `__name__` assume il valore: 
+- la stringa `"__main__"` se il file è chiamato direttamente 
 - il nome del modulo in cui si trova, che di default è uguale al nome del file
 
 In altre parole, per non eseguire del codice quando il file viene importato come libreria, dobbiamo aggiungere la condizione:
 
 ```py
 if __name__ == "__main__":
-  # codice da eseguire
+  # codice da eseguire solo quando il file è chiamato direttamente da riga di comando (python3 tris.py)
 ```
 
-## Versione definitiva del codice
+## Versione del codice con test
 Potete trovare la versione completa del codice [qui](https://github.com/wbigger/2021-tris/tree/v1.0-CLI).
