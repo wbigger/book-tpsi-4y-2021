@@ -91,6 +91,16 @@ Proviamo ad accedere alla nostra applicazione, o dal link locale (se lo lanciate
 
 <h1>Gioco del tris!!</h1>
 
+## Codice completo (finora)
+```py
+from flask import Flask
+
+app = Flask("tris")
+
+@app.route("/")
+def tris():
+    return "<h1>Gioco del tris!!</h1>"
+```
 
 
 <!-- Attenzione: se book **non** fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo `Book` in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà `__dict__`, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:

@@ -201,6 +201,15 @@ def tris():
 </code></pre>
 <p>Proviamo ad accedere alla nostra applicazione, o dal link locale (se lo lanciate dalla vostra macchina) o dal link della scuola. Il risultato dovrebbe essere come segue.</p>
 <h1 id="gioco-del-tris"><a class="header" href="#gioco-del-tris">Gioco del tris!!</a></h1>
+<h2 id="codice-completo-finora"><a class="header" href="#codice-completo-finora">Codice completo (finora)</a></h2>
+<pre><code class="language-py">from flask import Flask
+
+app = Flask(&quot;tris&quot;)
+
+@app.route(&quot;/&quot;)
+def tris():
+    return &quot;&lt;h1&gt;Gioco del tris!!&lt;/h1&gt;&quot;
+</code></pre>
 <!-- Attenzione: se book **non** fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo `Book` in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà `__dict__`, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:
 
 ```py
@@ -381,20 +390,6 @@ Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remot
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
