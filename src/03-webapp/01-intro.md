@@ -1,88 +1,99 @@
-# Web App
-Trasformiamo il gioco del tris in una web application con Python.
-## Caso di studio
-Immaginiamo di voler gestire una biblioteca scolastica. Da un lato ci serve del codice che gira da qualche parte nel cloud che gestisce la biblioteca, ed una pagina web per poter visualizzare la lista dei libri.
+# Introduzione
 
-Useremo Python per la prima parte (server), e HTML per la seconda parte (pagina web).
+## Cos'è una web app?
 
-<svg height='140' width='100%'>
-   
-   <rect width='40%' height='100%' style='fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)'/>
+Finora abbiamo sviluppato un'applicazione che gira su una singola macchina. Questo ci pone però dei limiti: se volessimo giocare con un'altro giocatore in rete? Se volessimo salvare i nostri progressi e poi usare un altro dispositivo?
 
-   <text x="15%" y="50%" font-size="30" text-anchor="middle" fill="white">
-   HTML
-   </text>
+Per questi ed altri motivi negli ultimi anni si sono largamente diffuse le _web application_, cioè applicazione che vengono eseguite in parte sul browser della mia macchina ed in parte su una macchina server in rete.
 
-   <rect width='40%' height='100%' style='fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)' x="60%"/>
+> Le _web application_ sono un caso particolare di applicazioni _distribuite_, cioè applicazioni che girano su più macchine fisiche. Le web app nello specifico hanno un architettura _client_ (il mio browser) - _server_ (la macchina in rete) ed usano i protocolli e gli standard tipici del web (HTTP, REST-API, web sockets, JSON, etc.)
 
-   <text x="75%" y="50%" font-size="30" text-anchor="middle" fill="white">
-   Python
-   </text>
-</svg>
 
-## Python
-Immaginiamo in maniera veramente minimale che il nostro catalogo sia formato solo dal seguente file Python, a cui diamo il nome di `library.py`.
+![web app](./assets/client-server.png)
 
-```py
-# library.py
-catalogue = ["Harry Potter e il calice di fuoco", "Il rosso e il nero", "Il piccolo principe"]
-```
+Per il lato client, la tecnologia è obbligata: i browser supportano solo HTML5, che è uno standard che utilizza HTML, CSS e JavaScript.
 
-Più essenziale di così, si muore... eppure è un codice valido e funzionante.
+Per il lato server invece possiamo usare il linguaggio che preferiamo. I più usati sono :
+- [PHP](https://www.php.net/)
+- [Python](https://www.python.org/)
+- [Java](https://www.java.com/it/)
+- C++ (non esiste un sito ufficiale, potete guardare [questo](http://cplusplus.com/))
+- [Rust](https://www.rust-lang.org/it) (I ❤️ Rust)
+- [Go](https://go.dev/) (linguaggio di Google)
+- [Scala](https://www.scala-lang.org/) (linguaggio simile a Java ma più orientato alla programmazione _funzionale_ e più bello)
+- [Erlang](https://www.erlang.org/) (linguaggio per la programmazione funzionale)
+- [Ruby](https://www.ruby-lang.org/it/)
+- [Haskell](https://www.haskell.org/) (linguaggio dichiarativo, ostico ma bello)
 
-### Web server
-Per poter far comunicare Python con la pagina HTML però, serve qualcuno che faccia da intermediario. Non posso infatti chiamare del codice Python direttamente dalla pagina web! Le pagine web possono infatti interagire unicamente tramite dei link, o più precisamente degli URL, e noi ancora non abbiamo nulla del genere.
+Noi useremo Python per la parte server.
 
-L'intermediario che mette in comunicazione pagina web e codice sul server si chiama, in modo non troppo sorprendente, **web server**. Vediamo come si fa su Python.
+## Python & Flask
+Per poter comunicare con il mondo esterno, la nostra applicazione in Python deve avere un componente che glielo permetta. In particolare questo componente dovrà:
+- accettare le richieste dall'esterno e inoltrarle (_route_) alla nostra applicazione
+- permettere alla nostra applicazione di rispondere alle richieste.
 
-Esistono diverse librerie che forniscono un web server, noi in questo tutorial useremo [Flask](https://www.palletsprojects.com/p/flask/), che è estremamente leggero e semplice da usare, anche se magari non ha tutte le funzionalità che offrono altre librerie.
+Questo componente si chiama _framework web_, ne esistono diversi per ogni linguaggio di programmazione e nel nostro caso useremo [__Flask__](https://flask.palletsprojects.com/en/2.0.x/).
 
-Essendo una libreria esterna non di sistema, bisogna prima di tutto installarla. Come abbiamo visto, apriamo un terminale e scriviamo:
-```
+### Come usare Flask
+#### Sul vostro computer
+Nella vostra macchina di casa, per installare Flask basta aprire un terminale e lanciare il comando:
+
+```sh
 pip3 install flask
 ```
 
-et voilà! La libreria è installata e pronta all'uso.
+Per lanciare l'applicazione, basta scrivere:
 
-Ora creiamo un nuovo file nel nostro progetto, che chiamiamo `app.py`. Attenzione: il nome deve essere esattamente questo, altrimenti non funziona tutto automagicamente 🎩.
+```sh
+flask run
+```
+
+Attenzione: per motivi di sicurezza l'applicazione di default è raggiungibile solo in locale attraverso l'interfaccia di loopback (127.0.0.1) e non da altri computer connessi in rete.
+
+#### Sul server della scuola
+La scuola mette a disposizione Flask per ogni utente della scuola. Per poterlo usare, basta creare una cartella che si chiami esattamente "flask" e usare quella per il progetto.
+
+```sh
+# sul server della scuola
+cd ~
+mkdir flask
+cd flask
+```
+
+Il file che contiene flask deve avere il nome standard `app.py`.
+
+In questo caso, non è necessario lanciare flask, perché il web server che gestisce tutta la macchina (nel nostro caso Apache) è già configurato per lanciare flask quando si accede a quella cartella.
+
+## Primi passi con Flask
+Ora creiamo il file principale del nostro progetto, che chiamiamo esattamente `app.py`. Attenzione: il nome deve essere questo, altrimenti non funziona tutto automagicamente 🎩.
+
+Nel nostro nuovo file, per prima cosa importiamo Flask:
 
 ```py
 from flask import Flask
-from library import catalogue
-import json
-
-app = Flask("marconi")
-
-@app.route("/")
-def data_book():
-    return json.dumps(
-        [book for book in catalogue]
-        )
 ```
 
-Vediamo cosa abbiamo fatto. Abbiamo importato `Flask` dalla libreria `flask` e il nostro catalogo dal file `library` che abbiamo creato precedentemente. Importiamo anche la libreria di sistema `json`, che è utile per convertire le variabili Python nel formato stringa JSON (vedi dopo. 
-
-La riga `app = Flask("marconi")` crea un web server e gli da il nome di "marconi" (possiamo mettere quello che preferiamo).
-
-La riga `@app.route("/")` è un'annotazione: sta ad indicare che la funzione successiva deve essere chiamata quando qualcuno prova ad accedere alla pagina web.
-
-La funzione `data_book()` viene quindi chiamata quando interroghiamo il web server. Questa funzione ritorna il nostro catalogo in formato JSON. È formata dalle seguenti parti:
-- `json.dumps()` è una funzione che converte il parametro che gli viene passato in formato JSON
-- `[book for book in catalogue]` è una sintassi tipica di Python, che crea una nuova lista con all'interno tutti gli elementi di `catalogue`.
-
-Nel dettaglio, stiamo dicendo che per ogni elemento `book` all'interno della lista `catalogue`, vogliamo creare un elemento con esattamente lo stesso valore di `book`.
-
-La precedente forma compatta è equivalente al seguente codice:
+Quindi creiamo un'istanza del framework. In Python, per creare l'istanza si una classe basta mettere il nome della classe (senza `new`) ed i parametri per l'inizializzazione. Nel caso di Flask, l'unico parametro obbligatorio è un nome scelto a piacere che ci servirà per riconoscere il nostro programma tra gli altri che girano sul server.
 
 ```py
-mylist = []
-for book in catalogue:
-    mylist.append(book)
+app = Flask("tris")
 ```
 
-Come si può vedere, nella forma compatta non abbiamo bisogno di dichiarare la variabile di appoggio `mylist`.
+Ora creiamo una funzione che verrà richiamata quando accederemo alla radice del nostro sito. Per fare questo, dobbiamo usare l'annotazione `@app.route()` specificando come parametro il percorso che si deve gestire, nel nostro caso la radice `\\`; dopo l'annotazione la funzione che verrà chiamata e il cui valore di ritorno verrà restituito al browser.
 
-Attenzione: se book **non** fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo `Book` in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà `__dict__`, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:
+```py
+@app.route("/")
+def tris():
+    return "<h1>Gioco del tris!!</h1>"
+```
+
+Proviamo ad accedere alla nostra applicazione, o dal link locale (se lo lanciate dalla vostra macchina) o dal link della scuola. Il risultato dovrebbe essere come segue.
+
+<h1>Gioco del tris!!</h1>
+
+
+
+<!-- Attenzione: se book **non** fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo `Book` in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà `__dict__`, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:
 
 ```py
 def data_book():
@@ -240,4 +251,4 @@ Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remot
 
 È normale, perché state usando due web-server diversi per la stessa pagina, questa è una cosa potenzialmente pericolosa ed il browser vi impedisce di farlo. Per aggirare la limitazione, il modo più semplice è installare queste estensioni per [Firefox](https://addons.mozilla.org/it/firefox/addon/cors-everywhere/) o per [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). In questo modo vi caricherà la pagina correttamente anche in questo caso.
 
-> Ovviamente non è questo il modo più corretto di procedere. Per fare le cose per bene, bisogna spostare tutto su Flask, anche le pagine HTML. È un'operazione abbastanza semplice ma la vedremo dopo che vi sarete impratichiti con questa parte.
+> Ovviamente non è questo il modo più corretto di procedere. Per fare le cose per bene, bisogna spostare tutto su Flask, anche le pagine HTML. È un'operazione abbastanza semplice ma la vedremo dopo che vi sarete impratichiti con questa parte. -->

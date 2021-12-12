@@ -77,7 +77,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Comandi</a></li><li class="chapter-item expanded "><a href="01-base/index.html"><strong aria-hidden="true">3.</strong> Programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-base/01-types.html"><strong aria-hidden="true">3.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">3.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">3.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="01-base/03-tris.html"><strong aria-hidden="true">3.4.</strong> Gioco del Tris</a></li><li class="chapter-item expanded "><a href="01-base/04-test.html"><strong aria-hidden="true">3.5.</strong> Test del gioco</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="02-prog/index.html"><strong aria-hidden="true">2.</strong> Gioco del Tris (locale)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris</a></li><li class="chapter-item expanded "><a href="02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="03-webapp/index.html"><strong aria-hidden="true">3.</strong> Gioco del Tris (webapp)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-webapp/01-intro.html"><strong aria-hidden="true">3.1.</strong> Web app</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -139,7 +139,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="organizzazione-di-un-sistema-operativo"><a class="header" href="#organizzazione-di-un-sistema-operativo">Organizzazione di un sistema operativo</a></h1>
+                        <h1 id="basi-di-linux"><a class="header" href="#basi-di-linux">Basi di Linux</a></h1>
+<p>In questo capitolo vedremo le basi del sistema operativo Linux ed i comandi più importanti da utilizzare nella riga di comando.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="organizzazione-di-un-sistema-operativo"><a class="header" href="#organizzazione-di-un-sistema-operativo">Organizzazione di un sistema operativo</a></h1>
 <p>Il sistema operativo gestisce le risorse della macchina (memoria, processore, periferiche) per permettere a più applicazioni di poter funzionare contemporaneamente. Ma ogni cosa ha un suo costo: il sistema operativo utilizza per sé stesso una porzione a volte considerevole delle risorse stesse del nostro computer: pensiamo a quanti GB sul disco occupa una installazione di Windows o Mac, a quanta memoria occupa, e che ha volte i loro processi impegnano la CPU senza una ragione apparente. Oltre a questo pensiamo a problemi di vulnerabilità, aggiornamento, etc.</p>
 <blockquote>
 <p>Se noi vogliamo far girare un solo programma sul computer, possiamo non aver bisogno di un sistema operativo. Tipicamente quest accade per piccoli elaboratori per compiti molto specifici: questo sistemi vengono chiamati <em>embedded</em>.</p>
@@ -163,7 +165,7 @@
 <p>Il kernel è un programma come gli altri, non ha niente di &quot;magico&quot;. In particolare il kernel è un insieme di librerie scritte principalmente in C/C++. Del kernel Linux possiamo anche vederne il <a href="https://github.com/torvalds/linux">codice sorgente</a>, visto che è un software libero e quindi anche aperto.</p>
 <h1 id="shell"><a class="header" href="#shell">Shell</a></h1>
 <p>Per usare direttamente il kernel dovremmo scrivere dei programmi in C/C++, ad esempio per interrogare l'hard-disk e farci restituire i file all'interno di una certa cartella. Scrivere un programma noi per ogni operazione che dobbiamo svolgere, ovviamente non è molto comodo.</p>
-<p>Per poter usare in maniera le chiamate di sistema che ci mette a disposizione il kernel, ci sono una serie di strumenti che ci facilitano i compito. Per Linux, queste utilità sono state sviluppate dal <a href="www.gnu.org">progetto GNU</a>, e si chiamano <strong>GNU coreutils</strong>.</p>
+<p>Per poter usare in maniera le chiamate di sistema che ci mette a disposizione il kernel, ci sono una serie di strumenti che ci facilitano i compito. Per Linux, queste utilità sono state sviluppate dal <a href="01-linux/www.gnu.org">progetto GNU</a>, e si chiamano <strong>GNU coreutils</strong>.</p>
 <blockquote>
 <p>Il progetto GNU è stato fondato nel 1983 da Richard Stallman, al MIT di Boston. GNU ha lo scopo in primo luogo di permettere agli sviluppatori di tutto il mondo di poter sviluppare <em>liberamente</em> software, ovvero avendo a disposizione il codice sorgente dei programmi di altre aziende che usano, e senza la necessità di pagare licenze. Le utilità che useremo in questo corso sono solo parte del progetto; un'altra parte fondamentale è la licenza che permette al software di essere usato legalmente, rispettando le libertà fondamentali del free software. Il nome di questa licenza è GPL (General Public Licence), di cui l'ultima versione è la <a href="https://www.gnu.org/licenses/gpl.html">GPLv3</a> <p align="center"><a href='https://www.gnu.org/licenses/gpl.html'><img src='./assets/gpl.png' width='200px'></a></p></p>
 </blockquote>
@@ -443,8 +445,8 @@ COLORFGBG=7;0
 <div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
 <p>Il linguaggio che vedremo quest'anno è <a href="https://www.python.org/">Python</a>. Python è un linguaggio completamente open-source, il codice sorgente è reperibile sulla pagina <a href="https://github.com/python">ufficiale di GitHub</a> ed è rilasciato sotto la <a href="https://opensource.org/licenses/Python-2.0">Python License</a>.</p>
 <p style="margin:auto;width:500px">
-<img class="right_side w20p" title="Python logo" alt="Python logo" src="01-base/assets/python-logo.png" width=200>
-<img class="left_side" title="Guido van Rossum" alt="Python logo" src="01-base/assets/guido-van-rossum.jpg" width=200>
+<img class="right_side w20p" title="Python logo" alt="Python logo" src="02-prog/assets/python-logo.png" width=200>
+<img class="left_side" title="Guido van Rossum" alt="Python logo" src="02-prog/assets/guido-van-rossum.jpg" width=200>
 </p>
 <p>Python è stato creato alla fine degli anni '80 dall'olandese <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a>, all'età di circa trent'anni. Come molti colleghi nell'ambito informatico, il suo operato è stato costantemente guidato da alcuni ideali, in particolare van Rossum credeva che la programmazione dovesse essere accessibile a tutti; le sue scelte per la sintassi del linguaggio hanno avuto sempre questa direzione. Nel 1999 sono state pubblicate delle linee guida che riassumevano questi concetti, conosciute come <a href="https://www.python.org/dev/peps/pep-0020/">&quot;The Zen of Python&quot;</a>.</p>
 <blockquote>
@@ -510,18 +512,18 @@ print(datetime.now())
 <p>Andare sul sito <a href="https://www.python.org/downloads/">Python downloads</a> e scaricare l'ultima versione di Python premendo il bottoncione giallo grande con scritto &quot;Download Python&quot;.</p>
 <p>Quando lo avviate, vedrete una schermata di questo genere (la versione di Python potrebbe cambiare):</p>
 <p class="img-container centered">
-<img class="w80p" src="01-base/assets/python-install.png" alt="Install Python">
+<img class="w80p" src="02-prog/assets/python-install.png" alt="Install Python">
 </p>
 <p>Attenzione: selezionate l'ultima spunta in basso &quot;Add Python to PATH&quot; per poter usare i comandi Python anche da terminale.</p>
 <p>Seguite le istruzioni fino in fondo, e se necessario riavviate Visual Studio Code.</p>
 <h3 id="2-installare-lestensione-per-visual-studio-code"><a class="header" href="#2-installare-lestensione-per-visual-studio-code">2. Installare l'estensione per Visual Studio Code</a></h3>
 <p>Aprite Visual Studio Code ed installate l'estensione <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python di Microsoft</a>. </p>
 <p class="img-container centered">
-<img class="w80p" src="01-base/assets/python-extension.png" alt="Install Python extension">
+<img class="w80p" src="02-prog/assets/python-extension.png" alt="Install Python extension">
 </p>
 <p>Una volta installata, quando aprirete un file con estensione <code>.py</code> vi comparirà nella barra blu in basso la possibilità di selezionare l'interprete Python. Selezionate l'ultima versione che avete appena installato.</p>
 <p class="img-container centered">
-<img class="w50p" src="01-base/assets/python-select-env.png" alt="Select Python Interpreter">
+<img class="w50p" src="02-prog/assets/python-select-env.png" alt="Select Python Interpreter">
 </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gioco-del-tris"><a class="header" href="#gioco-del-tris">Gioco del Tris</a></h1>
 <p>Usiamo come caso di studio il gioco del tris (Tic Tac Toe, in inglese).</p>
@@ -766,6 +768,230 @@ test_win_1()
 </code></pre>
 <h2 id="versione-del-codice-con-test"><a class="header" href="#versione-del-codice-con-test">Versione del codice con test</a></h2>
 <p>Potete trovare la versione completa del codice <a href="https://github.com/wbigger/2021-tris/tree/v1.0-CLI">qui</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="web-app"><a class="header" href="#web-app">Web App</a></h1>
+<p>Trasformiamo il gioco del tris in una web application con Python.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introduzione"><a class="header" href="#introduzione">Introduzione</a></h1>
+<h2 id="cosè-una-web-app"><a class="header" href="#cosè-una-web-app">Cos'è una web app?</a></h2>
+<p>Finora abbiamo sviluppato un'applicazione che gira su una singola macchina. Questo ci pone però dei limiti: se volessimo giocare con un'altro giocatore in rete? Se volessimo salvare i nostri progressi e poi usare un altro dispositivo?</p>
+<p>Per questi ed altri motivi negli ultimi anni si sono largamente diffuse le <em>web application</em>, cioè applicazione che vengono eseguite in parte sul browser della mia macchina ed in parte su una macchina server in rete.</p>
+<blockquote>
+<p>Le <em>web application</em> sono un caso particolare di applicazioni <em>distribuite</em>, cioè applicazioni che girano su più macchine fisiche. Le web app nello specifico hanno un architettura <em>client</em> (il mio browser) - <em>server</em> (la macchina in rete) ed usano i protocolli e gli standard tipici del web (HTTP, REST-API, web sockets, JSON, etc.)</p>
+</blockquote>
+<p><img src="03-webapp/./assets/client-server.png" alt="web app" /></p>
+<p>Per il lato client, la tecnologia è obbligata: i browser supportano solo HTML5, che è uno standard che utilizza HTML, CSS e JavaScript.</p>
+<p>Per il lato server invece possiamo usare il linguaggio che preferiamo. I più usati sono :</p>
+<ul>
+<li><a href="https://www.php.net/">PHP</a></li>
+<li><a href="https://www.python.org/">Python</a></li>
+<li><a href="https://www.java.com/it/">Java</a></li>
+<li>C++ (non esiste un sito ufficiale, potete guardare <a href="http://cplusplus.com/">questo</a>)</li>
+<li><a href="https://www.rust-lang.org/it">Rust</a> (I ❤️ Rust)</li>
+<li><a href="https://go.dev/">Go</a> (linguaggio di Google)</li>
+<li><a href="https://www.scala-lang.org/">Scala</a> (linguaggio simile a Java ma più orientato alla programmazione <em>funzionale</em> e più bello)</li>
+<li><a href="https://www.erlang.org/">Erlang</a> (linguaggio per la programmazione funzionale)</li>
+<li><a href="https://www.ruby-lang.org/it/">Ruby</a></li>
+<li><a href="https://www.haskell.org/">Haskell</a> (linguaggio dichiarativo, ostico ma bello)</li>
+</ul>
+<p>Noi useremo Python per la parte server.</p>
+<h2 id="python--flask"><a class="header" href="#python--flask">Python &amp; Flask</a></h2>
+<p>Per poter comunicare con il mondo esterno, la nostra applicazione in Python deve avere un componente che glielo permetta. In particolare questo componente dovrà:</p>
+<ul>
+<li>accettare le richieste dall'esterno e inoltrarle (<em>route</em>) alla nostra applicazione</li>
+<li>permettere alla nostra applicazione di rispondere alle richieste.</li>
+</ul>
+<p>Questo componente si chiama <em>framework web</em>, ne esistono diversi per ogni linguaggio di programmazione e nel nostro caso useremo <a href="https://flask.palletsprojects.com/en/2.0.x/"><strong>Flask</strong></a>.</p>
+<h3 id="come-usare-flask"><a class="header" href="#come-usare-flask">Come usare Flask</a></h3>
+<h4 id="sul-vostro-computer"><a class="header" href="#sul-vostro-computer">Sul vostro computer</a></h4>
+<p>Nella vostra macchina di casa, per installare Flask basta aprire un terminale e lanciare il comando:</p>
+<pre><code class="language-sh">pip3 install flask
+</code></pre>
+<p>Per lanciare l'applicazione, basta scrivere:</p>
+<pre><code class="language-sh">flask run
+</code></pre>
+<p>Attenzione: per motivi di sicurezza l'applicazione di default è raggiungibile solo in locale attraverso l'interfaccia di loopback (127.0.0.1) e non da altri computer connessi in rete.</p>
+<h4 id="sul-server-della-scuola"><a class="header" href="#sul-server-della-scuola">Sul server della scuola</a></h4>
+<p>La scuola mette a disposizione Flask per ogni utente della scuola. Per poterlo usare, basta creare una cartella che si chiami esattamente &quot;flask&quot; e usare quella per il progetto.</p>
+<pre><code class="language-sh"># sul server della scuola
+cd ~
+mkdir flask
+cd flask
+</code></pre>
+<p>Il file che contiene flask deve avere il nome standard <code>app.py</code>.</p>
+<p>In questo caso, non è necessario lanciare flask, perché il web server che gestisce tutta la macchina (nel nostro caso Apache) è già configurato per lanciare flask quando si accede a quella cartella.</p>
+<h2 id="primi-passi-con-flask"><a class="header" href="#primi-passi-con-flask">Primi passi con Flask</a></h2>
+<p>Ora creiamo il file principale del nostro progetto, che chiamiamo esattamente <code>app.py</code>. Attenzione: il nome deve essere questo, altrimenti non funziona tutto automagicamente 🎩.</p>
+<p>Nel nostro nuovo file, per prima cosa importiamo Flask:</p>
+<pre><code class="language-py">from flask import Flask
+</code></pre>
+<p>Quindi creiamo un'istanza del framework. In Python, per creare l'istanza si una classe basta mettere il nome della classe (senza <code>new</code>) ed i parametri per l'inizializzazione. Nel caso di Flask, l'unico parametro obbligatorio è un nome scelto a piacere che ci servirà per riconoscere il nostro programma tra gli altri che girano sul server.</p>
+<pre><code class="language-py">app = Flask(&quot;tris&quot;)
+</code></pre>
+<p>Ora creiamo una funzione che verrà richiamata quando accederemo alla radice del nostro sito. Per fare questo, dobbiamo usare l'annotazione <code>@app.route()</code> specificando come parametro il percorso che si deve gestire, nel nostro caso la radice <code>\\</code>; dopo l'annotazione la funzione che verrà chiamata e il cui valore di ritorno verrà restituito al browser.</p>
+<pre><code class="language-py">@app.route(&quot;/&quot;)
+def tris():
+    return &quot;&lt;h1&gt;Gioco del tris!!&lt;/h1&gt;&quot;
+</code></pre>
+<p>Proviamo ad accedere alla nostra applicazione, o dal link locale (se lo lanciate dalla vostra macchina) o dal link della scuola. Il risultato dovrebbe essere come segue.</p>
+<h1 id="gioco-del-tris-1"><a class="header" href="#gioco-del-tris-1">Gioco del tris!!</a></h1>
+<!-- Attenzione: se book **non** fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo `Book` in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà `__dict__`, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:
+
+```py
+def data_book():
+    return json.dumps(
+        [book.__dict__ for book in catalogue]
+        )
+```
+
+
+
+### Il formato JSON
+Fate attenzione: [JSON](https://www.json.org/) è un formato per scambiarsi i dati tra macchine (machine-to-machine), ma che può essere letto e scritto abbastanza facilmente anche dagli esseri umani. JSON quindi non è un codice, o un'applicazione, o una libreria, ma è un formato di stringa che permette alle macchine di comunicare fra loro in modo comprensibile. Volendo fare un paragone con la lingua umana, è come la sintassi della frase: per capirsi le persone devono mettere nel corretto ordine soggetto, verbo e complementi, altrimenti non ci si capisce.
+
+JSON usa le seguenti convenzioni:
+- le parentesi graffe per definire gli oggetti
+- le parentesi quadre per le liste
+- la virgola per separare gli elementi di una lista
+- i due punti per definire le proprietà di un oggetto
+
+Ad esempio, per definire una lista di due oggetti, ognuno con le proprietà `title` e `author`, scriveremo:
+```json
+[
+    {
+        "title":"Harry Potter e il calice di fuoco",
+        "author":"J.K.Rowling"
+    },
+    {
+        "title":"Il rosso e il nero",
+        "author":"Stendhal"
+    },
+    {
+        "title":"Il piccolo principe",
+        "author":"Antoine de Saint-Exupéry"
+    }
+]
+```
+Per generare o validare stringhe JSON, è possibile usare servizi online come ad esempio [JSON lint](https://jsonlint.com/?json=[{%22title%22:%22Harry%20Potter%20e%20il%20calice%20di%20fuoco%22,%22author%22:%22J.K.Rowling%22},{%22title%22:%22Il%20rosso%20e%20il%20nero%22,%22author%22:%22Stendhal%22},{%22title%22:%22Il%20piccolo%20principe%22,%22author%22:%22Antoine%20de%20Saint-Exup%C3%A9ry%22}]).
+
+### Lanciare il web server
+Per lanciare il web server, aprite un terminale nella cartella del vostro progetto e scrivete:
+
+```
+python3 -m flask run
+```
+Se tutto va bene, vi dovrebbe comparire la scritta `Running on http://127.0.0.1:5000/`. Ecco quindi il link che ci serviva per far comunicare la pagina web con la nostra applicazione!
+
+## HTML
+Ora creiamo un nuovo file, sempre nel nostro progetto, che chiamiamo `index.html`.
+
+```hmtl
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biblioteca scolastica</title>
+</head>
+<body>
+    <ul>
+    </ul>    
+</body>
+</html>
+```
+
+È una semplice pagina che visualizza una lista, in questo momento vuota.
+
+Come facciamo a riempire la lista con i dati presi dal web server? Ci serve un po' di JavaScript.
+
+
+### JavaScript
+Subito dopo il tag `</body>` e subito prima del tag `</html>`, nella penultima riga insomma, aggiungiamo il codice che ci serve. 
+
+Prima di tutto scarichiamo ed importiamo una libreria JavaScript che ci semplificherà molto la vita e chi si chiama [JQuery](https://jquery.com). Potete scaricare il file direttamente cliccando con il tasto destro [qui](https://code.jquery.com/jquery-3.4.1.min.js) e scegliendo "Salva link come" o qualcosa di simile. Salvate il file sempre nella cartella di progetto.
+
+Quindi aggiungiamo la seguente riga:
+```html
+<script src="jquery-3.4.1.min.js"></script>
+```
+
+OK, abbiamo importato la libreria. Ora dobbiamo prendere i dati dal web server. Lo facciamo scrivendo subito dopo un nostro pezzo di codice all'interno del tag `<script>`.
+
+```html
+<script>
+    // Prende i dati come JSON dall'URL
+    // quando ha finito di prendere i dati, chiama la funzione "makeList"
+    $.getJSON("http://127.0.0.1:5000/").done(makeList);
+</script>
+```
+
+Attenzione a quello che succede. Il codice dentro il tag script è JavaScript. Il simbolo del dollaro (`$`) indica che stiamo usando la libreria JQuery che abbiamo importato subito prima. Quando i dati sono stati completamente ricevuti (ci potrebbe volere del tempo, se i libri fossero molti), viene chiamata la funzione `makeList`, che dobbiamo ancora definire.
+
+Subito dopo la riga precedente, creiamo ora la funzione `makeList`:
+```js
+function makeList(jsonBooks) {
+    for (book of jsonBooks) {
+        let newItem = `<li>${book}</li>`;
+        $("ul").append(newItem);
+    }
+}
+```
+
+Vediamo cosa abbiamo fatto. Nella prima riga abbiamo creato una funzione con la keyword `function`; la funzione prende in input un parametro che gli viene passato da JQuery quando i dati sono stati ricevuti.
+
+Subito dopo c'è un ciclo `for`, molto simile a quello del Python, con qualche differenza:
+- JavaScript usa le parentesi dopo la keyword `for`
+- JavaScript usa la keyword `of` invece che `in` per iterare all'interno di una lista
+- JavaScript usa le parentesi graffe per contenere il corpo del `for`
+
+
+All'interno del `for`, nella prima riga creiamo il nuovo item che vogliamo andare ad aggiungere alla lista.
+
+Nella riga successiva, c'è un istruzione che dice:
+- usando JQuery (`$`), seleziona la lista non ordinata (`ul`)
+- all'interno della lista, aggiungi alla fine (`append`) il nuovo elemento appena creato
+
+Il codice finale di tutta la pagina verrà come segue:
+```hmtl
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biblioteca scolastica</title>
+</head>
+<body>
+    <ul>
+    </ul>    
+</body>
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+    // Prende i dati come JSON dall'URL
+    // quando ha finito di prendere i dati, chiama la funzione "makeList"
+    $.getJSON("http://127.0.0.1:5000/").done(makeList);
+    function makeList(jsonBooks) {
+    for (book of jsonBooks) {
+        let newItem = `<li>${book}</li>`;
+        $("ul").append(newItem);
+    }
+}
+</script>
+</html>
+```
+
+### Go Live
+Su Visual Studio Code (detto anche VSCode per brevità), potete lanciare questa pagina con "Go Live" nella barra in basso, lo trovate sulla destra. Se non lo vedete, assicuratevi di aver installato l'estensione "Live Server" su VSCode.
+
+Al primo lancio vedrete che non succede niente. Per controllare cosa è successo, aprite la console di debug premendo con il tasto destro in qualsiasi punto della pagina web nel browser e cliccando su "Analizza elemento" o "Ispeziona elemento", quindi nel pannello che si apre, selezionate la tab console.
+
+Se avete fatto tutto correttamente, dovrebbe comparirvi un messaggio di errore del tipo:
+```
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://127.0.0.1:5000/. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
+```
+
+È normale, perché state usando due web-server diversi per la stessa pagina, questa è una cosa potenzialmente pericolosa ed il browser vi impedisce di farlo. Per aggirare la limitazione, il modo più semplice è installare queste estensioni per [Firefox](https://addons.mozilla.org/it/firefox/addon/cors-everywhere/) o per [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). In questo modo vi caricherà la pagina correttamente anche in questo caso.
+
+> Ovviamente non è questo il modo più corretto di procedere. Per fare le cose per bene, bisogna spostare tutto su Flask, anche le pagine HTML. È un'operazione abbastanza semplice ma la vedremo dopo che vi sarete impratichiti con questa parte. -->
 
                     </main>
 
