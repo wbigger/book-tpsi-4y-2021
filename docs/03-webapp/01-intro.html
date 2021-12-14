@@ -173,21 +173,37 @@
 <p>Nella vostra macchina di casa, per installare Flask basta aprire un terminale e lanciare il comando:</p>
 <pre><code class="language-sh">pip3 install flask
 </code></pre>
-<p>Per lanciare l'applicazione, basta scrivere:</p>
+<p>Dopo aver creato il file <code>app.py</code> come vedremo tra poco, per lanciare l'applicazione basta scrivere:</p>
 <pre><code class="language-sh">flask run
 </code></pre>
 <p>Attenzione: per motivi di sicurezza l'applicazione di default è raggiungibile solo in locale attraverso l'interfaccia di loopback (127.0.0.1) e non da altri computer connessi in rete.</p>
+<blockquote>
+<p>E' possibile, sempre per fini di sviluppo, far vedere la vostra applicazione anche da altre macchine. Per maggiori informazioni leggete <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/#public-server">qui</a>.</p>
+</blockquote>
 <h4 id="sul-server-della-scuola"><a class="header" href="#sul-server-della-scuola">Sul server della scuola</a></h4>
-<p>La scuola mette a disposizione Flask per ogni utente della scuola. Per poterlo usare, basta creare una cartella che si chiami esattamente &quot;flask&quot; e usare quella per il progetto.</p>
+<p>La scuola mette a disposizione la possibilità di creare una web application con il framework Flask per ogni utente della scuola. Basta creare una cartella che si chiami esattamente <code>flask</code> nella vostra home.</p>
 <pre><code class="language-sh"># sul server della scuola
 cd ~
 mkdir flask
 cd flask
 </code></pre>
-<p>Il file che contiene flask deve avere il nome standard <code>app.py</code>.</p>
-<p>In questo caso, non è necessario lanciare flask, perché il web server che gestisce tutta la macchina (nel nostro caso Apache) è già configurato per lanciare flask quando si accede a quella cartella.</p>
+<p>All'interno di questa cartella dovete creare il file di partenza della web application che deve avere il nome <code>app.py</code>.</p>
+<p>A differenza dell'uso sulla macchina locale, in questo caso non dobbiamo lanciare direttamente flask da riga di comando, ma dobbiamo creare un file per il web server della scuola (Apache2) con le istruzioni su come lanciare la nostra web application. Il file si deve trovare sempre dentro la cartella <code>flask</code>, si deve chiamare esattamente <code>flask.wsgi</code> e contenere il seguente testo:</p>
+<pre><code class="language-py">import sys
+import os
+dir_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.insert(0, dir_path)
+
+from app import app as application
+</code></pre>
+<p>Ricapitolando, ipotizzando di essere k_utente00, la struttura del file system deve essere come segue:</p>
+<pre><code class="language-sh">k_utente00
+└── flask
+    ├── app.py
+    └── flask.wsgi
+</code></pre>
 <h2 id="primi-passi-con-flask"><a class="header" href="#primi-passi-con-flask">Primi passi con Flask</a></h2>
-<p>Ora creiamo il file principale del nostro progetto, che chiamiamo esattamente <code>app.py</code>. Attenzione: il nome deve essere questo, altrimenti non funziona tutto automagicamente 🎩.</p>
+<p>Ora creiamo il file principale del nostro progetto, che come visto dobbiamo chiamare esattamente <code>app.py</code>. Attenzione: il nome deve essere questo, altrimenti non funziona tutto automagicamente 🎩.</p>
 <p>Nel nostro nuovo file, per prima cosa importiamo Flask:</p>
 <pre><code class="language-py">from flask import Flask
 </code></pre>
@@ -390,6 +406,20 @@ Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remot
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>

@@ -42,7 +42,7 @@ Nella vostra macchina di casa, per installare Flask basta aprire un terminale e 
 pip3 install flask
 ```
 
-Per lanciare l'applicazione, basta scrivere:
+Dopo aver creato il file `app.py` come vedremo tra poco, per lanciare l'applicazione basta scrivere:
 
 ```sh
 flask run
@@ -50,8 +50,10 @@ flask run
 
 Attenzione: per motivi di sicurezza l'applicazione di default è raggiungibile solo in locale attraverso l'interfaccia di loopback (127.0.0.1) e non da altri computer connessi in rete.
 
+> E' possibile, sempre per fini di sviluppo, far vedere la vostra applicazione anche da altre macchine. Per maggiori informazioni leggete [qui](https://flask.palletsprojects.com/en/2.0.x/quickstart/#public-server).
+
 #### Sul server della scuola
-La scuola mette a disposizione Flask per ogni utente della scuola. Per poterlo usare, basta creare una cartella che si chiami esattamente "flask" e usare quella per il progetto.
+La scuola mette a disposizione la possibilità di creare una web application con il framework Flask per ogni utente della scuola. Basta creare una cartella che si chiami esattamente `flask` nella vostra home.
 
 ```sh
 # sul server della scuola
@@ -60,12 +62,29 @@ mkdir flask
 cd flask
 ```
 
-Il file che contiene flask deve avere il nome standard `app.py`.
+All'interno di questa cartella dovete creare il file di partenza della web application che deve avere il nome `app.py`.
 
-In questo caso, non è necessario lanciare flask, perché il web server che gestisce tutta la macchina (nel nostro caso Apache) è già configurato per lanciare flask quando si accede a quella cartella.
+A differenza dell'uso sulla macchina locale, in questo caso non dobbiamo lanciare direttamente flask da riga di comando, ma dobbiamo creare un file per il web server della scuola (Apache2) con le istruzioni su come lanciare la nostra web application. Il file si deve trovare sempre dentro la cartella `flask`, si deve chiamare esattamente `flask.wsgi` e contenere il seguente testo:
+
+```py
+import sys
+import os
+dir_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.insert(0, dir_path)
+
+from app import app as application
+```
+
+Ricapitolando, ipotizzando di essere k_utente00, la struttura del file system deve essere come segue:
+```sh
+k_utente00
+└── flask
+    ├── app.py
+    └── flask.wsgi
+```
 
 ## Primi passi con Flask
-Ora creiamo il file principale del nostro progetto, che chiamiamo esattamente `app.py`. Attenzione: il nome deve essere questo, altrimenti non funziona tutto automagicamente 🎩.
+Ora creiamo il file principale del nostro progetto, che come visto dobbiamo chiamare esattamente `app.py`. Attenzione: il nome deve essere questo, altrimenti non funziona tutto automagicamente 🎩.
 
 Nel nostro nuovo file, per prima cosa importiamo Flask:
 
