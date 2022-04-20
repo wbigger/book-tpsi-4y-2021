@@ -77,7 +77,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="02-prog/index.html"><strong aria-hidden="true">2.</strong> Gioco del Tris (locale)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris</a></li><li class="chapter-item expanded "><a href="02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="03-webapp/index.html"><strong aria-hidden="true">3.</strong> Gioco del Tris (webapp)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-webapp/01-intro.html"><strong aria-hidden="true">3.1.</strong> Web app</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="02-prog/index.html"><strong aria-hidden="true">2.</strong> Basi di programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris (locale)</a></li><li class="chapter-item expanded "><a href="02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="03-web/index.html"><strong aria-hidden="true">3.</strong> Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-web/01-client-server.html"><strong aria-hidden="true">3.1.</strong> Client/server</a></li><li class="chapter-item expanded "><a href="03-web/02-url.html"><strong aria-hidden="true">3.2.</strong> URL</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -768,255 +768,94 @@ test_win_1()
 </code></pre>
 <h2 id="versione-del-codice-con-test"><a class="header" href="#versione-del-codice-con-test">Versione del codice con test</a></h2>
 <p>Potete trovare la versione completa del codice <a href="https://github.com/wbigger/2021-tris/tree/v1.0-CLI">qui</a>.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="web-app"><a class="header" href="#web-app">Web App</a></h1>
-<p>Trasformiamo il gioco del tris in una web application con Python.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="introduzione"><a class="header" href="#introduzione">Introduzione</a></h1>
-<h2 id="cosè-una-web-app"><a class="header" href="#cosè-una-web-app">Cos'è una web app?</a></h2>
-<p>Finora abbiamo sviluppato un'applicazione che gira su una singola macchina. Questo ci pone però dei limiti: se volessimo giocare con un'altro giocatore in rete? Se volessimo salvare i nostri progressi e poi usare un altro dispositivo?</p>
-<p>Per questi ed altri motivi negli ultimi anni si sono largamente diffuse le <em>web application</em>, cioè applicazione che vengono eseguite in parte sul browser della mia macchina ed in parte su una macchina server in rete.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="web"><a class="header" href="#web">Web</a></h1>
+<p>Nel 1989, al CERN di Ginevra, in Svizzera, un laureato in fisica con la borsa di studio trovava estremamente frustrante dover andare a cercare le informazioni che gli servivano per le sue ricerche sui vari computer del centro di ricerca (il più grande del mondo per la fisica delle particelle). Questo ricercatore si immaginava di avere una pagina con delle parole cliccabili che rimandavano a delle risorse o ad altre pagine: sarebbe stato comodissimo! Il ricercatore si chiamava <a href="https://it.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a>.</p>
+<p align="center">
+<img title="prompt" src='./assets/berners.png' width='70%' style="padding: 50px 0 30px 0;">
+</p>
+<p>Tim diede a queste pagine immaginarie il nome di <em>ipertesto</em> (HyperText). Scrisse un articolo su questa idea, ed il suo capo gli permise di lavorarci per un piccolo progetto collaterale. È nato in questo modo, quasi per caso, il <em>World Wide Web</em> che conosciamo oggi, chiamato anche più semplicemente il <em>Web</em>.</p>
 <blockquote>
-<p>Le <em>web application</em> sono un caso particolare di applicazioni <em>distribuite</em>, cioè applicazioni che girano su più macchine fisiche. Le web app nello specifico hanno un architettura <em>client</em> (il mio browser) - <em>server</em> (la macchina in rete) ed usano i protocolli e gli standard tipici del web (HTTP, REST-API, web sockets, JSON, etc.)</p>
+<p><em>Web</em> in inglese significa propriamente <em>ragnatela</em>, mentre <em>rete</em> si traduce con <em>net</em>. Tuttavia, di solito Web si traduce in italiano con il termine più generico di rete.</p>
 </blockquote>
-<p><img src="03-webapp/./assets/client-server.png" alt="web app" /></p>
-<p>Per il lato client, la tecnologia è obbligata: i browser supportano solo HTML5, che è uno standard che utilizza HTML, CSS e JavaScript.</p>
-<p>Per il lato server invece possiamo usare il linguaggio che preferiamo. I più usati sono :</p>
+<p>Gli ingredienti che Tim Berners-Lee ha inventato e messo a punto per il suo progetto sono:</p>
 <ul>
-<li><a href="https://www.php.net/">PHP</a></li>
-<li><a href="https://www.python.org/">Python</a></li>
-<li><a href="https://www.java.com/it/">Java</a></li>
-<li>C++ (non esiste un sito ufficiale, potete guardare <a href="http://cplusplus.com/">questo</a>)</li>
-<li><a href="https://www.rust-lang.org/it">Rust</a> (I ❤️ Rust)</li>
-<li><a href="https://go.dev/">Go</a> (linguaggio di Google)</li>
-<li><a href="https://www.scala-lang.org/">Scala</a> (linguaggio simile a Java ma più orientato alla programmazione <em>funzionale</em> e più bello)</li>
-<li><a href="https://www.erlang.org/">Erlang</a> (linguaggio per la programmazione funzionale)</li>
-<li><a href="https://www.ruby-lang.org/it/">Ruby</a></li>
-<li><a href="https://www.haskell.org/">Haskell</a> (linguaggio dichiarativo, ostico ma bello)</li>
+<li>un linguaggio per scrivere le pagine web, utilizzando dei marcatori, che ha chiamato HyperText Markup Language (HTML, in italiano si potrebbe tradurre con linguaggio con marcatori per ipertesti);</li>
+<li>un modo per identificare in maniera univoca una risorsa su internet, che ha chiamato Universal Resource Locator (URL, in italiano localizzatore di risorse universale);</li>
+<li>un protocollo per trasmettere gli ipertesti, che ha chiamato HyperText Transfer Protocol (HTTP)</li>
 </ul>
-<p>Noi useremo Python per la parte server.</p>
-<h2 id="python--flask"><a class="header" href="#python--flask">Python &amp; Flask</a></h2>
-<p>Per poter comunicare con il mondo esterno, la nostra applicazione in Python deve avere un componente che glielo permetta. In particolare questo componente dovrà:</p>
-<ul>
-<li>accettare le richieste dall'esterno e inoltrarle (<em>route</em>) alla nostra applicazione</li>
-<li>permettere alla nostra applicazione di rispondere alle richieste.</li>
-</ul>
-<p>Questo componente si chiama <em>framework web</em>, ne esistono diversi per ogni linguaggio di programmazione e nel nostro caso useremo <a href="https://flask.palletsprojects.com/en/2.0.x/"><strong>Flask</strong></a>.</p>
-<h3 id="come-usare-flask"><a class="header" href="#come-usare-flask">Come usare Flask</a></h3>
-<h4 id="sul-vostro-computer"><a class="header" href="#sul-vostro-computer">Sul vostro computer</a></h4>
-<p>Nella vostra macchina di casa, per installare Flask basta aprire un terminale e lanciare il comando:</p>
-<pre><code class="language-sh">pip3 install flask
-</code></pre>
-<p>Dopo aver creato il file <code>app.py</code> come vedremo tra poco, per lanciare l'applicazione basta scrivere:</p>
-<pre><code class="language-sh">flask run
-</code></pre>
-<p>Attenzione: per motivi di sicurezza l'applicazione di default è raggiungibile solo in locale attraverso l'interfaccia di loopback (127.0.0.1) e non da altri computer connessi in rete.</p>
+<p>Tutte queste cose sono diventate uno standard per nel mondo attuale, e le imparerete a conoscere nei prossimi anni.</p>
 <blockquote>
-<p>E' possibile, sempre per fini di sviluppo, far vedere la vostra applicazione anche da altre macchine. Per maggiori informazioni leggete <a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/#public-server">qui</a>.</p>
+<p>L'associazione che si occupa di standardizzare tutti gli aspetti del web si chiama World Wide Web Consortium, abbreviato con <em>w3c</em>. Il w3c è stato fondato da Tim Berners-Lee, che ne è ancora il presidente.</p>
 </blockquote>
-<h4 id="sul-server-della-scuola"><a class="header" href="#sul-server-della-scuola">Sul server della scuola</a></h4>
-<p>La scuola mette a disposizione la possibilità di creare una web application con il framework Flask per ogni utente della scuola. Basta creare una cartella che si chiami esattamente <code>flask</code> nella vostra home.</p>
-<pre><code class="language-sh"># sul server della scuola
-cd ~
-mkdir flask
-cd flask
-</code></pre>
-<p>All'interno di questa cartella dovete creare il file di partenza della web application che deve avere il nome <code>app.py</code>.</p>
-<p>A differenza dell'uso sulla macchina locale, in questo caso non dobbiamo lanciare direttamente flask da riga di comando, ma dobbiamo creare un file per il web server della scuola (Apache2) con le istruzioni su come lanciare la nostra web application. Il file si deve trovare sempre dentro la cartella <code>flask</code>, si deve chiamare esattamente <code>flask.wsgi</code> e contenere il seguente testo:</p>
-<pre><code class="language-py">import sys
-import os
-dir_path = os.path.dirname(os.path.realpath(__file__))
-sys.path.insert(0, dir_path)
-
-from app import app as application
-</code></pre>
-<p>Ricapitolando, ipotizzando di essere k_utente00, la struttura del file system deve essere come segue:</p>
-<pre><code class="language-sh">k_utente00
-└── flask
-    ├── app.py
-    └── flask.wsgi
-</code></pre>
-<h2 id="primi-passi-con-flask"><a class="header" href="#primi-passi-con-flask">Primi passi con Flask</a></h2>
-<p>Ora creiamo il file principale del nostro progetto, che come visto dobbiamo chiamare esattamente <code>app.py</code>. Attenzione: il nome deve essere questo, altrimenti non funziona tutto automagicamente 🎩.</p>
-<p>Nel nostro nuovo file, per prima cosa importiamo Flask:</p>
-<pre><code class="language-py">from flask import Flask
-</code></pre>
-<p>Quindi creiamo un'istanza del framework. In Python, per creare l'istanza si una classe basta mettere il nome della classe (senza <code>new</code>) ed i parametri per l'inizializzazione. Nel caso di Flask, l'unico parametro obbligatorio è un nome scelto a piacere che ci servirà per riconoscere il nostro programma tra gli altri che girano sul server.</p>
-<pre><code class="language-py">app = Flask(&quot;tris&quot;)
-</code></pre>
-<p>Ora creiamo una funzione che verrà richiamata quando accederemo alla radice del nostro sito. Per fare questo, dobbiamo usare l'annotazione <code>@app.route()</code> specificando come parametro il percorso che si deve gestire, nel nostro caso la radice <code>\\</code>; dopo l'annotazione la funzione che verrà chiamata e il cui valore di ritorno verrà restituito al browser.</p>
-<pre><code class="language-py">@app.route(&quot;/&quot;)
-def tris():
-    return &quot;&lt;h1&gt;Gioco del tris!!&lt;/h1&gt;&quot;
-</code></pre>
-<p>Proviamo ad accedere alla nostra applicazione, o dal link locale (se lo lanciate dalla vostra macchina) o dal link della scuola. Il risultato dovrebbe essere come segue.</p>
-<h1 id="gioco-del-tris-1"><a class="header" href="#gioco-del-tris-1">Gioco del tris!!</a></h1>
-<h2 id="codice-completo-finora"><a class="header" href="#codice-completo-finora">Codice completo (finora)</a></h2>
-<pre><code class="language-py">from flask import Flask
-
-app = Flask(&quot;tris&quot;)
-
-@app.route(&quot;/&quot;)
-def tris():
-    return &quot;&lt;h1&gt;Gioco del tris!!&lt;/h1&gt;&quot;
-</code></pre>
-<!-- Attenzione: se book **non** fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo `Book` in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà `__dict__`, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:
-
-```py
-def data_book():
-    return json.dumps(
-        [book.__dict__ for book in catalogue]
-        )
-```
-
-
-
-### Il formato JSON
-Fate attenzione: [JSON](https://www.json.org/) è un formato per scambiarsi i dati tra macchine (machine-to-machine), ma che può essere letto e scritto abbastanza facilmente anche dagli esseri umani. JSON quindi non è un codice, o un'applicazione, o una libreria, ma è un formato di stringa che permette alle macchine di comunicare fra loro in modo comprensibile. Volendo fare un paragone con la lingua umana, è come la sintassi della frase: per capirsi le persone devono mettere nel corretto ordine soggetto, verbo e complementi, altrimenti non ci si capisce.
-
-JSON usa le seguenti convenzioni:
-- le parentesi graffe per definire gli oggetti
-- le parentesi quadre per le liste
-- la virgola per separare gli elementi di una lista
-- i due punti per definire le proprietà di un oggetto
-
-Ad esempio, per definire una lista di due oggetti, ognuno con le proprietà `title` e `author`, scriveremo:
-```json
-[
-    {
-        "title":"Harry Potter e il calice di fuoco",
-        "author":"J.K.Rowling"
-    },
-    {
-        "title":"Il rosso e il nero",
-        "author":"Stendhal"
-    },
-    {
-        "title":"Il piccolo principe",
-        "author":"Antoine de Saint-Exupéry"
-    }
-]
-```
-Per generare o validare stringhe JSON, è possibile usare servizi online come ad esempio [JSON lint](https://jsonlint.com/?json=[{%22title%22:%22Harry%20Potter%20e%20il%20calice%20di%20fuoco%22,%22author%22:%22J.K.Rowling%22},{%22title%22:%22Il%20rosso%20e%20il%20nero%22,%22author%22:%22Stendhal%22},{%22title%22:%22Il%20piccolo%20principe%22,%22author%22:%22Antoine%20de%20Saint-Exup%C3%A9ry%22}]).
-
-### Lanciare il web server
-Per lanciare il web server, aprite un terminale nella cartella del vostro progetto e scrivete:
-
-```
-python3 -m flask run
-```
-Se tutto va bene, vi dovrebbe comparire la scritta `Running on http://127.0.0.1:5000/`. Ecco quindi il link che ci serviva per far comunicare la pagina web con la nostra applicazione!
-
-## HTML
-Ora creiamo un nuovo file, sempre nel nostro progetto, che chiamiamo `index.html`.
-
-```hmtl
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Biblioteca scolastica</title>
-</head>
-<body>
-    <ul>
-    </ul>    
-</body>
-</html>
-```
-
-È una semplice pagina che visualizza una lista, in questo momento vuota.
-
-Come facciamo a riempire la lista con i dati presi dal web server? Ci serve un po' di JavaScript.
-
-
-### JavaScript
-Subito dopo il tag `</body>` e subito prima del tag `</html>`, nella penultima riga insomma, aggiungiamo il codice che ci serve. 
-
-Prima di tutto scarichiamo ed importiamo una libreria JavaScript che ci semplificherà molto la vita e chi si chiama [JQuery](https://jquery.com). Potete scaricare il file direttamente cliccando con il tasto destro [qui](https://code.jquery.com/jquery-3.4.1.min.js) e scegliendo "Salva link come" o qualcosa di simile. Salvate il file sempre nella cartella di progetto.
-
-Quindi aggiungiamo la seguente riga:
-```html
-<script src="jquery-3.4.1.min.js"></script>
-```
-
-OK, abbiamo importato la libreria. Ora dobbiamo prendere i dati dal web server. Lo facciamo scrivendo subito dopo un nostro pezzo di codice all'interno del tag `<script>`.
-
-```html
-<script>
-    // Prende i dati come JSON dall'URL
-    // quando ha finito di prendere i dati, chiama la funzione "makeList"
-    $.getJSON("http://127.0.0.1:5000/").done(makeList);
-</script>
-```
-
-Attenzione a quello che succede. Il codice dentro il tag script è JavaScript. Il simbolo del dollaro (`$`) indica che stiamo usando la libreria JQuery che abbiamo importato subito prima. Quando i dati sono stati completamente ricevuti (ci potrebbe volere del tempo, se i libri fossero molti), viene chiamata la funzione `makeList`, che dobbiamo ancora definire.
-
-Subito dopo la riga precedente, creiamo ora la funzione `makeList`:
-```js
-function makeList(jsonBooks) {
-    for (book of jsonBooks) {
-        let newItem = `<li>${book}</li>`;
-        $("ul").append(newItem);
-    }
-}
-```
-
-Vediamo cosa abbiamo fatto. Nella prima riga abbiamo creato una funzione con la keyword `function`; la funzione prende in input un parametro che gli viene passato da JQuery quando i dati sono stati ricevuti.
-
-Subito dopo c'è un ciclo `for`, molto simile a quello del Python, con qualche differenza:
-- JavaScript usa le parentesi dopo la keyword `for`
-- JavaScript usa la keyword `of` invece che `in` per iterare all'interno di una lista
-- JavaScript usa le parentesi graffe per contenere il corpo del `for`
-
-
-All'interno del `for`, nella prima riga creiamo il nuovo item che vogliamo andare ad aggiungere alla lista.
-
-Nella riga successiva, c'è un istruzione che dice:
-- usando JQuery (`$`), seleziona la lista non ordinata (`ul`)
-- all'interno della lista, aggiungi alla fine (`append`) il nuovo elemento appena creato
-
-Il codice finale di tutta la pagina verrà come segue:
-```hmtl
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Biblioteca scolastica</title>
-</head>
-<body>
-    <ul>
-    </ul>    
-</body>
-<script src="jquery-3.4.1.min.js"></script>
-<script>
-    // Prende i dati come JSON dall'URL
-    // quando ha finito di prendere i dati, chiama la funzione "makeList"
-    $.getJSON("http://127.0.0.1:5000/").done(makeList);
-    function makeList(jsonBooks) {
-    for (book of jsonBooks) {
-        let newItem = `<li>${book}</li>`;
-        $("ul").append(newItem);
-    }
-}
-</script>
-</html>
-```
-
-### Go Live
-Su Visual Studio Code (detto anche VSCode per brevità), potete lanciare questa pagina con "Go Live" nella barra in basso, lo trovate sulla destra. Se non lo vedete, assicuratevi di aver installato l'estensione "Live Server" su VSCode.
-
-Al primo lancio vedrete che non succede niente. Per controllare cosa è successo, aprite la console di debug premendo con il tasto destro in qualsiasi punto della pagina web nel browser e cliccando su "Analizza elemento" o "Ispeziona elemento", quindi nel pannello che si apre, selezionate la tab console.
-
-Se avete fatto tutto correttamente, dovrebbe comparirvi un messaggio di errore del tipo:
-```
-Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://127.0.0.1:5000/. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
-```
-
-È normale, perché state usando due web-server diversi per la stessa pagina, questa è una cosa potenzialmente pericolosa ed il browser vi impedisce di farlo. Per aggirare la limitazione, il modo più semplice è installare queste estensioni per [Firefox](https://addons.mozilla.org/it/firefox/addon/cors-everywhere/) o per [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). In questo modo vi caricherà la pagina correttamente anche in questo caso.
-
-> Ovviamente non è questo il modo più corretto di procedere. Per fare le cose per bene, bisogna spostare tutto su Flask, anche le pagine HTML. È un'operazione abbastanza semplice ma la vedremo dopo che vi sarete impratichiti con questa parte. -->
+<div style="break-before: page; page-break-before: always;"></div><h1 id="modello-client-server"><a class="header" href="#modello-client-server">Modello client-server</a></h1>
+<p>Prima di passare a vedere nel dettaglio le tecnologie web, vediamo il paradigma su cui si basa il web stesso: il modello client-server.</p>
+<p>Nel web, si distinguono nettamente due diverse macchine:</p>
+<ul>
+<li>il client, che invia la richiesta e visualizza una pagina web</li>
+<li>il server, che riceve le richieste e fornisce le pagine web da visualizzare</li>
+</ul>
+<p align="center">
+<img title="prompt" src='./assets/client-server.png' width='70%' style="padding: 50px 0 30px 0;">
+</p>
+<h2 id="client"><a class="header" href="#client">Client</a></h2>
+<p>Il client è una qualsiasi macchina che visualizza le pagine web, ad esempio:</p>
+<ul>
+<li>un computer desktop</li>
+<li>uno smartphone</li>
+<li>uno smartwatch</li>
+<li>una smartTV</li>
+<li>...</li>
+</ul>
+<p>Il programma che visualizza le pagine web viene normalmente chiamato <em>browser</em>.</p>
+<p>Esistono tanti browser differenti, ma quasi tutti sono delle varianti di questi tre:</p>
+<ul>
+<li>Chrome/Chromium, da cui deriva ad esempio Edge e Safari</li>
+<li>Firefox</li>
+<li>Opera</li>
+</ul>
+<p>Nel browser possiamo usare solo HTML, CSS e JavaScript per le nostre pagine.</p>
+<h2 id="server"><a class="header" href="#server">Server</a></h2>
+<p>Il server ha il compito di gestire le richieste dei client.</p>
+<p>Client e server, nel mondo web, comunicano tramite il protocollo HTTP. L'applicazione software all'interno del server che riceve le chiamate e ritorna una risposta viene chiamata <em>web server</em>.</p>
+<p>Sul server abbiamo una maggiore libertà di scelta delle tecnologie da usare rispetto al client. Possiamo usare una vasta gamma di linguaggi di programmazione tra cui PHP, Java, Python, C++, Rust, etc.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="url"><a class="header" href="#url">URL</a></h1>
+<p>L'URL (Uniform Resource Locator) è uno dei mattoncini base del web e serve per identificare in maniera univoca una risorsa all'interno del web stesso. Volendo fare un paragone, è l'equivalente dell'IP per Internet.</p>
+<p>Una risorsa può essere teoricamente qualsiasi cosa, ma tipicamente è una delle seguenti:</p>
+<ul>
+<li>una pagina web (.html)</li>
+<li>un file (es. immagine, audio)</li>
+<li>un JSON (una stringa di testo contenente informazioni)</li>
+</ul>
+<h2 id="sintassi"><a class="header" href="#sintassi">Sintassi</a></h2>
+<p>Un URL ha la seguente sintassi:</p>
+<p><code>protocollo://host/percorso?query#fragment</code></p>
+<p>Vediamo di seguito in dettaglio ogni parte.</p>
+<h3 id="protocollo"><a class="header" href="#protocollo">Protocollo</a></h3>
+<p>I protocolli che usiamo solitamente sono:</p>
+<ul>
+<li>http (da usare con cautela perché non sicuro)</li>
+<li>https</li>
+</ul>
+<p>Altri protocolli molto usati sono:</p>
+<ul>
+<li>ftp per trasferire i file</li>
+<li>ssh per aprire una sessione remota</li>
+</ul>
+<h3 id="host"><a class="header" href="#host">Host</a></h3>
+<p>L'host è la macchina su cui si trova la risorsa. Può essere:</p>
+<ul>
+<li>un indirizzo IP (IPv4 o IPv6)</li>
+<li>un nome di dominio (es. google.com)</li>
+</ul>
+<p>Per maggiori informazioni su come viene mappato un indirizzo IP ad un nome di dominio, rimando a <a href="https://wbigger.github.io/book-tpsi-5y/04-deploy/04-domains.html">questa pagina</a>.</p>
+<h3 id="percorso"><a class="header" href="#percorso">Percorso</a></h3>
+<p>Il percorso individua la risorsa all'interno dell'host. Può essere il path di un file all'interno della macchina, oppure un percorso generico che viene <em>instradato</em> (<em>routed</em>) dal web server verso una specifica funzione che si occuperà di gestire la richiesta.</p>
+<h3 id="query"><a class="header" href="#query">Query</a></h3>
+<p>La <em>query</em> serve per modificare in qualche modo la richiesta della risorsa.
+Ad esempio, se la risorsa è la lista dei prodotto di abbigliamento di un certo ecommerce, attraverso una query posso chiedere di visualizzare solo i prodotti con un certo prezzo, o solo i primi 10 prodotti, etc.</p>
+<h3 id="fragment"><a class="header" href="#fragment">Fragment</a></h3>
+<p>Un <em>fragment</em> individua una porzione della risorsa restituita.</p>
+<p>Per le pagine web, ad esempio, ogni id crea un nuovo fragment. Posso quindi saltare ad un certo punto di una pagina specificando l'id al termine dell'URL, come in <a href="https://en.wikipedia.org/wiki/URI_fragment#Basics">questo</a> caso.</p>
 
                     </main>
 
@@ -1032,20 +871,6 @@ Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remot
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>

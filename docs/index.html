@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="02-prog/index.html"><strong aria-hidden="true">2.</strong> Gioco del Tris (locale)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris</a></li><li class="chapter-item expanded "><a href="02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="03-webapp/index.html"><strong aria-hidden="true">3.</strong> Gioco del Tris (webapp)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-webapp/01-intro.html"><strong aria-hidden="true">3.1.</strong> Web app</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="02-prog/index.html"><strong aria-hidden="true">2.</strong> Basi di programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris (locale)</a></li><li class="chapter-item expanded "><a href="02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="03-web/index.html"><strong aria-hidden="true">3.</strong> Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-web/01-client-server.html"><strong aria-hidden="true">3.1.</strong> Client/server</a></li><li class="chapter-item expanded "><a href="03-web/02-url.html"><strong aria-hidden="true">3.2.</strong> URL</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -161,20 +161,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>

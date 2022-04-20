@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Gioco del Tris (webapp) - TPSI - Quarto anno - 2021</title>
+        <title>URL - TPSI - Quarto anno - 2021</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Materiale di supporto alle lezioni.">
@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="../02-prog/index.html"><strong aria-hidden="true">2.</strong> Gioco del Tris (locale)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="../02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="../02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris</a></li><li class="chapter-item expanded "><a href="../02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="../03-webapp/index.html" class="active"><strong aria-hidden="true">3.</strong> Gioco del Tris (webapp)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-webapp/01-intro.html"><strong aria-hidden="true">3.1.</strong> Web app</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="../02-prog/index.html"><strong aria-hidden="true">2.</strong> Basi di programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="../02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="../02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris (locale)</a></li><li class="chapter-item expanded "><a href="../02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/index.html"><strong aria-hidden="true">3.</strong> Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/01-client-server.html"><strong aria-hidden="true">3.1.</strong> Client/server</a></li><li class="chapter-item expanded "><a href="../03-web/02-url.html" class="active"><strong aria-hidden="true">3.2.</strong> URL</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -138,18 +138,51 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="web-app"><a class="header" href="#web-app">Web App</a></h1>
-<p>Trasformiamo il gioco del tris in una web application con Python.</p>
+                        <h1 id="url"><a class="header" href="#url">URL</a></h1>
+<p>L'URL (Uniform Resource Locator) è uno dei mattoncini base del web e serve per identificare in maniera univoca una risorsa all'interno del web stesso. Volendo fare un paragone, è l'equivalente dell'IP per Internet.</p>
+<p>Una risorsa può essere teoricamente qualsiasi cosa, ma tipicamente è una delle seguenti:</p>
+<ul>
+<li>una pagina web (.html)</li>
+<li>un file (es. immagine, audio)</li>
+<li>un JSON (una stringa di testo contenente informazioni)</li>
+</ul>
+<h2 id="sintassi"><a class="header" href="#sintassi">Sintassi</a></h2>
+<p>Un URL ha la seguente sintassi:</p>
+<p><code>protocollo://host/percorso?query#fragment</code></p>
+<p>Vediamo di seguito in dettaglio ogni parte.</p>
+<h3 id="protocollo"><a class="header" href="#protocollo">Protocollo</a></h3>
+<p>I protocolli che usiamo solitamente sono:</p>
+<ul>
+<li>http (da usare con cautela perché non sicuro)</li>
+<li>https</li>
+</ul>
+<p>Altri protocolli molto usati sono:</p>
+<ul>
+<li>ftp per trasferire i file</li>
+<li>ssh per aprire una sessione remota</li>
+</ul>
+<h3 id="host"><a class="header" href="#host">Host</a></h3>
+<p>L'host è la macchina su cui si trova la risorsa. Può essere:</p>
+<ul>
+<li>un indirizzo IP (IPv4 o IPv6)</li>
+<li>un nome di dominio (es. google.com)</li>
+</ul>
+<p>Per maggiori informazioni su come viene mappato un indirizzo IP ad un nome di dominio, rimando a <a href="https://wbigger.github.io/book-tpsi-5y/04-deploy/04-domains.html">questa pagina</a>.</p>
+<h3 id="percorso"><a class="header" href="#percorso">Percorso</a></h3>
+<p>Il percorso individua la risorsa all'interno dell'host. Può essere il path di un file all'interno della macchina, oppure un percorso generico che viene <em>instradato</em> (<em>routed</em>) dal web server verso una specifica funzione che si occuperà di gestire la richiesta.</p>
+<h3 id="query"><a class="header" href="#query">Query</a></h3>
+<p>La <em>query</em> serve per modificare in qualche modo la richiesta della risorsa.
+Ad esempio, se la risorsa è la lista dei prodotto di abbigliamento di un certo ecommerce, attraverso una query posso chiedere di visualizzare solo i prodotti con un certo prezzo, o solo i primi 10 prodotti, etc.</p>
+<h3 id="fragment"><a class="header" href="#fragment">Fragment</a></h3>
+<p>Un <em>fragment</em> individua una porzione della risorsa restituita.</p>
+<p>Per le pagine web, ad esempio, ogni id crea un nuovo fragment. Posso quindi saltare ad un certo punto di una pagina specificando l'id al termine dell'URL, come in <a href="https://en.wikipedia.org/wiki/URI_fragment#Basics">questo</a> caso.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../02-prog/04-test.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../03-web/01-client-server.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a rel="next" href="../03-webapp/01-intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -157,30 +190,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../02-prog/04-test.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../03-web/01-client-server.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a rel="next" href="../03-webapp/01-intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
