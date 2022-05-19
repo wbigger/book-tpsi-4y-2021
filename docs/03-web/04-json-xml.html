@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Basi di programmazione - TPSI - Quarto anno - 2021</title>
+        <title>Confronto con XML - TPSI - Quarto anno - 2021</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Materiale di supporto alle lezioni.">
@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="../02-prog/index.html" class="active"><strong aria-hidden="true">2.</strong> Basi di programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="../02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="../02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris (locale)</a></li><li class="chapter-item expanded "><a href="../02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/index.html"><strong aria-hidden="true">3.</strong> Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/01-client-server.html"><strong aria-hidden="true">3.1.</strong> Client/server</a></li><li class="chapter-item expanded "><a href="../03-web/02-url.html"><strong aria-hidden="true">3.2.</strong> URL</a></li><li class="chapter-item expanded "><a href="../03-web/03-http.html"><strong aria-hidden="true">3.3.</strong> HTTP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/03-http-rest.html"><strong aria-hidden="true">3.3.1.</strong> REST</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/04-json.html"><strong aria-hidden="true">3.4.</strong> JSON</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/04-json-xml.html"><strong aria-hidden="true">3.4.1.</strong> Confronto con XML</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="../02-prog/index.html"><strong aria-hidden="true">2.</strong> Basi di programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="../02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="../02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris (locale)</a></li><li class="chapter-item expanded "><a href="../02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/index.html"><strong aria-hidden="true">3.</strong> Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/01-client-server.html"><strong aria-hidden="true">3.1.</strong> Client/server</a></li><li class="chapter-item expanded "><a href="../03-web/02-url.html"><strong aria-hidden="true">3.2.</strong> URL</a></li><li class="chapter-item expanded "><a href="../03-web/03-http.html"><strong aria-hidden="true">3.3.</strong> HTTP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/03-http-rest.html"><strong aria-hidden="true">3.3.1.</strong> REST</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/04-json.html"><strong aria-hidden="true">3.4.</strong> JSON</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/04-json-xml.html" class="active"><strong aria-hidden="true">3.4.1.</strong> Confronto con XML</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -138,23 +138,64 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="premessa-concetti-base-di-programmazione"><a class="header" href="#premessa-concetti-base-di-programmazione">Premessa: concetti base di programmazione</a></h1>
-<p>Quando vogliamo imparare a programmare, in qualsiasi linguaggio, ci troviamo di fronte ad una pagina vuota.</p>
-<p>Cosa dobbiamo fare? Cosa dobbiamo scrivere in questa pagina che ci si presenta davanti?</p>
-<p>Quello che facciamo quando scriviamo un programma è qualcosa di fortemente creativo: non andremo solo a scrivere del codice che esegue istruzioni, ma andremo a creare un mondo nuovo, in cui ci potremo muovere ed agire con i concetti e le relazioni che avremo definito noi stessi.</p>
-<p>Scrivere codice è come scrivere un romanzo o dipingere su una tela. Le nostre penne e pennelli sono tastiera e mouse, e la tela è lo schermo. Quello che andremo a realizzare però sarà qualcosa che non solo <em>rappresenta</em> la realtà, ma andrà anche ad <em>interagire</em> con essa, e in un medio periodo può anche modificarla ed a sua volta esserne modificato. In altre parole il codice è una cosa viva, in continua evoluzione, la cui capacità di replicazione e mutazione (soprattutto per il codice open-source) lo rende vicino per certi versi ad un essere vivente.</p>
-<h2 id="un-programmatore-è-un-bravo-osservatore"><a class="header" href="#un-programmatore-è-un-bravo-osservatore">Un programmatore è un bravo osservatore</a></h2>
-<p>Un programmatore è un informatico ed il compito principale di un informatico è... risolvere problemi. Per poter risolvere un problema, però, bisogna prima capire <em>qual è</em> il problema, <em>chi</em> ha il problema e <em>perché</em>. Per poter fare questo, un programmatore deve essere un bravo osservatore della realtà. Più importante del QI o della genialità, è la capacità di saper osservare il mondo, ascoltare le persone, immedesimarsi negli altri e saper trasformare tutto questo in righe di codice che funzionino.</p>
+                        <h1 id="confronto-con-il-formato-xml"><a class="header" href="#confronto-con-il-formato-xml">Confronto con il formato XML</a></h1>
+<p>Un altro formato molto usato per lo scambio di dati è l'XML, anche se i due formati hanno campi di azione un po' diversi.</p>
+<p>XML è l'acronimo di <em>eXtensible Markup Language</em>, ed è un <em>metalinguaggio</em> che serve sia per creare linguaggi di markup, sia per trasmettere dati.</p>
+<p>Noi ci occuperemo solo di questo secondo uso, per confrontarlo con JSON.</p>
+<p>Un esempio di XML valido è il seguente:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;root&gt;
+    &lt;studenti&gt;
+        &lt;studente&gt;
+            &lt;nome&gt;Maria&lt;/nome&gt;
+            &lt;cognome&gt;Rossi&lt;/cognome&gt;
+            &lt;eta&gt;18&lt;/eta&gt;
+        &lt;/studente&gt;
+        &lt;studente&gt;
+            &lt;nome&gt;Marco&lt;/nome&gt;
+            &lt;cognome&gt;Neri&lt;/cognome&gt;
+            &lt;eta&gt;17&lt;/eta&gt;
+        &lt;/studente&gt;
+    &lt;/studenti&gt;
+&lt;/root&gt;
+</code></pre>
+<p>L'equivalente in JSON ha il seguente formato:</p>
+<pre><code class="language-JSON">{&quot;studente&quot;:[
+  { &quot;nome&quot;:&quot;Maria&quot;, &quot;cognome&quot;:&quot;Rossi&quot;, &quot;eta&quot;:18 },
+  { &quot;nome&quot;:&quot;Marco&quot;, &quot;cognome&quot;:&quot;Neri&quot;, &quot;eta&quot;:17 }
+]}
+</code></pre>
+<p>Come si può facilmente vedere, il formato JSON è molto più compatto e c'è una netta distinzione sintattica tra tipi di dati, come ad esempio l'array o il numero. In XML, infatti, non c'è una sintassi specifica per dire che <code>studenti</code> è un array o <code>eta</code> è un numero. Per aggiungere queste informazioni è necessario aggiungere degli attributi o definire un ulteriore file, detto <a href="https://www.w3schools.com/xml/schema_simple.asp"><em>schema</em></a>.</p>
+<p>È possibile passare da XML e JSON in modo più o meno automatico usando dei convertitori, ad esempio <a href="https://codebeautify.org/jsontoxml">questo</a>.</p>
+<h2 id="somiglianze-tra-xml-e-json"><a class="header" href="#somiglianze-tra-xml-e-json">Somiglianze tra XML e JSON</a></h2>
+<ul>
+<li>entrambi sono gerarchici</li>
+<li>entrambi sono leggibili da essere umano</li>
+<li>entrambi sono facilmente interpretabili da una macchina (<em>parsing</em>)</li>
+<li>entrambi sono standard web che possono essere usati in JavaScript</li>
+</ul>
+<h2 id="differenze-tra-xml-e-json"><a class="header" href="#differenze-tra-xml-e-json">Differenze tra XML e JSON</a></h2>
+<ul>
+<li>JSON non ha bisogno di tag di chiusura</li>
+<li>JSON usa meno caratteri</li>
+<li>JSON è più veloce da leggere e scrivere su JavaScript</li>
+<li>JSON può usare gli array</li>
+<li>XML ha la possibilità di specificare proprietà attraverso attributi e schemi</li>
+<li>XML può essere usato per creare nuovi linguaggi di markup</li>
+</ul>
+<blockquote>
+<p>Nota: se necessario, in realtà anche JSON ha la possibilità di definire dei propri schemi usando i <a href="https://json-schema.org/">JSON Schema</a></p>
+</blockquote>
+<h1 id="uso-di-xml"><a class="header" href="#uso-di-xml">Uso di XML</a></h1>
+<p>Sebbene sul web ormai si usi quasi esclusivamente il formato JSON, uno dei casi in cui vengono molto usati gli schemi XML è nello sviluppo Android, in cui tutte le pagine di un'applicazione sono definite tramite XML.</p>
+<p>Nota: nonostante la somiglianza sintattica, HTML non è un istanza di uno schema XML. </p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../01-linux/chapter_2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../03-web/04-json.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a rel="next" href="../02-prog/01-types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -162,11 +203,8 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../01-linux/chapter_2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../03-web/04-json.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a rel="next" href="../02-prog/01-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 

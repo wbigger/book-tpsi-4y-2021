@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Basi di programmazione - TPSI - Quarto anno - 2021</title>
+        <title>REST - TPSI - Quarto anno - 2021</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Materiale di supporto alle lezioni.">
@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="../02-prog/index.html" class="active"><strong aria-hidden="true">2.</strong> Basi di programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="../02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="../02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris (locale)</a></li><li class="chapter-item expanded "><a href="../02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/index.html"><strong aria-hidden="true">3.</strong> Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/01-client-server.html"><strong aria-hidden="true">3.1.</strong> Client/server</a></li><li class="chapter-item expanded "><a href="../03-web/02-url.html"><strong aria-hidden="true">3.2.</strong> URL</a></li><li class="chapter-item expanded "><a href="../03-web/03-http.html"><strong aria-hidden="true">3.3.</strong> HTTP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/03-http-rest.html"><strong aria-hidden="true">3.3.1.</strong> REST</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/04-json.html"><strong aria-hidden="true">3.4.</strong> JSON</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/04-json-xml.html"><strong aria-hidden="true">3.4.1.</strong> Confronto con XML</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="../02-prog/index.html"><strong aria-hidden="true">2.</strong> Basi di programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="../02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="../02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris (locale)</a></li><li class="chapter-item expanded "><a href="../02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/index.html"><strong aria-hidden="true">3.</strong> Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/01-client-server.html"><strong aria-hidden="true">3.1.</strong> Client/server</a></li><li class="chapter-item expanded "><a href="../03-web/02-url.html"><strong aria-hidden="true">3.2.</strong> URL</a></li><li class="chapter-item expanded "><a href="../03-web/03-http.html"><strong aria-hidden="true">3.3.</strong> HTTP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/03-http-rest.html" class="active"><strong aria-hidden="true">3.3.1.</strong> REST</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/04-json.html"><strong aria-hidden="true">3.4.</strong> JSON</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/04-json-xml.html"><strong aria-hidden="true">3.4.1.</strong> Confronto con XML</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -138,22 +138,51 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="premessa-concetti-base-di-programmazione"><a class="header" href="#premessa-concetti-base-di-programmazione">Premessa: concetti base di programmazione</a></h1>
-<p>Quando vogliamo imparare a programmare, in qualsiasi linguaggio, ci troviamo di fronte ad una pagina vuota.</p>
-<p>Cosa dobbiamo fare? Cosa dobbiamo scrivere in questa pagina che ci si presenta davanti?</p>
-<p>Quello che facciamo quando scriviamo un programma è qualcosa di fortemente creativo: non andremo solo a scrivere del codice che esegue istruzioni, ma andremo a creare un mondo nuovo, in cui ci potremo muovere ed agire con i concetti e le relazioni che avremo definito noi stessi.</p>
-<p>Scrivere codice è come scrivere un romanzo o dipingere su una tela. Le nostre penne e pennelli sono tastiera e mouse, e la tela è lo schermo. Quello che andremo a realizzare però sarà qualcosa che non solo <em>rappresenta</em> la realtà, ma andrà anche ad <em>interagire</em> con essa, e in un medio periodo può anche modificarla ed a sua volta esserne modificato. In altre parole il codice è una cosa viva, in continua evoluzione, la cui capacità di replicazione e mutazione (soprattutto per il codice open-source) lo rende vicino per certi versi ad un essere vivente.</p>
-<h2 id="un-programmatore-è-un-bravo-osservatore"><a class="header" href="#un-programmatore-è-un-bravo-osservatore">Un programmatore è un bravo osservatore</a></h2>
-<p>Un programmatore è un informatico ed il compito principale di un informatico è... risolvere problemi. Per poter risolvere un problema, però, bisogna prima capire <em>qual è</em> il problema, <em>chi</em> ha il problema e <em>perché</em>. Per poter fare questo, un programmatore deve essere un bravo osservatore della realtà. Più importante del QI o della genialità, è la capacità di saper osservare il mondo, ascoltare le persone, immedesimarsi negli altri e saper trasformare tutto questo in righe di codice che funzionino.</p>
+                        <h1 id="metodi-http-ed-architettura-rest"><a class="header" href="#metodi-http-ed-architettura-rest">Metodi HTTP ed architettura REST</a></h1>
+<p>Come sappiamo, tutto il web si basa sul concetto di risorsa. In HTTP, per manipolare una risorsa usiamo i <em>metodi</em>, per questo è di particolare importanza capire bene cosa sono e come si usano.</p>
+<p>Quando interagiamo con un qualsiasi risorsa, i diversi comandi che possiamo usare per manipolarla rientrano all'interno delle operazioni cosiddette <strong>CRUD</strong>: <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate e <strong>D</strong>elete.</p>
+<p>Di seguito una semplice tabellina che fa un paragone tra metodi HTTP e database SQL, che può esservi utile anche l'anno prossimo.</p>
+<table><thead><tr><th>Operazione</th><th>SQL</th><th>HTTP/REST</th></tr></thead><tbody>
+<tr><td>Create</td><td>INSERT</td><td>POST (o PUT)</td></tr>
+<tr><td>Read</td><td>SELECT</td><td>GET</td></tr>
+<tr><td>Update</td><td>UPDATE</td><td>PUT / PATCH</td></tr>
+<tr><td>Delete</td><td>DELETE</td><td>DELETE</td></tr>
+</tbody></table>
+<h2 id="get-selezione-della-risorsa"><a class="header" href="#get-selezione-della-risorsa">GET: selezione della risorsa</a></h2>
+<p>Per leggere il valore di una risorsa, usiamo l'URL della risorsa stessa ed effettuiamo la richiesta HTTP con il metodo <code>GET</code>. Ci si aspetta che lo stato della risorsa non cambi a seguito di questa chiamata.</p>
+<h2 id="post-e-put-creazione-e-modifica-di-una-risorsa"><a class="header" href="#post-e-put-creazione-e-modifica-di-una-risorsa">POST e PUT: creazione e modifica di una risorsa</a></h2>
+<p>Per creare una nuova risorsa si usa il metodo <code>POST</code>, specificando nel corpo i dati per la creazione della risorsa stessa. A seguito di una chiamata con successo di questo metodo, il server ritorna l'ID univoco della risorsa appena creata.</p>
+<p>Nota: in alcuni casi si utilizza anche il metodo <code>PUT</code> per creare una nuova risorsa. Si utilizza questa strategia quando l'ID della risorsa viene fornita dal client e non deve essere generata dal server. Di solito in questo caso se la risorsa non esiste viene creata, mentre se esiste viene sovrascritta.</p>
+<p>Nei casi di incertezza, le specifiche HTTP ci ricordano che una differenza sostanziale tra <code>POST</code> e <code>PUT</code> è l'idempotenza, come spiegato di seguito.</p>
+<h3 id="idempotenza"><a class="header" href="#idempotenza">Idempotenza</a></h3>
+<p>Per capire bene la differenza tra <code>POST</code> e <code>PUT</code>, dobbiamo introdurre il concetto di idempotenza. Un comando è <em>idempotente</em> quando <em>&quot;richieste ripetute identiche devono portare al medesimo stato dei dati sul server&quot;</em>. </p>
+<p>Per le chiamate HTTP:</p>
+<ul>
+<li>
+<p><code>GET</code> è idempotente: facendo più richieste identiche, la risorsa è immutata ed ottengo sempre la stessa risposta</p>
+</li>
+<li>
+<p><code>PUT</code> è idempotente: facendo più richieste identiche, il DB viene modificato solo la prima volta</p>
+</li>
+<li>
+<p><code>POST</code> non è idempotente: facendo più richieste identiche, ad ogni chiamata verrà aggiunta una nuova risorsa e creato un nuovo ID per noi</p>
+</li>
+</ul>
+<p>Nella pratica, questo significa che quando uso <code>PUT</code> devo passare anche l'ID dell'elemento da creare o aggiornare, mentre con <code>POST</code> non devo fornire l'ID, perché verrà creata dal server.</p>
+<p>Approfondimento sul concetto di idempotenza <a href="http://blog.loris.tissino.it/2013/06/http-rest-e-api.html">qui</a>.</p>
+<h2 id="update-modifica-parziale-di-una-risorsa"><a class="header" href="#update-modifica-parziale-di-una-risorsa">UPDATE: modifica parziale di una risorsa</a></h2>
+<p>Con il metodo <code>UPDATE</code> è possibile aggiornare solo parte di una risorsa, senza doverla sovrascrivere interamente.</p>
+<h2 id="delete-cancellazione-di-una-risorsa"><a class="header" href="#delete-cancellazione-di-una-risorsa">DELETE: cancellazione di una risorsa</a></h2>
+<p>Il metodo <code>DELETE</code> permette di cancellare la o le riorse specificate.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../01-linux/chapter_2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../03-web/03-http.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../02-prog/01-types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../03-web/04-json.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -162,10 +191,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../01-linux/chapter_2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../03-web/03-http.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../02-prog/01-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../03-web/04-json.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

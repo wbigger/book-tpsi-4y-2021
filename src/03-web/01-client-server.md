@@ -30,7 +30,7 @@ Nel browser possiamo usare solo HTML, CSS e JavaScript per le nostre pagine.
 ## Server
 Il server ha il compito di gestire le richieste dei client.
 
-Client e server, nel mondo web, comunicano tramite il protocollo HTTP. L'applicazione software all'interno del server che riceve le chiamate e ritorna una risposta viene chiamata _web server_.
+Client e server, nel mondo web, comunicano tramite il protocollo _HTTP_. L'applicazione software all'interno del server che ha il compito specifico di riceve le chiamate HTTP, passarle ad un'altra applicazione, ricevere la risposta da questa applicazione e ritornare una risposta HTTP al client viene chiamata _web server_. Ad esempio, un web server molto comune in Python è _Flask_.
 
 Sul server abbiamo una maggiore libertà di scelta delle tecnologie da usare rispetto al client. Possiamo usare una vasta gamma di linguaggi di programmazione tra cui PHP, Java, Python, C++, Rust, etc.
 

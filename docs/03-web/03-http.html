@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html lang="it" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>HTTP - TPSI - Quarto anno - 2021</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Materiale di supporto alle lezioni.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01-linux/index.html"><strong aria-hidden="true">1.</strong> Basi di Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01-linux/chapter_1.html"><strong aria-hidden="true">1.1.</strong> Kernel&amp;Shell</a></li><li class="chapter-item expanded "><a href="../01-linux/chapter_2.html"><strong aria-hidden="true">1.2.</strong> Comandi</a></li></ol></li><li class="chapter-item expanded "><a href="../02-prog/index.html"><strong aria-hidden="true">2.</strong> Basi di programmazione</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-prog/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="chapter-item expanded "><a href="../02-prog/02-python.html"><strong aria-hidden="true">2.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../02-prog/02-1-python-install.html"><strong aria-hidden="true">2.3.</strong> Come usare Python</a></li><li class="chapter-item expanded "><a href="../02-prog/03-tris.html"><strong aria-hidden="true">2.4.</strong> Gioco del Tris (locale)</a></li><li class="chapter-item expanded "><a href="../02-prog/04-test.html"><strong aria-hidden="true">2.5.</strong> Test del gioco</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/index.html"><strong aria-hidden="true">3.</strong> Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/01-client-server.html"><strong aria-hidden="true">3.1.</strong> Client/server</a></li><li class="chapter-item expanded "><a href="../03-web/02-url.html"><strong aria-hidden="true">3.2.</strong> URL</a></li><li class="chapter-item expanded "><a href="../03-web/03-http.html" class="active"><strong aria-hidden="true">3.3.</strong> HTTP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/03-http-rest.html"><strong aria-hidden="true">3.3.1.</strong> REST</a></li></ol></li><li class="chapter-item expanded "><a href="../03-web/04-json.html"><strong aria-hidden="true">3.4.</strong> JSON</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-web/04-json-xml.html"><strong aria-hidden="true">3.4.1.</strong> Confronto con XML</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">TPSI - Quarto anno - 2021</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wbigger/book-tpsi-4y-2021.git" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="http"><a class="header" href="#http">HTTP</a></h1>
+<p>L'HTTP (HyperText Transfer Protocol) è il principale protocollo a livello applicativo (livello 7 ISO/OSI) che si usa per il web. Le specifiche sono gestite direttamente dal w3c.</p>
+<p>L'HTTP si fonda su un'architettura di tipo client-server. Il <em>client</em> per definizione è <em>la macchina che effettua la richiesta</em>, mentre il <em>server</em> è <em>la macchina che gestisce la richiesta e fornisce una risposta</em>.</p>
+<blockquote>
+<p>Una stessa macchina, in momenti diversi, si può comportare sia da client che da server.</p>
+</blockquote>
+<p>Il protocollo HTTP prevede quindi due messaggi: la richiesta (<em>request</em>, da client a server) e la risposta (<em>response</em>, da server a client).</p>
+<object data="assets/http-arrows.html" style="width:100%;"> 
+    Your browser doesn’t support the object tag. 
+</object>
+<p>L'HTTP di default comunica attraverso la porta 80. Quando usiamo un browser senza specificare la porta, il browser stesso aggiunge automaticamente questa porta di default per noi.</p>
+<h2 id="versione-sicura"><a class="header" href="#versione-sicura">Versione sicura</a></h2>
+<p>L'HTTP trasmette l'intestazione ed il corpo del messaggio in chiaro, cioè in modo non criptato, ponendo dei problemi sia di sicurezza quando si scambiano delle credenziali, sia di privacy, in quanto un qualsiasi utente che si pone in ascolto del nostro traffico (detto anche <em>man-in-the-middle</em>) ha libero accesso al conenuto di tutti i messaggi inviati e ricevuti.</p>
+<p>Per ovviare a questo problema, è nato il protocollo HTTPS (<em>HTTP Secure</em>), che utilizza un layer di cifratura di tipo SSL/TLS per criptare la comunicazione. </p>
+<p>NOTA: l'HTTPS nasconde il contenuto del messaggio (intestazione e corpo), ma non l'URL stesso, quindi un man-in-the-middle può comunque sapere verso quali siti stiamo navigando. Per aumentare la privacy, è in fase di fase di approvazione il protocollo <em>DNS over HTTPS</em> (abbreviato in DoH) per criptare anche la comunicazione tra il browser ed il server DNS.</p>
+<p>L'HTTPs di default comunica attraverso la porta 443.</p>
+<h2 id="sessioni-e-cookies"><a class="header" href="#sessioni-e-cookies">Sessioni e cookies</a></h2>
+<p>L'HTTP è un protocollo senza stato (&quot;stateless&quot;), cioé a livello di protocollo ogni richiesta è del tutto indipendente dalla precedente. Come può fare quindi il server a sapere che più richieste provengono dalla stessa macchina, ad esempio per mantenere lo stato del carrello? In altre parole, come fanno client e server a mantenere una <em>sessione</em> persistente tra più messaggi HTTP?</p>
+<p>Per fare questo, si utilizza in generale la strategia dei <em>cookies</em> (biscotti). Client e server concordano una stringa casuale che verrà trasmessa nell'header di tutte le richieste HTTP, in modo che il server possa tenere traccia delle varie richieste.</p>
+<p>Ovviamente, se qualcuno venisse a conoscenza dei nostri cookies, li potrebbe utilizzare per violare la nostra privacy o per truffarci. È quindi importante che i cookies siano adeguatamente protetti in tutta lo loro vita:</p>
+<ul>
+<li>il browser deve assicurare che solo il sito che ha generato il cookie può accederci e nessun altro</li>
+<li>deve essere usato il protocollo HTTPS, per criptare l'intestazione della richiesta che contiene il cookie stesso</li>
+</ul>
+<h2 id="request"><a class="header" href="#request">Request</a></h2>
+<p>Una richiesta HTTP è formata da:</p>
+<ul>
+<li>una linea di richiesta (<em>request line</em>), dove viene specificato il metodo, l'URL di destinazione ed il protocollo richiesto (in genere HTTP/1.1)</li>
+</ul>
+<pre><code>GET /image/logo.png HTTP/1.1
+</code></pre>
+<blockquote>
+<p>In questo esempio, nella linea di richiesta ho solo la parte dell'URL che segue il dominio, in quanto l'host viene specificato successivamente nell'intestazione.</p>
+</blockquote>
+<ul>
+<li>un'intestazione (<em>header</em>), formata da una serie di campi (<em>fields</em>), con la sintassi <code>nome:valore</code></li>
+</ul>
+<pre><code>Host:www.example.com
+Accept-language:en
+</code></pre>
+<ul>
+<li>opzionalmente il corpo del messaggio (<em>message body</em>)</li>
+</ul>
+<h3 id="metodi-http"><a class="header" href="#metodi-http">Metodi HTTP</a></h3>
+<p>I metodi HTTP sono una parte fondamentale del protocollo, indicano l'azione desiderata del client riguardo la risorsa specificata nell'URL.</p>
+<p>Questo argomento merita una pagina a parte, trovate tutti i dettagli <a href="./03-http-rest.html">qui</a>.</p>
+<h3 id="request-header-fields"><a class="header" href="#request-header-fields">Request header fields</a></h3>
+<p>I più comuni campi dell'intestazione della richiesta sono:</p>
+<ul>
+<li><code>Host</code>: l'unico campo obbligatorio da HTTP/1.1, con l'IP o il dominio che identifica il server di destinazione</li>
+<li><code>User-agent</code>: specifica il browser utilizzato dal client, ad esempio nel mio caso è <code>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36</code></li>
+<li><code>Accept-language</code>: specifica in quale lingua il client si aspetta la risposta</li>
+<li><code>Cookie</code>: una stringa che identifica il <em>cookie</em> per mantenere lo stato tra client e server, come abbiamo visto in precedenza</li>
+</ul>
+<p>Per una lista completa, potete consultare il <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">sito ufficiale</a> del w3c oppure su <a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields">wikipedia</a>.</p>
+<h2 id="response"><a class="header" href="#response">Response</a></h2>
+<p>Una risposta HTTP è formata da:</p>
+<ul>
+<li>una linea di stato (<em>status line</em>), che contiene la versione del protocollo di risposta, lo status code e opzionalmente una frase di risposta:</li>
+</ul>
+<pre><code>HTTP/1.1 200 OK
+</code></pre>
+<ul>
+<li>un'intestazione (<em>header</em>), formata da una serie di campi (<em>fields</em>), con la sintassi <code>nome:valore</code>, come nel caso della richiesta</li>
+</ul>
+<pre><code>Content-Type: text/html
+</code></pre>
+<blockquote>
+<p>Nota: i campi delle intestazioni di richiesta e risposta non sono tutti uguali, alcuni sono validi solo per le domande, alcuni solo per le risposte, alcuni per entrambi.</p>
+</blockquote>
+<ul>
+<li>opzionalmente il corpo del messaggio (<em>message body</em>)</li>
+</ul>
+<h3 id="request-header-fields-1"><a class="header" href="#request-header-fields-1">Request header fields</a></h3>
+<p>I più comuni campi dell'intestazione della richiesta sono:</p>
+<ul>
+<li><code>Date</code>: specifica la data della risposta</li>
+<li><code>Content-Lenght</code>: specifica la dimensione in byte del body</li>
+<li><code>Content-Type</code>: specifica il <a href="https://en.wikipedia.org/wiki/Media_type#Common_examples_%5B10%5D">Media-Type</a> del body, i più comuni sono:
+<ul>
+<li><code>text/html</code> per le pagine HTML</li>
+<li><code>application/json</code> per i messaggi JSON</li>
+<li><code>application/pdf</code> per un file PDF</li>
+<li><code>image/png</code> o <code>image/jpeg</code> per le immagini</li>
+<li><code>video/mp4</code> e <code>video/ogg</code> per i video</li>
+<li><code>audio/mpeg</code> e <code>audio/ogg</code> per l'audio</li>
+</ul>
+</li>
+</ul>
+<p>La lista completa dei possibili Media-Type la trovate <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">qui</a>.</p>
+<h3 id="status-codes"><a class="header" href="#status-codes">Status codes</a></h3>
+<p>Il dato più importante in una risposta HTTP è il <em>codice di stato</em> (status code), che identifica se la richiesta è andata a buon fine ed in caso negativo qual è stato il problema.</p>
+<p>I codici di stato sono divisi in 5 categorie:</p>
+<ul>
+<li>1xx informational – richiesta ricevuta, continua l'elaborazione.</li>
+<li>2xx successful – l'azione è stata ricevuta con successo, compresa ed accettata.</li>
+<li>3xx redirection – il client deve eseguire ulteriori azioni per soddisfare la richiesta.</li>
+<li>4xx client error – la richiesta è sintatticamente scorretta o non può essere soddisfatta.</li>
+<li>5xx server error – il server ha fallito nel soddisfare una richiesta apparentemente valida.</li>
+</ul>
+<p>Per una lista completa degli status codes, vi consiglio di consultare la pagina ufficiale di <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">MDN Web Docs</a>. </p>
+<p>Di seguito alcuni dei codici più comuni che abbiamo visto a lezione.</p>
+<h4 id="2xx-successful"><a class="header" href="#2xx-successful">2xx successful</a></h4>
+<p>200: OK. Risposta standard per le richieste HTTP andate a buon fine.</p>
+<p>201: Created. La richiesta è stata soddisfatta, restituendo la creazione di una nuova risorsa.</p>
+<h4 id="4xx-client-error"><a class="header" href="#4xx-client-error">4xx client error</a></h4>
+<p>400: Bad Request. La richiesta non può essere soddisfatta a causa di errori di sintassi.</p>
+<p>403: Forbidden. La richiesta è legittima ma il server si rifiuta di soddisfarla.</p>
+<p>404:Not Found. La risorsa richiesta non è stata trovata ma in futuro potrebbe essere disponibile.</p>
+<p>429: Too many requests. Il client ha effettuato troppe richieste in un intervallo di tempo ridotto.</p>
+<h4 id="5xx-server-error"><a class="header" href="#5xx-server-error">5xx server error</a></h4>
+<p>500: Internal Server Error. Messaggio di errore generico senza alcun dettaglio.</p>
+<p>501: Not Implemented. Il server non è in grado di soddisfare il metodo della richiesta.</p>
+<p>504: Gateway Timeout. Il server si sta comportando come un gateway o un proxy e non ha ricevuto una risposta tempestiva dal server di upstream.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../03-web/02-url.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../03-web/03-http-rest.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../03-web/02-url.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../03-web/03-http-rest.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

@@ -1,0 +1,54 @@
+#cs .arrow-container {
+    padding:0;
+    margin:0;
+    position: relative;
+    height: 10px;
+}
+
+/* arrow right */
+#cs .arrow-right::before {
+    position: absolute;
+    padding:0;
+    margin:0;
+    content: "";
+    width: calc(100% - 2px);
+    height: 2px;
+    top: calc(50% - 1px);
+    background-color: black;
+}
+
+#cs .arrow-right::after {
+    position: absolute;
+    width: 0;
+    border-style: solid;
+    content: "";
+
+    right:0px;
+    border-width: 5px 0px 5px 5px;
+    border-color: transparent transparent transparent #000000;
+}
+
+
+/* arrow left */
+#cs .arrow-left::after {
+    position: absolute;
+    padding:0;
+    margin:0;
+    content: "";
+    width: calc(100% - 2px);
+    height: 2px;
+    top: calc(50% - 1px);
+    left:2px;
+    background-color: black;
+}
+
+#cs .arrow-left::before {
+    position: absolute;
+    width: 0;
+    border-style: solid;
+    content: "";
+
+    left:0px;
+    border-width: 5px 5px 5px 0px;
+    border-color: transparent #000000 transparent transparent;
+}

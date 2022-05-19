@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="arrows.css">
+    <style>
+        #cs p {
+            text-align: center;
+            color: black;
+            padding: 0;
+            font-size: 2rem;
+        }
+
+        #cs .grid-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            place-items: center;
+        }
+
+        #cs .grid-item {
+            width: 100%;
+            aspect-ratio: 3;
+            
+        }
+
+        #cs .grid-item-box {
+            border-radius: 5px;
+            display: grid;
+            place-items: center;
+
+        }
+
+        #cs .grid-item-arrows {
+            display: grid;
+            grid-template-rows: 1fr 1fr 4fr 1fr 1fr;
+        }
+
+        #cs .arrow-label {
+            text-align: center;
+        }
+
+        #cs .client {
+            background-color: lightgreen;
+        }
+
+        #cs .server {
+            background-color: lightblue;
+        }
+    </style>
+    <div id="cs">
+        <div class="grid-container">
+            <div class="grid-item grid-item-box client">
+                <p>CLIENT</p>
+            </div>
+            <div class="grid-item grid-item-arrows">
+                <div class="arrow-label">
+                    HTTP REQUEST
+                </div>
+                <div class="arrow-container">
+                    <div class="arrow arrow-right"></div>
+                </div>
+                <div>
+                    
+                </div>
+                <div class="arrow-container">
+                    <div class="arrow arrow-left"></div>
+                </div>
+                <div class="arrow-label">
+                    HTTP RESPONSE
+                </div>
+            </div>
+            <div class="grid-item grid-item-box server">
+                <p>SERVER</p>
+            </div>
+        </div>
+    </div>

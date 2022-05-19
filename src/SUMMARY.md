@@ -12,5 +12,9 @@
 - [Web](./03-web/README.md)
     - [Client/server](./03-web/01-client-server.md)
     - [URL](./03-web/02-url.md)
+    - [HTTP](./03-web/03-http.md)
+        - [REST](./03-web/03-http-rest.md)
+    - [JSON](./03-web/04-json.md)
+        - [Confronto con XML](./03-web/04-json-xml.md)
 <!-- - [Web application](./03-webapp/README.md)
     - [Web app](./03-webapp/01-intro.md) -->
