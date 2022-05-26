@@ -828,9 +828,9 @@ test_win_1()
 </ul>
 <h2 id="sintassi"><a class="header" href="#sintassi">Sintassi</a></h2>
 <p>Un URL ha la seguente sintassi:</p>
-<p><code>protocollo://host/percorso?query#fragment</code></p>
+<p><code>protocol://host/path?query#fragment</code></p>
 <p>Vediamo di seguito in dettaglio ogni parte.</p>
-<h3 id="protocollo"><a class="header" href="#protocollo">Protocollo</a></h3>
+<h3 id="protocol"><a class="header" href="#protocol">Protocol</a></h3>
 <p>I protocolli che usiamo solitamente sono:</p>
 <ul>
 <li>http (porta 80, da usare con cautela perché non sicuro)</li>
@@ -842,19 +842,19 @@ test_win_1()
 <li>ssh per aprire una sessione remota (porta 22)</li>
 </ul>
 <h3 id="host"><a class="header" href="#host">Host</a></h3>
-<p>L'host è la macchina su cui si trova la risorsa. Può essere:</p>
+<p>L'<em>host</em> è la macchina su cui si trova la risorsa. Può essere:</p>
 <ul>
 <li>un indirizzo IP (IPv4 o IPv6)</li>
 <li>un nome di dominio (es. www.google.com)</li>
 </ul>
 <p>Per maggiori informazioni su come viene mappato un indirizzo IP ad un nome di dominio, rimando a <a href="https://wbigger.github.io/book-tpsi-5y/04-deploy/04-domains.html">questa pagina</a>.</p>
-<h3 id="percorso"><a class="header" href="#percorso">Percorso</a></h3>
-<p>Il percorso individua la risorsa all'interno dell'host. Può essere il path di un file all'interno della macchina, oppure un percorso generico che viene <em>instradato</em> (<em>routed</em>) dal web server verso una specifica funzione che si occuperà di gestire la richiesta.</p>
+<h3 id="path"><a class="header" href="#path">Path</a></h3>
+<p>Il <em>path</em> (percorso) individua la risorsa all'interno dell'host. Può essere il path di un file all'interno della macchina, oppure un percorso generico che viene <em>instradato</em> (<em>routed</em>) dal web server verso una specifica funzione che si occuperà di gestire la richiesta.</p>
 <h3 id="query"><a class="header" href="#query">Query</a></h3>
-<p>La <em>query</em> serve per specificare meglio la risorsa richiesta.</p>
+<p>La <em>query</em> (interrogazione) serve per specificare meglio la risorsa richiesta.</p>
 <p>Ad esempio, se la risorsa è la lista dei prodotto di abbigliamento di un certo ecommerce, attraverso una query posso chiedere di visualizzare solo i prodotti con un certo prezzo, o solo i primi 10 prodotti, etc.</p>
 <h3 id="fragment"><a class="header" href="#fragment">Fragment</a></h3>
-<p>Un <em>fragment</em> individua una porzione della risorsa restituita.</p>
+<p>Un <em>fragment</em> (frammento) individua una porzione della risorsa restituita.</p>
 <p>Per le pagine web, ad esempio, ogni id crea un nuovo fragment. Posso quindi saltare ad un certo punto di una pagina specificando l'id al termine dell'URL, come in <a href="03-web/./02-url.html#sintassi">questo</a> caso.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="http"><a class="header" href="#http">HTTP</a></h1>
 <p>L'HTTP (HyperText Transfer Protocol) è il principale protocollo a livello applicativo (livello 7 ISO/OSI) che si usa per il web. Le specifiche sono gestite direttamente dal w3c.</p>
@@ -870,7 +870,7 @@ test_win_1()
 <h2 id="versione-sicura"><a class="header" href="#versione-sicura">Versione sicura</a></h2>
 <p>L'HTTP trasmette l'intestazione ed il corpo del messaggio in chiaro, cioè in modo non criptato, ponendo dei problemi sia di sicurezza quando si scambiano delle credenziali, sia di privacy, in quanto un qualsiasi utente che si pone in ascolto del nostro traffico (detto anche <em>man-in-the-middle</em>) ha libero accesso al conenuto di tutti i messaggi inviati e ricevuti.</p>
 <p>Per ovviare a questo problema, è nato il protocollo HTTPS (<em>HTTP Secure</em>), che utilizza un layer di cifratura di tipo SSL/TLS per criptare la comunicazione. </p>
-<p>NOTA: l'HTTPS nasconde il contenuto del messaggio (intestazione e corpo), ma non l'URL stesso, quindi un man-in-the-middle può comunque sapere verso quali siti stiamo navigando. Per aumentare la privacy, è in fase di fase di approvazione il protocollo <em>DNS over HTTPS</em> (abbreviato in DoH) per criptare anche la comunicazione tra il browser ed il server DNS.</p>
+<p>NOTA: l'HTTPS nasconde il contenuto del messaggio (intestazione e corpo), ma il destinatario (IP o nome di dominio), quindi un man-in-the-middle può comunque sapere verso quali siti stiamo navigando. Per aumentare la privacy, è in fase di fase di approvazione il protocollo <em>DNS over HTTPS</em> (abbreviato in DoH) per criptare anche la comunicazione tra il browser ed il server DNS.</p>
 <p>L'HTTPs di default comunica attraverso la porta 443.</p>
 <h2 id="sessioni-e-cookies"><a class="header" href="#sessioni-e-cookies">Sessioni e cookies</a></h2>
 <p>L'HTTP è un protocollo senza stato (&quot;stateless&quot;), cioé a livello di protocollo ogni richiesta è del tutto indipendente dalla precedente. Come può fare quindi il server a sapere che più richieste provengono dalla stessa macchina, ad esempio per mantenere lo stato del carrello? In altre parole, come fanno client e server a mantenere una <em>sessione</em> persistente tra più messaggi HTTP?</p>

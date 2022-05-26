@@ -148,9 +148,9 @@
 </ul>
 <h2 id="sintassi"><a class="header" href="#sintassi">Sintassi</a></h2>
 <p>Un URL ha la seguente sintassi:</p>
-<p><code>protocollo://host/percorso?query#fragment</code></p>
+<p><code>protocol://host/path?query#fragment</code></p>
 <p>Vediamo di seguito in dettaglio ogni parte.</p>
-<h3 id="protocollo"><a class="header" href="#protocollo">Protocollo</a></h3>
+<h3 id="protocol"><a class="header" href="#protocol">Protocol</a></h3>
 <p>I protocolli che usiamo solitamente sono:</p>
 <ul>
 <li>http (porta 80, da usare con cautela perché non sicuro)</li>
@@ -162,19 +162,19 @@
 <li>ssh per aprire una sessione remota (porta 22)</li>
 </ul>
 <h3 id="host"><a class="header" href="#host">Host</a></h3>
-<p>L'host è la macchina su cui si trova la risorsa. Può essere:</p>
+<p>L'<em>host</em> è la macchina su cui si trova la risorsa. Può essere:</p>
 <ul>
 <li>un indirizzo IP (IPv4 o IPv6)</li>
 <li>un nome di dominio (es. www.google.com)</li>
 </ul>
 <p>Per maggiori informazioni su come viene mappato un indirizzo IP ad un nome di dominio, rimando a <a href="https://wbigger.github.io/book-tpsi-5y/04-deploy/04-domains.html">questa pagina</a>.</p>
-<h3 id="percorso"><a class="header" href="#percorso">Percorso</a></h3>
-<p>Il percorso individua la risorsa all'interno dell'host. Può essere il path di un file all'interno della macchina, oppure un percorso generico che viene <em>instradato</em> (<em>routed</em>) dal web server verso una specifica funzione che si occuperà di gestire la richiesta.</p>
+<h3 id="path"><a class="header" href="#path">Path</a></h3>
+<p>Il <em>path</em> (percorso) individua la risorsa all'interno dell'host. Può essere il path di un file all'interno della macchina, oppure un percorso generico che viene <em>instradato</em> (<em>routed</em>) dal web server verso una specifica funzione che si occuperà di gestire la richiesta.</p>
 <h3 id="query"><a class="header" href="#query">Query</a></h3>
-<p>La <em>query</em> serve per specificare meglio la risorsa richiesta.</p>
+<p>La <em>query</em> (interrogazione) serve per specificare meglio la risorsa richiesta.</p>
 <p>Ad esempio, se la risorsa è la lista dei prodotto di abbigliamento di un certo ecommerce, attraverso una query posso chiedere di visualizzare solo i prodotti con un certo prezzo, o solo i primi 10 prodotti, etc.</p>
 <h3 id="fragment"><a class="header" href="#fragment">Fragment</a></h3>
-<p>Un <em>fragment</em> individua una porzione della risorsa restituita.</p>
+<p>Un <em>fragment</em> (frammento) individua una porzione della risorsa restituita.</p>
 <p>Per le pagine web, ad esempio, ogni id crea un nuovo fragment. Posso quindi saltare ad un certo punto di una pagina specificando l'id al termine dell'URL, come in <a href="./02-url.html#sintassi">questo</a> caso.</p>
 
                     </main>
