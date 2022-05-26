@@ -19,7 +19,7 @@ L'HTTP trasmette l'intestazione ed il corpo del messaggio in chiaro, cioè in mo
 
 Per ovviare a questo problema, è nato il protocollo HTTPS (_HTTP Secure_), che utilizza un layer di cifratura di tipo SSL/TLS per criptare la comunicazione. 
 
-NOTA: l'HTTPS nasconde il contenuto del messaggio (intestazione e corpo), ma non l'URL stesso, quindi un man-in-the-middle può comunque sapere verso quali siti stiamo navigando. Per aumentare la privacy, è in fase di fase di approvazione il protocollo _DNS over HTTPS_ (abbreviato in DoH) per criptare anche la comunicazione tra il browser ed il server DNS.
+NOTA: l'HTTPS nasconde il contenuto del messaggio (intestazione e corpo), ma il destinatario (IP o nome di dominio), quindi un man-in-the-middle può comunque sapere verso quali siti stiamo navigando. Per aumentare la privacy, è in fase di fase di approvazione il protocollo _DNS over HTTPS_ (abbreviato in DoH) per criptare anche la comunicazione tra il browser ed il server DNS.
 
 L'HTTPs di default comunica attraverso la porta 443.
 
